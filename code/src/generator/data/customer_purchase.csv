@@ -1,0 +1,73 @@
+transaction_id,customer_id,date,platform,payment_method,amt,location,item_category,item_sub_category,item_brand
+TXN_1,CUST_1,18/07/2023,Amazon,Credit Card,120.5,California,Groceries,Household Supplies,Amazon Basics
+TXN_2,CUST_1,25/07/2023,Offline,Credit Card,65.8,California,Dining,Restaurant,Local Restaurant
+TXN_3,CUST_1,02/08/2023,Online,Credit Card,350.0,California,Travel,Flights,United Airlines
+TXN_4,CUST_1,10/08/2023,Offline,Credit Card,185.2,California,Groceries,Produce,Trader Joe's
+TXN_5,CUST_1,17/08/2023,Offline,Credit Card,80.0,California,Dining,Restaurant,Local Restaurant
+TXN_6,CUST_1,21/08/2023,Amazon,Credit Card,45.75,California,Home Goods,Kitchenware,Amazon Basics
+TXN_7,CUST_1,29/08/2023,Offline,Credit Card,72.35,California,Dining,Fast Food,In-N-Out Burger
+TXN_8,CUST_1,05/09/2023,Online,Credit Card,89.99,California,Apparel,Shoes,Nike
+TXN_9,CUST_1,12/09/2023,Offline,Credit Card,210.5,California,Groceries,Meat & Seafood,Whole Foods
+TXN_10,CUST_1,22/09/2023,Online,Credit Card,550.0,California,Travel,Hotel,Marriott
+TXN_11,CUST_1,28/09/2023,Offline,Debit Card,40.0,California,Dining,Coffee Shop,Starbucks
+TXN_12,CUST_1,09/10/2023,Amazon,Credit Card,29.99,California,Personal Care,Toiletries,Crest
+TXN_13,CUST_1,18/10/2023,Offline,Credit Card,152.88,California,Groceries,Snacks,Trader Joe's
+TXN_14,CUST_1,01/11/2023,Offline,Credit Card,95.0,California,Dining,Restaurant,Local Restaurant
+TXN_15,CUST_1,10/11/2023,Offline,Credit Card,585.0,Nevada,Travel,Entertainment,Casino
+TXN_16,CUST_1,23/11/2023,Offline,Credit Card,21.99,California,Dining,Fast Food,McDonald's
+TXN_17,CUST_1,26/11/2023,Online,Credit Card,64.0,California,Apparel,Clothing,Old Navy
+TXN_1,CUST_2,18/07/2023,Amazon,Debit Card,79.99,Texas,Electronics,Headphones,Sony
+TXN_2,CUST_2,22/07/2023,Offline,Debit Card,45.5,Texas,Dining,Restaurant,Chili's
+TXN_3,CUST_2,05/08/2023,Online,Debit Card,25.0,Texas,Entertainment,Streaming Service,Netflix
+TXN_4,CUST_2,12/08/2023,Offline,Debit Card,62.75,Texas,Dining,Restaurant,Texas Roadhouse
+TXN_5,CUST_2,28/08/2023,Amazon,Debit Card,129.99,Texas,Electronics,Video Games,Nintendo
+TXN_6,CUST_2,02/09/2023,Offline,Cash,20.0,Texas,Entertainment,Movie Ticket,AMC Theatres
+TXN_7,CUST_2,15/09/2023,Online,Debit Card,15.0,Texas,Entertainment,Streaming Service,Spotify
+TXN_8,CUST_2,29/09/2023,Offline,Debit Card,55.2,Texas,Dining,Restaurant,Olive Garden
+TXN_9,CUST_2,11/10/2023,Online,Debit Card,99.99,Texas,Electronics,Accessories,Logitech
+TXN_10,CUST_2,24/10/2023,Offline,Debit Card,38.9,Texas,Dining,Restaurant,Local Diner
+TXN_11,CUST_2,05/11/2023,Amazon,Debit Card,150.0,Texas,Electronics,Tablet Accessories,Samsung
+TXN_12,CUST_2,05/12/2023,Offline,Debit Card,45.0,Texas,Dining,Fast Food,McDonald's
+TXN_13,CUST_2,22/12/2023,Online,Debit Card,39.0,Texas,Entertainment,Gaming,Steam
+TXN_14,CUST_2,08/01/2024,Offline,Debit Card,52.8,Texas,Dining,Restaurant,Applebee's
+TXN_15,CUST_2,23/01/2024,Online,Debit Card,125.38,Texas,Electronics,Smart Watch,Fitbit
+TXN_16,CUST_2,12/02/2024,Offlline,Debit Card,85.0,Texas,Dining,Restaurant,Outback Steakhouse
+TXN_1,CUST_3,15/08/2023,Online,Credit Card,1250.0,New York,Travel,Flights,Delta Airlines
+TXN_2,CUST_3,22/08/2023,Home Depot,Credit Card,450.0,New York,Home Improvement,Materials,Home Depot
+TXN_3,CUST_3,05/09/2023,Online,Credit Card,1800.0,New York,Investments,Stocks,Fidelity
+TXN_4,CUST_3,12/09/2023,Amazon,Credit Card,120.0,New York,Home Improvement,Tools,DeWalt
+TXN_5,CUST_3,18/09/2023,Restaurant,Debit Card,85.0,New York,Dining,Restaurant,Local Restaurant
+TXN_6,CUST_3,29/09/2023,Online,Credit Card,165.0,New York,Travel,Hotel,Marriott
+TXN_7,CUST_3,11/10/2023,Grocery Store,Debit Card,180.0,New York,Groceries,Food,Whole Foods
+TXN_8,CUST_3,25/10/2023,Online,Zelle,400.0,New York,Investments,Brokerage Transfer,Vanguard
+TXN_9,CUST_3,08/11/2023,Offline,Debit Card,50.0,New York,Entertainment,Movies,AMC Theatres
+TXN_10,CUST_3,03/01/2024,Amazon,Credit Card,700.0,New York,Home Improvement,Appliance,Samsung
+TXN_1,CUST_4,02/08/2023,Offline,Credit Card,125.5,Florida,Groceries,Produce,Publix
+TXN_2,CUST_4,05/08/2023,Online,Credit Card,75.2,Florida,Education,Books,Amazon
+TXN_3,CUST_4,12/08/2023,Offline,Credit Card,210.0,Florida,Healthcare,Pharmacy,CVS
+TXN_4,CUST_4,18/08/2023,Offline,Debit Card,85.0,Florida,Groceries,Dairy,Walmart
+TXN_5,CUST_4,25/08/2023,Online,Credit Card,45.99,Florida,Education,Supplies,Amazon
+TXN_6,CUST_4,01/09/2023,Offline,Credit Card,150.75,Florida,Groceries,Meat,Publix
+TXN_7,CUST_4,08/09/2023,Online,Credit Card,60.0,Florida,Education,Online Course,Udemy
+TXN_8,CUST_4,15/09/2023,Offline,Credit Card,350.0,Florida,Healthcare,Doctor Visit,Florida Health
+TXN_9,CUST_4,22/09/2023,Offline,Cash,50.0,Florida,Groceries,Snacks,Local Store
+TXN_10,CUST_4,02/10/2023,Offline,Credit Card,95.8,Florida,Groceries,Beverages,Walmart
+TXN_11,CUST_4,10/10/2023,Online,Credit Card,112.45,Florida,Apparel,Children's Clothing,Old Navy
+TXN_12,CUST_4,18/10/2023,Offline,Credit Card,28.12,Florida,Education,Stationary,Staples
+TXN_13,CUST_4,26/10/2023,Offline,Credit Card,780.0,Florida,Healthcare,Medical Tests,Quest Diagnostics
+TXN_14,CUST_4,03/11/2023,Offline,Debit Card,135.33,Florida,Groceries,Produce,Publix
+TXN_15,CUST_4,11/11/2023,Offline,Credit Card,950.0,Florida,Education,Tuition,University of Florida
+TXN_16,CUST_4,17/11/2023,Online,Credit Card,59.99,Florida,Education,Software,Adobe
+TXN_17,CUST_4,22/11/2023,Offline,Zelle,40.0,Florida,Services,Tutoring,Private Tutor
+TXN_1,CUST_5,18/08/2023,Offline,Cash,185.5,Arizona,Utilities,Electricity Bill,APS
+TXN_2,CUST_5,25/08/2023,Offline,Cash,95.0,Arizona,Healthcare,Pharmacy,CVS
+TXN_3,CUST_5,02/09/2023,Offline,Cash,220.0,Arizona,Home Maintenance,Plumbing Repair,Local Plumber
+TXN_4,CUST_5,12/09/2023,Offline,Cash,75.8,Arizona,Utilities,Water Bill,City of Phoenix
+TXN_5,CUST_5,19/09/2023,Offline,Cash,110.25,Arizona,Healthcare,Doctor Visit,Banner Health
+TXN_6,CUST_5,28/09/2023,Offline,Cash,60.0,Arizona,Home Maintenance,Hardware Supplies,Home Depot
+TXN_7,CUST_5,05/10/2023,Offline,Cash,170.0,Arizona,Utilities,Electricity Bill,APS
+TXN_8,CUST_5,15/10/2023,Online,Debit Card,45.0,Arizona,Healthcare,Online Pharmacy Order,GoodRx
+TXN_9,CUST_5,29/10/2023,Offline,Cash,78.9,Arizona,Home Maintenance,Gardening Supplies,Lowe's
+TXN_10,CUST_5,07/11/2023,Offline,Cash,82.55,Arizona,Utilities,Water Bill,City of Phoenix
+TXN_11,CUST_5,11/11/2023,Offline,Cash,48.0,Arizona,Healthcare,Pharmacy,Walgreens
+TXN_12,CUST_5,29/11/2023,Offline,Cash,330.0,Arizona,Home Maintenance,Appliance Repair,Local Repair Service

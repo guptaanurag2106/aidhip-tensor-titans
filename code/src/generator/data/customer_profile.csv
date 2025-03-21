@@ -1,0 +1,6 @@
+customer_id,age,gender,income,education,is_married,num_of_children,job,credit_score,preferred_payment_method,location,avg_balance,loan_count,total_loan_amt,avg_monthly_spending,main_purchase_cat,support_interaction_count,satisfaction
+CUST_1,35,Female,65000,Graduate,True,2,Marketing Manager,720,Credit Card,California,8500,2,25000,2800,"Groceries,Dining,Travel",3,7.01017547129115
+CUST_2,24,Male,38000,Secondary,False,0,Retail Associate,650,Debit Card,Texas,1200,1,5000,1100,"Entertainment,Dining,Electronics",1,7.394193583471486
+CUST_3,58,Male,120000,Graduate,True,3,Engineer,780,Online,New York,25000,3,150000,4500,"Travel,Home Improvement,Investments",5,6.213324966234531
+CUST_4,42,Female,80000,Graduate,True,1,Teacher,740,Credit Card,Florida,12000,1,10000,3200,"Groceries,Education,Healthcare",2,6.25322956325488
+CUST_5,70,Male,45000,Primary,False,2,Retired Carpenter,690,Cash,Arizona,5500,2,30000,1500,"Utilities,Healthcare,Home Maintenance",8,7.960081716927112
