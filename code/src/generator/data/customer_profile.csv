@@ -1,6 +1,6 @@
-customer_id,age,gender,income,education,is_married,num_of_children,job,credit_score,preferred_payment_method,location,avg_balance,loan_count,total_loan_amt,avg_monthly_spending,main_purchase_cat,support_interaction_count,satisfaction
-CUST_1,35,Female,65000,Graduate,True,2,Marketing Manager,720,Credit Card,California,8500,2,25000,2800,"Groceries,Dining,Travel",3,7.01017547129115
-CUST_2,24,Male,38000,Secondary,False,0,Retail Associate,650,Debit Card,Texas,1200,1,5000,1100,"Entertainment,Dining,Electronics",1,7.394193583471486
-CUST_3,58,Male,120000,Graduate,True,3,Engineer,780,Online,New York,25000,3,150000,4500,"Travel,Home Improvement,Investments",5,6.213324966234531
-CUST_4,42,Female,80000,Graduate,True,1,Teacher,740,Credit Card,Florida,12000,1,10000,3200,"Groceries,Education,Healthcare",2,6.25322956325488
-CUST_5,70,Male,45000,Primary,False,2,Retired Carpenter,690,Cash,Arizona,5500,2,30000,1500,"Utilities,Healthcare,Home Maintenance",8,7.960081716927112
+customer_id,age,gender,income,education,is_married,num_of_children,location,job,goals,credit_score,preferred_payment_method,avg_balance,loan_count,total_loan_amt,avg_monthly_spending,main_purchase_cat,support_interaction_count,satisfaction
+CUST_1,35,Female,65000,Graduate,True,2,California,Marketing Manager,"stability, children's education, home improvement",720,Credit Card,8500,2,25000,2800,"Groceries, Children's expenses, Entertainment",3,6.184925717129889
+CUST_2,62,Male,90000,Graduate,True,3,Florida,Retired Engineer,"retirement, travel, healthcare",780,Debit Card,45000,3,180000,3500,"Travel, Healthcare, Dining",1,7.407465088941162
+CUST_3,24,Male,38000,Secondary,False,0,Texas,Customer Service Representative,"stability, pay off debt, build credit",650,Online,1200,1,5000,1500,"Rent, Utilities, Food",8,6.693685903163028
+CUST_4,48,Female,120000,Graduate,True,1,New York,Lawyer,"investment, retirement, high risk",810,Credit Card,22000,1,350000,5500,"Travel, Dining, Shopping, Investments",2,6.330101059739782
+CUST_5,30,Other,52000,Graduate,False,0,Illinois,Graphic Designer,"stability, save for a down payment, travel",690,Online,3500,0,0,1900,"Rent, Technology, Travel, Entertainment",5,7.1064297038052935
