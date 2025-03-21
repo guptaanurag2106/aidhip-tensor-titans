@@ -1,0 +1,6 @@
+org_id,company_name,industry,size,annual_revenue,years_in_business,location,business_model,growth_stage,risk_tolerance,credit_rating,preferred_payment_method,avg_account_balance,loan_count,total_loan_amt,avg_monthly_spending,main_expense_categories,support_interaction_count,satisfaction
+ORG_1,InnoTech Solutions,Technology,Medium,15000000,8,California,B2B,Growth,Medium,A,Wire Transfer,750000,2,1000000,800000,"Salaries,Software Licenses,Marketing,Office Rent,R&D",15,7.852742080172858
+ORG_2,MediCare Providers Group,Healthcare,Large,85000000,25,Florida,B2C,Mature,Low,AA,ACH,4500000,5,10000000,4000000,"Medical Supplies,Salaries,Insurance,Utilities,Equipment Maintenance",45,6.738725725171418
+ORG_3,Global Trade Manufacturing,Manufacturing,Enterprise,450000000,60,Texas,B2B,Mature,Medium,A,Wire Transfer,20000000,12,75000000,25000000,"Raw Materials,Labor,Shipping,Factory Overhead,Equipment",120,6.207644589048571
+ORG_4,FreshFoods Market,Retail,Small,800000,3,New York,B2C,Growth,High,BBB,Credit Card,50000,1,75000,40000,"Inventory,Rent,Salaries,Utilities,Marketing",8,6.798379817814882
+ORG_5,Elite Financial Advisors,Finance,Medium,22000000,15,Illinois,Hybrid,Mature,Low,AAA,ACH,3200000,0,0,900000,"Salaries,Office Rent,Software,Compliance,Marketing",22,8.216817088212009
