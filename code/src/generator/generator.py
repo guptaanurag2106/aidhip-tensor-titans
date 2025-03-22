@@ -65,7 +65,7 @@ def request_parse_ret(prompt, count):
 
 
 def main(args):
-    output_dir = "data"
+    output_dir = "../data"
     if not os.path.exists(output_dir):
         os.makedirs(output_dir)
 
@@ -81,19 +81,18 @@ def main(args):
                 "customer_id",
                 "age",
                 "gender",
-                "income",
                 "education",
                 "is_married",
                 "num_of_children",
                 "location",
+                "income",
                 "job",
                 "goals",
                 "credit_score",
                 "preferred_payment_method",
-                "avg_balance",
-                "loan_count",
-                "total_loan_amt",
-                "avg_monthly_spending",
+                "balance",
+                "loan_amts",
+                "monthly_spending",
                 "main_purchase_cat",
                 "support_interaction_count",
                 "satisfaction",
@@ -165,10 +164,6 @@ def main(args):
     post_id = 1
     for customer_id in range(1, args.customer_count + 1):
         persona = personas[customer_id - 1]
-        numbers = [random.random() for _ in range(10)]
-        avg = sum(numbers) / len(numbers)
-        result = 7 + (avg - 0.5) * 6
-        persona["satisfaction"] = max(0, min(10, result))
 
         with open(customer_file, "a", newline="") as f:
             writer = csv.writer(f)
@@ -177,19 +172,18 @@ def main(args):
                     f"CUST_{customer_id}",
                     persona.get("age", ""),
                     persona.get("gender", ""),
-                    persona.get("income", ""),
                     persona.get("education", ""),
                     persona.get("is_married", ""),
                     persona.get("num_of_children", ""),
                     persona.get("location", ""),
+                    persona.get("income", ""),
                     persona.get("job", ""),
                     persona.get("goals", ""),
                     persona.get("credit_score", ""),
                     persona.get("preferred_payment_method", ""),
-                    persona.get("avg_balance", ""),
-                    persona.get("loan_count", ""),
-                    persona.get("total_loan_amt", ""),
-                    persona.get("avg_monthly_spending", ""),
+                    persona.get("balance", ""),
+                    persona.get("loan_amts", ""),
+                    persona.get("monthly_spending", ""),
                     persona.get("main_purchase_cat", ""),
                     persona.get("support_interaction_count", ""),
                     persona.get("satisfaction", ""),
