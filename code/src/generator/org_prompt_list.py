@@ -1,6 +1,6 @@
 def create_org_persona_prompt(org_count):
     return f"""
-        Create {org_count} detailed bank corporate customer personas with the following attributes and only the following attributes:
+        Create {org_count} detailed bank corporate customer personas with the following attributes and only the following attributes for a particular U.S. bank:
         - company_name: Company Name (Type: String)
         - industry: Industry (Type: String, Examples: Technology, Healthcare, Finance, Manufacturing, Retail, etc.)
         - size: Company Size (Type: String, Examples: Small (1-50), Medium (51-250), Large (251-1000), Enterprise (1000+))
@@ -12,14 +12,17 @@ def create_org_persona_prompt(org_count):
         - risk_tolerance: Risk Tolerance (Type: String, Options: Low/Medium/High)
         - credit_rating: Credit Rating (Type: String, Examples: AAA, AA, A, BBB, BB, B)
         - preferred_payment_method: Preferred Payment Method (Type: String, Options: Wire Transfer/ACH/Credit Card/Check)
-        - avg_account_balance: Average Past 12 Month Bank Balance (Type: Float/Integer)
-        - loan_count: Number of Lifetime Loans (Range: Integer, 0 and above)
-        - total_loan_amt: Total Loan Amount (Range: Float/Integer)
-        - avg_monthly_spending: Average Monthly Spending (Type: Float/Integer)
+        - account_balance: Comma separated list of past 12 Month Bank Balance (Type: Comma separated list of float, older to newer)
+        - loan_amts: Comma separated list of Loan Amount for past 12 Months (Type: Comma separated list of float, older to newer)
+        - monthly_spending: Average Monthly Spending (from this bank) (Type: Comma separated list of Float, older to newer)
         - main_expense_categories: Main Expense Categories (Comma Separated String)
-        - support_interaction_count: Number of Lifetime Support Interactions (Range: Integer)
+        - support_interaction_count: Number of Lifetime Customer Support Interactions, could be for asking for products, complaining etc. (Range: Integer)
+        - satisfaction: Customer's satisfaction with the bank, average is around 7 but could be lower or higher (Type: Float 0-10)
         
         The data should be congruent with itself and be representative of average U.S. businesses in different sectors.
+        The trend in list of bank balance, loan amounts, and monthly_spending (from this bank's account) over time could show changes in organization's revenue over time,
+        or maybe organization is withdrawing money from bank showing decreasing trust (satisfaction) in bank, or increasing/decreasing monthly_spending without
+        changes in revenue/loan could show shift from/to another bank account showing their satisfaction level with the bank.
         Return the persona in a structured array of JSON format using the key mentioned after every field.
         """
 
@@ -38,18 +41,19 @@ def create_org_transaction_history_prompt(persona, num_transactions):
     Risk Tolerance: {persona["risk_tolerance"]}
     Credit Rating: {persona["credit_rating"]}
     Preferred Payment Method: {persona["preferred_payment_method"]}
-    Average Account Balance: {persona["avg_account_balance"]}
-    Number of Lifetime Loans: {persona["loan_count"]}
-    Total Loan Amount: {persona["total_loan_amt"]}
-    Average Monthly Spending: {persona["avg_monthly_spending"]}
+    List of past 12 Month Bank Balance (older to newer): {persona["account_balance"]}
+    List of past 12 Month Loan Amounts (older to newer): {persona["loan_amts"]}
+    List of past 12 Month Spending (older to newer): {persona["monthly_spending"]}
     Main Expense Categories: {persona["main_expense_categories"]}
+    Satisfaction: {persona["satisfaction"]}/10, Customer's satisfaction with the bank, lower satisfaction could imply lesser new transactions
     
     From this information about the organization, using their preferred_payment_method (not always the same),
     their revenue, and expense categories, generate the following data (It can have some outliers but most should follow the organization's profile).
-    Also, make sure the Average Monthly Spending matches with the transactions created.
+    Also, make sure the Monthly Spending matches with the transactions created.
     
     The transactions should include corporate expenses like payroll, vendor payments, equipment purchases, 
     service subscriptions, loan payments, etc. based on their industry, size, and business model.
+    Transactions could have increasing/decreasing trend over time based on increasing or decreasing loans, bank balance, satisfaction with bank
     
     Each transaction should include these and only these attributes:
 
@@ -84,13 +88,12 @@ def create_org_support_prompt(persona, num_support):
     Risk Tolerance: {persona["risk_tolerance"]}
     Credit Rating: {persona["credit_rating"]}
     Preferred Payment Method: {persona["preferred_payment_method"]}
-    Average Account Balance: {persona["avg_account_balance"]}
-    Number of Lifetime Loans: {persona["loan_count"]}
-    Total Loan Amount: {persona["total_loan_amt"]}
-    Average Monthly Spending: {persona["avg_monthly_spending"]}
+    List of past 12 Month Bank Balance (older to newer): {persona["account_balance"]}
+    List of past 12 Month Loan Amounts (older to newer): {persona["loan_amts"]}
+    List of past 12 Month Spending (older to newer): {persona["monthly_spending"]}
     Main Expense Categories: {persona["main_expense_categories"]}
     Support Interaction Count: {persona["support_interaction_count"]}
-    Satisfaction with bank: {persona["satisfaction"]}/10
+    Satisfaction: {persona["satisfaction"]}/10, Customer's satisfaction with the bank, lower satisfaction could imply lesser new transactions
     
     Each support ticket should include the following and only these attributes:
     date: Date (Format: DD/MM/YYYY should be in past 1 year)
@@ -98,7 +101,7 @@ def create_org_support_prompt(persona, num_support):
     issue_type: Issue Type (Type: String, Example: "Payment Processing Issue", "Loan Application", "Technical Support", "Fraud Alert")
     priority: Priority (Type: String, Options: Low/Medium/High/Critical)
     is_repeating_issue: Is Repeating Issue (Type: Boolean, True/False)
-    was_issue_resolved: Was Issue Resolved (Type: Boolean, True/False)
+    was_issue_resolved: Was Issue Resolved (Type: Boolean, True/False, a lot of simpler issues, or issues inquiring about products are usually solved)
     resolution_time: Resolution Time (Type: String, Example: "4 hours", "3 days", "Not resolved")
     sentiment: Sentiment (Type: Double, Options: -1 to 1)
     
@@ -111,14 +114,7 @@ def create_org_support_prompt(persona, num_support):
 
 
 def create_org_social_media_prompt(persona, num_posts):
-    sentiment = (
-        "mostly positive"
-        if persona["satisfaction"] >= 7
-        else "mixed"
-        if persona["satisfaction"] >= 4
-        else "mostly negative"
-    )
-
+   
     return f"""
     Generate maximum of {num_posts} realistic corporate social media posts for the following organization:
     
@@ -130,6 +126,9 @@ def create_org_social_media_prompt(persona, num_posts):
     Location: {persona["location"]}
     Business Model: {persona["business_model"]}
     Growth Stage: {persona["growth_stage"]}
+    List of past 12 Month Bank Balance (older to newer): {persona["account_balance"]}
+    List of past 12 Month Loan Amounts (older to newer): {persona["loan_amts"]}
+    List of past 12 Month Spending (older to newer): {persona["monthly_spending"]}
     Risk Tolerance: {persona["risk_tolerance"]}
     Credit Rating: {persona["credit_rating"]}
     Satisfaction with bank: {persona["satisfaction"]}/10
@@ -137,20 +136,20 @@ def create_org_social_media_prompt(persona, num_posts):
     The posts should include a mix of company announcements, industry news, product/service promotions, 
     partnerships, and occasionally banking or financial service-related content.
     
-    The banking-related sentiment should be {sentiment} based on their satisfaction level.
+    The banking-related sentiment should be {persona["satisfaction"]}/10 based on their satisfaction level.
     The posts should be professional and aligned with the organization's industry and business model.
     
     Each post should include the following and only these attributes:
 
-    date: Date (Format: DD/MM/YY should be in past 1 year)
+    date: Date (Format: DD/MM/YYYY should be in past 1 year)
     platform: Platform (Options: 'LinkedIn', 'Twitter', 'Facebook', 'Instagram', 'Company Blog')
     image_url: Image URL (Type: String, Example: 'https://example.com/images/corporate/abcd1234.jpg')
     text_content: Text Content (Type: String, Max: 280 characters for Twitter, longer for other platforms)
     topics_of_interest: Topics of Interest (Type: List of Strings, Example: ['Industry News', 'Technology Trends', 'Finance', 'Sustainability'])
     feedback_on_financial_services: Feedback on Financial Services (Options: 'Positive', 'Negative', 'Neutral', 'Not Applicable')
-    sentiment_score: Sentiment Score (Range: Float, 0.0 to 10.0, Example: 7.4)
+    sentiment_score: Sentiment Score toward the bank/financial related topic(Range: Float, 0.0 to 10.0, Example: 7.4)
     engagement_level: Engagement Level (Range: Float, 0.0 to 10.0, Example: 6.2)
-    partners_mentioned: Partners Mentioned (Type: List of Strings, Example: ['Microsoft', 'Salesforce', 'Local Chamber of Commerce'])
+    partners_mentioned: Partners Mentioned (Type: Comma separated list of Strings, Example: ['Microsoft', 'Salesforce', 'Local Chamber of Commerce'])
     post_type: Post Type (Type: String, Options: 'Announcement', 'Promotion', 'Industry News', 'Financial', 'Community', 'Hiring')
     
     Return the posts as a JSON array.

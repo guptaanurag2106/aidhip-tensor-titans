@@ -1,0 +1,116 @@
+transaction_id,org_id,date,platform,payment_method,amount,location,expense_category,expense_sub_category,vendor,transaction_type
+TXN_1,ORG_1,15/08/2023,Online,ACH,150000.0,California,Salaries,Salaries,ADP,Payment
+TXN_2,ORG_1,18/08/2023,Online,Wire Transfer,25000.0,Remote,Software Licenses,Cloud Services,AWS,Payment
+TXN_3,ORG_1,22/08/2023,Vendor Portal,Credit Card,15000.0,Remote,Marketing,Digital Ads,Google,Payment
+TXN_4,ORG_1,28/08/2023,Bank Transfer,Wire Transfer,50000.0,California,Office Rent,Office Space,CBRE Group,Payment
+TXN_5,ORG_1,02/09/2023,ERP System,ACH,70050.0,Remote,R&D,Software Development Tools,Atlassian,Payment
+TXN_6,ORG_1,05/09/2023,Online,Wire Transfer,100000.0,California,R&D,Contractors,Upwork,Payment
+TXN_7,ORG_1,05/09/2023,Online,ACH,9973.5,California,Loan,Principal Repayment,Comerica Bank,Payment
+TXN_8,ORG_1,05/09/2023,Online,ACH,76.5,California,Loan,Interest payment,Comerica Bank,Payment
+TXN_9,ORG_1,15/04/2023,Online,ACH,150000.0,California,Salaries,Salaries,ADP,Payment
+TXN_10,ORG_1,18/04/2023,Bank Transfer,Wire Transfer,25000.0,California,Office Rent,Rent,CBRE Group,Payment
+TXN_11,ORG_1,22/04/2023,Vendor Portal,ACH,35000.0,Remote,Software Licenses,Cloud Services,Amazon Web Services,Payment
+TXN_12,ORG_1,25/04/2023,Online,Credit Card,10000.0,Remote,Marketing,Digital Ads,Google,Payment
+TXN_13,ORG_1,29/04/2023,Online,ACH,70000.0,Remote,R&D,Consulting services,ExpertConsulting LLC,Payment
+TXN_14,ORG_1,02/05/2023,Bank Transfer,Wire Transfer,20000.0,California,Software Licenses,CRM Software,Salesforce,Payment
+TXN_15,ORG_1,16/05/2023,Online,ACH,155000.0,California,Salaries,Salaries,ADP,Payment
+TXN_16,ORG_1,18/05/2023,Bank Transfer,Wire Transfer,25000.0,California,Office Rent,Rent,CBRE Group,Payment
+TXN_17,ORG_1,20/05/2023,Online,Credit Card,90000.0,Remote,R&D,Cloud research platform,Azure,Payment
+TXN_18,ORG_1,23/05/2023,Online,Credit Card,10000.0,Remote,Marketing,Digital Ads,Facebook,Payment
+TXN_19,ORG_1,26/05/2023,ERP System,ACH,30000.0,California,Software Licenses,Project Management Software,Atlassian,Payment
+TXN_20,ORG_1,01/06/2023,Bank,Direct Deposit,3000000.0,California,Revenue,Service income,Client A,Deposit
+TXN_21,ORG_1,08/09/2023,Bank,Wire Transfer,10000.0,California,Loan,Loan Payment,Bank of America,Payment
+TXN_22,ORG_2,18/07/2023,Online,ACH,37500.0,Florida,Medical Supplies,Surgical Instruments,Henry Schein Inc.,Payment
+TXN_23,ORG_2,20/07/2023,Bank Transfer,ACH,62000.0,Florida,Salaries,Salaries,ADP,Payment
+TXN_24,ORG_2,22/07/2023,Online,ACH,4500.0,Florida,Utilities,Electricity,Florida Power & Light,Payment
+TXN_25,ORG_2,25/07/2023,Online,ACH,12000.0,Florida,Insurance,Liability Insurance,The Hartford,Payment
+TXN_26,ORG_2,28/07/2023,Online,ACH,32000.0,Florida,Medical Supplies,Pharmaceuticals,McKesson Corporation,Payment
+TXN_27,ORG_2,02/08/2023,Bank Transfer,ACH,6500.0,Florida,Equipment Maintenance,MRI Machine Maintenance,GE Healthcare,Payment
+TXN_28,ORG_2,05/08/2023,Online,ACH,58000.0,Florida,Salaries,Salaries,ADP,Payment
+TXN_29,ORG_2,08/08/2023,Online,ACH,42000.0,Florida,Medical Supplies,Diagnostic Equipment Supplies,Medline Industries,Payment
+TXN_30,ORG_2,10/08/2023,Online,ACH,12000.0,Florida,Insurance,Property Insurance,State Farm,Payment
+TXN_31,ORG_2,12/08/2023,Online,ACH,40000.0,Florida,Medical Supplies,General Medical Supplies,Cardinal Health,Payment
+TXN_32,ORG_2,15/08/2023,Online,ACH,7000.0,Florida,Equipment Maintenance,General Equipment Servicing,Siemens Healthineers,Payment
+TXN_33,ORG_2,16/08/2023,Bank Transfer,ACH,4500.0,Florida,Utilities,Water,Aqua America,Payment
+TXN_34,ORG_2,16/08/2023,Online,Check,27000.0,Florida,Medical Supplies,Lab Supplies,Thermo Fisher Scientific,Payment
+TXN_35,ORG_2,18/07/2023,Online,ACH,75000.0,Florida,Salaries,Salaries,ADP,Payment
+TXN_36,ORG_2,20/07/2023,Online,ACH,32000.0,Florida,Medical Supplies,General Supplies,McKesson Medical-Surgical,Payment
+TXN_37,ORG_2,22/07/2023,Bank Transfer,ACH,5500.0,Florida,Utilities,Electricity,Florida Power & Light,Payment
+TXN_38,ORG_2,25/07/2023,Online,ACH,12000.0,Florida,Insurance,Liability Insurance,The Hartford,Payment
+TXN_39,ORG_2,28/07/2023,Online,ACH,75000.0,Florida,Salaries,Salaries,ADP,Payment
+TXN_40,ORG_2,29/07/2023,Vendor Portal,ACH,8500.0,Remote,Equipment Maintenance,Diagnostic Equipment,Siemens Healthineers,Payment
+TXN_41,ORG_2,02/08/2023,Online,ACH,20000.0,Florida,Medical Supplies,Pharmaceuticals,Cardinal Health,Payment
+TXN_42,ORG_2,05/08/2023,Bank Transfer,ACH,56000.0,Florida,Medical Supplies,Surgical Instruments,Stryker Corporation,Payment
+TXN_43,ORG_2,08/08/2023,ERP System,ACH,47000.0,Florida,Equipment Maintenance,IT Equipment,Dell,Payment
+TXN_44,ORG_2,09/08/2023,Online,ACH,35000.0,Florida,Salaries,Salaries,ADP,Payment
+TXN_45,ORG_3,18/07/2023,ERP System,Wire Transfer,1500000.0,Texas,Raw Materials,Steel Sheets,Texas Steelworks Inc.,Payment
+TXN_46,ORG_3,22/07/2023,Online,ACH,1200000.0,Texas,Salaries,Salaries,ADP,Payment
+TXN_47,ORG_3,29/07/2023,Bank Transfer,Wire Transfer,250000.0,Texas,Logistics,Freight Shipping,Swift Logistics,Payment
+TXN_48,ORG_3,05/08/2023,Online,ACH,1200000.0,Texas,Salaries,Salaries,ADP,Payment
+TXN_49,ORG_3,10/08/2023,Vendor Portal,Wire Transfer,100000.0,Texas,Equipment,CNC Machine Maintenance,Precision Machines Co.,Payment
+TXN_50,ORG_3,12/08/2023,Bank Transfer,Wire Transfer,180000.0,Texas,Energy,Electricity Bill,Reliant Energy,Payment
+TXN_51,ORG_3,19/08/2023,Bank Transfer,Wire Transfer,1450000.0,Texas,Raw Materials,Aluminium Ingots,Aluminium Suppliers Co.,Payment
+TXN_52,ORG_3,22/08/2023,ERP System,Wire Transfer,570000.0,Texas,Raw Materials,Plastic Resins,Polymer Solutions,Payment
+TXN_53,ORG_3,28/08/2023,Online,Wire Transfer,200000.0,Texas,Loan,Loan Repayment,Enterprise Bank,Loan
+TXN_54,ORG_3,18/07/2023,ERP System,Wire Transfer,1500000.0,Texas,Raw Materials,Steel,Texas Steelworks Inc.,Payment
+TXN_55,ORG_3,20/07/2023,Online,ACH,1250000.0,Texas,Salaries,Salaries,ADP,Payment
+TXN_56,ORG_3,28/07/2023,Bank Transfer,Wire Transfer,250000.0,Texas,Equipment,Maintenance,Industrial Repair Services,Payment
+TXN_57,ORG_3,05/08/2023,Vendor Portal,ACH,500000.0,Texas,Logistics,Freight,National Freight Services,Payment
+TXN_58,ORG_3,10/08/2023,Online,Direct Deposit,1500000.0,Texas,Salaries,Salaries,ADP,Payment
+TXN_59,ORG_3,12/08/2023,Online,Wire Transfer,100000.0,Texas,Energy,Electricity,TXU Energy,Payment
+TXN_60,ORG_3,25/08/2023,Bank Transfer,Wire Transfer,600000.0,Texas,Raw Materials,Polymers,Polymer Supply Co.,Payment
+TXN_61,ORG_3,12/09/2023,ERP System,Wire Transfer,750000.0,Remote,Raw Materials,Alloys,Global Alloy Distribution,Payment
+TXN_62,ORG_3,15/09/2023,Online,Direct Deposit,1500000.0,Texas,Salaries,Salaries,ADP,Payment
+TXN_63,ORG_3,19/09/2023,Online,Wire Transfer,100000.0,Texas,Energy,Electricity,TXU Energy,Payment
+TXN_64,ORG_3,23/09/2023,Vendor Portal,ACH,1500000.0,Texas,Equipment,Robotics Arm,Robotics Automation Inc,Payment
+TXN_65,ORG_3,28/09/2023,Bank Transfer,Wire Transfer,2800000.0,Texas,Raw Materials,Copper,Copper Mining Texas,Payment
+TXN_66,ORG_3,02/10/2023,Online,Direct Deposit,1500000.0,Texas,Salaries,Salaries,ADP,Payment
+TXN_67,ORG_3,10/10/2023,Online,Wire Transfer,100000.0,Texas,Energy,Electricity,TXU Energy,Payment
+TXN_68,ORG_3,16/10/2023,Vendor Portal,ACH,550000.0,Texas,Logistics,Transportation,Fast Delivery Corp,Payment
+TXN_69,ORG_3,28/10/2023,Bank Transfer,Wire Transfer,2750000.0,Texas,Raw Materials,Aluminum,Alcoa Corp,Payment
+TXN_70,ORG_4,18/08/2023,Online,Credit Card,3500.0,New York,Inventory,Fall Collection Stock,NY Apparel Distributors,Payment
+TXN_71,ORG_4,22/08/2023,Bank Transfer,ACH,2500.0,New York,Rent,Store Lease,Manhattan Realty,Payment
+TXN_72,ORG_4,25/08/2023,Vendor Portal,Credit Card,1000.0,Remote,Marketing,Digital Ads,Google,Payment
+TXN_73,ORG_4,30/08/2023,Online,Direct Deposit,6000.0,New York,Salaries,Employee Wages,ADP,Payment
+TXN_74,ORG_4,05/09/2023,Online,ACH,650.0,New York,Utilities,Electricity,Con Edison,Payment
+TXN_75,ORG_4,08/09/2023,Online,Credit Card,850.0,Remote,Marketing,Social Media Management,Hootsuite,Payment
+TXN_76,ORG_4,12/09/2023,Vendor Portal,Credit Card,14500.0,New York,Deposit,Sales Revenue,Various Customers,Deposit
+TXN_77,ORG_4,18/07/2023,Online,Credit Card,3500.0,New York,Inventory,Goods Purchase,NY Wholesale Distributors,Payment
+TXN_78,ORG_4,22/07/2023,Bank Transfer,ACH,2000.0,New York,Rent,Office Space,Manhattan Realty,Payment
+TXN_79,ORG_4,29/07/2023,Online,Credit Card,1500.0,Remote,Marketing,Digital Ads,Google,Payment
+TXN_80,ORG_4,05/08/2023,ERP System,Direct Deposit,6000.0,New York,Salaries,Employee Wages,ADP,Payment
+TXN_81,ORG_4,12/08/2023,Online,Credit Card,500.0,New York,Utilities,Electricity,Con Edison,Payment
+TXN_82,ORG_4,15/08/2023,Online,Credit Card,750.0,Remote,Marketing,Social Media Management,Hootsuite,Payment
+TXN_83,ORG_4,19/08/2023,Online,Credit Card,250.0,New York,Utilities,Internet,Verizon,Payment
+TXN_84,ORG_4,18/07/2023,Online,Credit Card,3500.0,New York,Inventory,Clothing Stock,Fashion Wholesalers Inc.,Payment
+TXN_85,ORG_4,20/07/2023,Bank Transfer,ACH,2500.0,New York,Rent,Store Rent,NY Real Estate Corp,Payment
+TXN_86,ORG_4,25/07/2023,Online,Credit Card,1500.0,Remote,Marketing,Digital Ads,Google,Payment
+TXN_87,ORG_4,28/07/2023,Bank Transfer,Direct Deposit,4500.0,New York,Salaries,Employee Wages,ADP,Payment
+TXN_88,ORG_4,02/08/2023,Online,Credit Card,500.0,New York,Utilities,Electricity,Con Edison,Payment
+TXN_89,ORG_4,15/08/2023,Online,Credit Card,4000.0,New York,Inventory,Accessories Stock,Accessory Imports Ltd.,Payment
+TXN_90,ORG_4,17/08/2023,Online,Credit Card,2000.0,Remote,Marketing,Social Media Ads,Facebook,Payment
+TXN_91,ORG_4,19/08/2023,Online,Credit Card,600.0,New York,Utilities,Internet,Verizon,Payment
+TXN_92,ORG_4,25/08/2023,Bank Transfer,Direct Deposit,5200.0,New York,Salaries,Employee Wages,ADP,Payment
+TXN_93,ORG_4,28/08/2023,Bank Transfer,ACH,2700.0,New York,Rent,Store Rent,NY Real Estate Corp,Payment
+TXN_94,ORG_5,15/07/2023,ERP System,ACH,75000.0,Illinois,Salaries,Salaries,ADP,Payment
+TXN_95,ORG_5,20/07/2023,Online,ACH,12000.0,Remote,Software,Financial Planning Software,Envestnet,Payment
+TXN_96,ORG_5,22/07/2023,Bank Transfer,ACH,5500.0,Illinois,Compliance,Audit Fees,Deloitte,Payment
+TXN_97,ORG_5,28/07/2023,Online,ACH,15000.0,Illinois,Office Rent,Office Space,CBRE,Payment
+TXN_98,ORG_5,05/08/2023,Vendor Portal,ACH,4000.0,Remote,Client Services,Client Meeting Expenses,Zoom,Payment
+TXN_99,ORG_5,15/08/2023,ERP System,ACH,75500.0,Illinois,Salaries,Salaries,ADP,Payment
+TXN_100,ORG_5,01/08/2023,Online,Check,8000.0,Illinois,Office Rent,Utilities,ComEd,Payment
+TXN_101,ORG_5,01/09/2023,Bank Transfer,ACH,4166.67,Illinois,Loan,Loan Payment,Bank of America,Loan
+TXN_102,ORG_5,15/09/2023,ERP System,ACH,76000.0,Illinois,Salaries,Salaries,ADP,Payment
+TXN_103,ORG_5,20/09/2023,Online,ACH,10000.0,Illinois,Compliance,Annual Report,KPMG,Payment
+TXN_104,ORG_5,15/07/2023,Online,ACH,75000.0,Illinois,Salaries,Salaries,ADP,Payment
+TXN_105,ORG_5,18/07/2023,Bank Transfer,ACH,12000.0,Illinois,Office Rent,Office Space,Regus,Payment
+TXN_106,ORG_5,22/07/2023,Online,ACH,60000.0,Remote,Client Services,Consulting Fees,External Consultants,Payment
+TXN_107,ORG_5,25/07/2023,Vendor Portal,ACH,25000.0,Remote,Software,Financial Planning Software,eMoney Advisor,Payment
+TXN_108,ORG_5,28/07/2023,Online,ACH,10000.0,Remote,Compliance,Regulatory Fees,FINRA,Payment
+TXN_109,ORG_5,02/08/2023,Bank Transfer,Wire Transfer,7000.0,Illinois,Software,CRM Software,Salesforce,Payment
+TXN_110,ORG_5,05/08/2023,Online,ACH,4500.0,Illinois,Client Services,Client Reporting Tools,SS&C Technologies,Payment
+TXN_111,ORG_5,05/08/2023,ERP System,ACH,76500.0,Illinois,Salaries,Salaries,ADP,Payment
+TXN_112,ORG_5,08/08/2023,Bank Transfer,Check,12000.0,Illinois,Office Rent,Office Space,Regus,Payment
+TXN_113,ORG_5,10/08/2023,Online,ACH,10000.0,Remote,Compliance,Audit Fees,Deloitte,Payment
+TXN_114,ORG_5,14/08/2023,Vendor Portal,ACH,2000.0,Remote,Software,Office Suite,Microsoft,Payment
+TXN_115,ORG_5,02/08/2023,Online,Credit Card,98000.0,Remote,Client Services,Deposits return,Multiple Clients,Payment
