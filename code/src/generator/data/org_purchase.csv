@@ -1,0 +1,58 @@
+transaction_id,org_id,date,platform,payment_method,amount,location,expense_category,expense_sub_category,vendor,transaction_type
+TXN_1,ORG_1,15/10/2023,Online,Wire Transfer,185000.0,California,Salaries,Salaries,ADP,Payment
+TXN_2,ORG_1,22/10/2023,Vendor Portal,ACH,25000.0,Remote,Software Licenses,CRM Software,Salesforce,Payment
+TXN_3,ORG_1,05/11/2023,Online,Wire Transfer,12500.0,California,Marketing,Digital Ads,Google Ads,Payment
+TXN_4,ORG_1,10/11/2023,Bank Transfer,Wire Transfer,30000.0,California,Rent,Office Space,Regus,Payment
+TXN_5,ORG_1,18/11/2023,Online,ACH,45000.0,Remote,R&D,Cloud Services,Amazon Web Services,Payment
+TXN_6,ORG_1,01/12/2023,Online,Wire Transfer,18500.0,California,Loan,Loan Repayment,Comerica Bank,Payment
+TXN_7,ORG_1,08/12/2023,ERP System,ACH,10000.0,Remote,Software Licenses,Project Management,Atlassian,Payment
+TXN_8,ORG_1,15/12/2023,Online,Wire Transfer,185000.0,California,Salaries,Salaries,ADP,Payment
+TXN_9,ORG_1,02/01/2024,Vendor Portal,Credit Card,2000.68,Remote,Marketing,Social Media Management Tools,Hootsuite,Payment
+TXN_10,ORG_1,12/01/2024,Online,Wire Transfer,7890.55,Remote,Software Licenses,Security Software,Norton,Payment
+TXN_11,ORG_1,25/01/2024,Bank Transfer,Direct Deposit,875000.0,California,Revenue,Client Payment,TechCorp Inc.,Deposit
+TXN_12,ORG_2,18/07/2023,Online,ACH,25000.0,Texas,Salaries,Salaries,ADP,Payment
+TXN_13,ORG_2,22/07/2023,Vendor Portal,ACH,12000.0,Texas,Medical Supplies,General Supplies,McKesson Medical-Surgical,Payment
+TXN_14,ORG_2,05/08/2023,Bank Transfer,ACH,5500.0,Texas,Rent,Office Rent,Regus Property Management,Payment
+TXN_15,ORG_2,12/08/2023,Online,ACH,1800.0,Texas,Utilities,Electricity,TXU Energy,Payment
+TXN_16,ORG_2,12/08/2023,Online,ACH,250.0,Texas,Utilities,Water,Texas Water Utilities,Payment
+TXN_17,ORG_2,19/08/2023,Bank Transfer,ACH,2000.0,Texas,Insurance,Liability Insurance,State Farm,Payment
+TXN_18,ORG_2,02/09/2023,Online,ACH,25000.0,Texas,Salaries,Salaries,ADP,Payment
+TXN_19,ORG_2,16/09/2023,Bank Transfer,ACH,997.89,Texas,Loan,Loan Payment,Bank of Texas,Payment
+TXN_20,ORG_2,28/09/2023,Vendor Portal,ACH,7500.0,Texas,Medical Supplies,Pharmaceuticals,Cardinal Health,Payment
+TXN_21,ORG_2,10/10/2023,Online,Credit Card,5000.0,Remote,Equipment,Medical Equipment,Stryker Medical,Payment
+TXN_22,ORG_2,22/10/2023,Online,Check,1200.0,Texas,Utilities,Internet,Spectrum,Payment
+TXN_23,ORG_3,18/07/2023,Online,Wire Transfer,750000.0,Ohio,Raw Materials,Steel Sheets,Ohio Steel Co.,Payment
+TXN_24,ORG_3,20/07/2023,Bank Transfer,ACH,500000.0,Remote,Labor,Salaries,ADP,Payment
+TXN_25,ORG_3,25/07/2023,ERP System,Wire Transfer,150000.0,Ohio,Machinery,CNC Machine Maintenance,TechMach Services,Payment
+TXN_26,ORG_3,02/08/2023,Online,Wire Transfer,100000.0,Remote,Shipping,Freight Charges,National Logistics,Payment
+TXN_27,ORG_3,05/08/2023,Bank Transfer,ACH,50000.0,Ohio,Utilities,Electricity Bill,Ohio Power,Payment
+TXN_28,ORG_3,10/08/2023,Online,Wire Transfer,300000.0,Ohio,Raw Materials,Aluminum Ingots,Alloy Metals Inc.,Payment
+TXN_29,ORG_3,12/08/2023,Vendor Portal,Check,75000.0,Ohio,Machinery,Equipment Repair,Industrial Repair Solutions,Payment
+TXN_30,ORG_3,18/08/2023,Online,Direct Deposit,60000.0,Ohio,Labor,Salaries,ADP,Payment
+TXN_31,ORG_3,20/08/2023,Bank Transfer,ACH,15000.0,Ohio,Loan,Principal and Interest,First National Bank,Loan
+TXN_32,ORG_4,18/07/2023,Online,Credit Card,45000.0,Florida,Inventory,Produce,Southern Produce Distributors,Payment
+TXN_33,ORG_4,25/07/2023,Online,ACH,30000.0,Florida,Payroll,Salaries,ADP,Payment
+TXN_34,ORG_4,01/08/2023,Bank Transfer,ACH,12000.0,Florida,Rent,Store Lease,Regency Centers,Payment
+TXN_35,ORG_4,05/08/2023,Online,Credit Card,38000.0,Florida,Inventory,Dairy & Eggs,Farm Fresh Dairy Supply,Payment
+TXN_36,ORG_4,10/08/2023,Online,Credit Card,7500.0,Remote,Marketing,Digital Ads,Google,Payment
+TXN_37,ORG_4,12/08/2023,Online,Credit Card,2500.0,Florida,Utilities,Electricity,Florida Power & Light,Payment
+TXN_38,ORG_4,15/08/2023,Bank Transfer,ACH,4800.0,Florida,Loan,Loan Payment,Sunshine State Bank,Payment
+TXN_39,ORG_4,18/08/2023,Online,Credit Card,42000.0,Florida,Inventory,Meat & Seafood,Gulf Coast Seafood Suppliers,Payment
+TXN_40,ORG_4,22/08/2023,Vendor Portal,Credit Card,1000.0,Remote,Service Subscriptions,POS System,Toast POS,Payment
+TXN_41,ORG_4,24/08/2023,Online,Credit Card,1700.0,Florida,Utilities,Water,City of Miami Water,Payment
+TXN_42,ORG_4,26/08/2023,Online,Credit Card,4000.0,Remote,Service Subscriptions,Marketing Software,Mailchimp,Payment
+TXN_43,ORG_4,29/08/2023,Online,ACH,10000.0,Florida,Payroll,Salaries,ADP,Payment
+TXN_44,ORG_5,15/01/2024,Online,ACH,12000.0,NY,Salaries,Salaries,ADP,Payment
+TXN_45,ORG_5,18/01/2024,Bank Transfer,ACH,2500.0,NY,Rent,Office Rent,Regus,Payment
+TXN_46,ORG_5,22/01/2024,Vendor Portal,Credit Card,1500.0,Remote,Software,CRM Software,Salesforce,Payment
+TXN_47,ORG_5,26/01/2024,Online,ACH,4500.0,Remote,Marketing,Digital Ads,Google Ads,Payment
+TXN_48,ORG_5,02/02/2024,ERP System,ACH,500.0,Remote,Professional Development,Online Courses,Coursera,Payment
+TXN_49,ORG_5,15/02/2024,Online,ACH,12000.0,NY,Salaries,Salaries,ADP,Payment
+TXN_50,ORG_5,20/02/2024,Vendor Portal,Credit Card,2000.0,Remote,Software,Financial Planning Software,eMoney Advisor,Payment
+TXN_51,ORG_5,05/03/2024,Online,ACH,-55000.0,NY,Revenue,Client Fees,Multiple Clients,Deposit
+TXN_52,ORG_5,15/03/2024,Online,ACH,12000.0,NY,Salaries,Salaries,ADP,Payment
+TXN_53,ORG_5,21/03/2024,Online,ACH,4000.0,Remote,Marketing,Digital Ads,LinkedIn Ads,Payment
+TXN_54,ORG_5,01/04/2024,Online,ACH,-60000.0,NY,Revenue,Client Fees,Multiple Clients,Deposit
+TXN_55,ORG_5,15/04/2024,Online,ACH,11000.0,NY,Salaries,Salaries,ADP,Payment
+TXN_56,ORG_5,28/02/2024,Bank Transfer,ACH,3000.0,NY,Rent,Office Rent,Regus,Payment
+TXN_57,ORG_5,10/05/2023,Online,ACH,13000.0,California,Software,Data analytics subscription,Bloomberg Terminal,Payment

@@ -1,0 +1,6 @@
+org_id,company_name,industry,size,annual_revenue,years_in_business,location,business_model,growth_stage,risk_tolerance,credit_rating,preferred_payment_method,avg_account_balance,loan_count,total_loan_amt,avg_monthly_spending,main_expense_categories,support_interaction_count,satisfaction
+ORG_1,Innovate Solutions Tech,Technology,Medium,8500000,7,California,B2B,Growth,Medium,A,Wire Transfer,750000,2,1500000,400000,"Salaries, Software Licenses, Marketing, Rent, R&D",12,6.744995170162556
+ORG_2,Community Care Clinic,Healthcare,Small,900000,15,Texas,B2C,Mature,Low,AA,ACH,200000,1,100000,60000,"Medical Supplies, Salaries, Rent, Utilities, Insurance",25,6.693518527943227
+ORG_3,Global Trade Manufacturing,Manufacturing,Large,45000000,30,Ohio,B2B,Mature,Medium,BBB,Wire Transfer,3000000,5,10000000,2000000,"Raw Materials, Labor, Machinery, Shipping, Utilities",40,7.876025267642369
+ORG_4,Fresh Foods Market,Retail,Medium,3500000,10,Florida,B2C,Growth,Medium,A,Credit Card,150000,2,300000,200000,"Inventory, Rent, Salaries, Utilities, Marketing",65,7.169787105965518
+ORG_5,Elite Financial Advisors,Finance,Small,550000,5,New York,B2B,Growth,High,BB,ACH,100000,0,0,30000,"Salaries, Software, Rent, Marketing, Professional Development.",8,7.923463652561915
