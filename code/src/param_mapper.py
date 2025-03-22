@@ -1,4 +1,4 @@
-def map(input_params):
+def cust_map(input_params):
     churn_rate = input_params["churn_rate"]
     profit_generated = input_params["profit_generated"]
     risk_appetite = input_params["risk_appetite"]
@@ -29,5 +29,5 @@ if __name__ == "__main__":
         "risk_appetite": 1,
         "financial_acumen": 10,
     }
-    output = map(input_params)
+    output = cust_map(input_params)
     print(f"Mapped {input_params} to {output}")
