@@ -1,0 +1,72 @@
+transaction_id,customer_id,date,platform,payment_method,amt,location,item_category,item_sub_category,item_brand
+TXN_1,CUST_1,18/08/2023,Amazon,Credit Card,129.99,California,Electronics,Headphones,Sony
+TXN_2,CUST_1,22/08/2023,Offline,Credit Card,65.75,California,Groceries,Produce,Trader Joe's
+TXN_3,CUST_1,25/08/2023,Online,Credit Card,120,California,Restaurants,Dinner,The Cheesecake Factory
+TXN_4,CUST_1,29/08/2023,Online,Zelle,1500,California,Rent,Apartment Rent,N/A
+TXN_5,CUST_1,02/09/2023,Offline,Credit Card,82.3,California,Groceries,General,Safeway
+TXN_6,CUST_1,05/09/2023,Online,Credit Card,212.5,California,Utilities,Electricity,PG&E
+TXN_7,CUST_1,10/09/2023,Online,Credit Card,75,California,Restaurants,Brunch,Local Cafe
+TXN_8,CUST_1,16/09/2023,Offline,Credit Card,45.99,California,Apparel,Shoes,Nike
+TXN_9,CUST_1,19/09/2023,Online,Credit Card,30,California,Entertainment,Streaming Service,Netflix
+TXN_10,CUST_1,23/09/2023,Offline,Credit Card,55.2,California,Groceries,Snacks,Trader Joe's
+TXN_11,CUST_1,28/09/2023,Online,Credit Card,110.44,California,Travel,Ride Share,Uber
+TXN_12,CUST_1,03/10/2023,Online,Debit Card,500,California,Savings,Investment,Fidelity
+TXN_13,CUST_2,15/07/2023,H-E-B,Debit Card,285.5,Texas,Groceries,Food & Beverage,Various
+TXN_14,CUST_2,18/07/2023,Shell,Debit Card,65.2,Texas,Utilities,Gas,Shell
+TXN_15,CUST_2,20/07/2023,Amazon,Debit Card,120,Texas,Children,Toys,Lego
+TXN_16,CUST_2,22/07/2023,Offline,Cash,80,Texas,Entertainment,Movies,AMC Theatres
+TXN_17,CUST_2,25/07/2023,Texas Gas Service,Debit Card,150.75,Texas,Utilities,Gas Bill,Texas Gas Service
+TXN_18,CUST_2,28/07/2023,H-E-B,Debit Card,310.25,Texas,Groceries,Food & Beverage,Various
+TXN_19,CUST_2,01/08/2023,Online,Zelle,1500,Texas,Mortgage,Mortgage Payment,Mortgage Company
+TXN_20,CUST_2,02/08/2023,Childcare Center,Debit Card,1200,Texas,Childcare,Daycare,Local Childcare
+TXN_21,CUST_2,04/08/2023,Amazon,Debit Card,78.98,Texas,Apparel,Children's Shoes,Nike
+TXN_22,CUST_2,05/08/2023,Vanguard,Zelle,500,Texas,Investments,Retirement Account,Vanguard
+TXN_23,CUST_2,05/08/2023,Target,Debit Card,112.5,Texas,Household Supplies,Cleaning Products,Various
+TXN_24,CUST_3,15/07/2023,Offline,Cash,85.5,Florida,Groceries,Dairy,Local Farm
+TXN_25,CUST_3,22/07/2023,Offline,Cash,25,Florida,Utilities,Water Bill,City Water
+TXN_26,CUST_3,01/08/2023,Offline,Cash,120,Florida,Healthcare,Prescription,CVS
+TXN_27,CUST_3,10/08/2023,Offline,Cash,50,Florida,Entertainment,Movie Tickets,Local Cinema
+TXN_28,CUST_3,18/08/2023,Offline,Cash,75,Florida,Groceries,Produce,Local Market
+TXN_29,CUST_3,25/08/2023,Offline,Cash,25,Florida,Utilities,Electricity Bill,Power Company
+TXN_30,CUST_3,05/09/2023,Offline,Zelle,150,Florida,Healthcare,Doctor Visit,Medical Clinic
+TXN_31,CUST_3,15/09/2023,Offline,Cash,60,Florida,Groceries,Meat,Local Butcher
+TXN_32,CUST_3,22/09/2023,Offline,Cash,25,Florida,Utilities,Gas Bill,Gas Company
+TXN_33,CUST_3,03/10/2023,Offline,Cash,100,Florida,Travel,Gasoline,Gas Station
+TXN_34,CUST_3,12/10/2023,Offline,Cash,50,Florida,Entertainment,Dinner,Local Restaurant
+TXN_35,CUST_3,20/10/2023,Offline,Cash,80,Florida,Groceries,Canned Goods,Supermarket
+TXN_36,CUST_3,27/10/2023,Offline,Debit Card,25,Florida,Utilities,Internet Bill,ISP Provider
+TXN_37,CUST_3,07/11/2023,Offline,Cash,130,Florida,Healthcare,Dental Checkup,Dental Clinic
+TXN_38,CUST_3,15/11/2023,Offline,Cash,45,Florida,Groceries,Snacks,Supermarket
+TXN_39,CUST_4,15/08/2023,Robinhood,Zelle,2000,New York,Investments,Stocks,TSLA
+TXN_40,CUST_4,18/08/2023,Online,Credit Card,150,New York,Dining,Restaurant,The Smith
+TXN_41,CUST_4,22/08/2023,Amazon,Debit Card,75.5,New York,Electronics,Headphones,Sony
+TXN_42,CUST_4,29/08/2023,Offline,Credit Card,120,New York,Entertainment,Concert Tickets,Ticketmaster
+TXN_43,CUST_4,02/09/2023,Online,Zelle,2500,New York,Rent,Apartment Rent,N/A
+TXN_44,CUST_4,05/09/2023,Online,Venmo,80,New York,Dining,Restaurant,Chipotle
+TXN_45,CUST_4,10/09/2023,Expedia,Credit Card,450,New York,Travel,Flights,JetBlue
+TXN_46,CUST_4,12/09/2023,Offline,Debit Card,100,New York,Entertainment,Movie Tickets,AMC Theatres
+TXN_47,CUST_4,15/09/2023,Robinhood,Zelle,1500,New York,Investments,Stocks,AAPL
+TXN_48,CUST_4,18/09/2023,Online,Debit Card,65.99,New York,Apparel,Shoes,Nike
+TXN_49,CUST_4,22/09/2023,Amazon,Credit Card,25.78,New York,Books,Finance,Wiley
+TXN_50,CUST_4,25/09/2023,Offline,Credit Card,140,New York,Dining,Restaurant,ABC Steakhouse
+TXN_51,CUST_5,02/07/2023,Offline,Debit Card,1550,Illinois,Mortgage,Mortgage Payment,N/A
+TXN_52,CUST_5,05/07/2023,Offline,Debit Card,450,Illinois,Groceries,General Groceries,Trader Joe's
+TXN_53,CUST_5,07/07/2023,Online,Debit Card,300,Illinois,Childcare,After-school care,Local Childcare Center
+TXN_54,CUST_5,10/07/2023,Online,Debit Card,220,Illinois,Utilities,Electricity Bill,ComEd
+TXN_55,CUST_5,15/07/2023,Online,Debit Card,75,Illinois,Education,School Supplies,Amazon
+TXN_56,CUST_5,18/07/2023,Offline,Debit Card,125,Illinois,Apparel,Children's Clothing,Target
+TXN_57,CUST_5,23/07/2023,Offline,Debit Card,80,Illinois,Utilities,Water Bill,Illinois American Water
+TXN_58,CUST_5,28/07/2023,Offline,Cash,40,Illinois,Food,Restaurant,Local Diner
+TXN_59,CUST_6,15/08/2023,Amazon,Debit Card,125.5,Colorado,Books,Textbooks,Pearson
+TXN_60,CUST_6,18/08/2023,Offline,Debit Card,22.75,Colorado,Food,Restaurant,Local Cafe
+TXN_61,CUST_6,25/08/2023,Online,Debit Card,45,Colorado,Entertainment,Streaming Service,Netflix
+TXN_62,CUST_6,02/09/2023,Offline,Debit Card,15.8,Colorado,Food,Groceries,Grocery Store
+TXN_63,CUST_6,10/09/2023,Offline,Debit Card,35,Colorado,Transport,Bus Fare,RTD
+TXN_64,CUST_6,22/09/2023,Online,Debit Card,85.99,Colorado,Books,Textbooks,McGraw-Hill
+TXN_65,CUST_6,29/09/2023,Offline,Cash,25,Colorado,Food,Fast Food,McDonald's
+TXN_66,CUST_6,05/10/2023,Offline,Debit Card,12.5,Colorado,Food,Coffee,Starbucks
+TXN_67,CUST_6,12/10/2023,Online,Debit Card,55.2,Colorado,Entertainment,Concert,Local Artist
+TXN_68,CUST_6,20/10/2023,Offline,Debit Card,38.75,Colorado,Food,Groceries,Grocery Store
+TXN_69,CUST_6,02/11/2023,Amazon,Debit Card,65.99,Colorado,Books,Notebooks,Amazon Basics
+TXN_70,CUST_6,11/11/2023,Offline,Debit Card,20.5,Colorado,Transport,Bus Fare,RTD
+TXN_71,CUST_6,26/01/2024,Offline,Debit Card,495,Colorado,Tuition,Course Fees,University of Colorado

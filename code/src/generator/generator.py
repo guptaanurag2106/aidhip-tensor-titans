@@ -2,7 +2,6 @@ import argparse
 import csv
 import json
 import os
-import random
 
 import requests
 from dotenv import load_dotenv
@@ -274,28 +273,21 @@ if __name__ == "__main__":
     parser.add_argument(
         "--customer_count",
         type=int,
-        default=5,
+        default=6,
         required=False,
         help="Number of individual customers",
     )
     parser.add_argument(
-        "--corporate_count",
-        type=int,
-        default=5,
-        required=False,
-        help="Number of corporate customers",
-    )
-    parser.add_argument(
         "--max_post",
         type=int,
-        default=20,
+        default=15,
         required=False,
         help="Max number of social media posts per person",
     )
     parser.add_argument(
         "--max_purchase_count",
         type=int,
-        default=25,
+        default=20,
         required=False,
         help="Max number of purchase history per person",
     )
