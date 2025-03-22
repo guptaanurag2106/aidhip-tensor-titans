@@ -1,0 +1,1658 @@
+[
+  {
+    "product_id": "ORG_PROD_1",
+    "category": "Credit Card",
+    "subcategory": "Basic",
+    "tier": "Entry",
+    "name": "Entry Basic Credit Card for Organizations",
+    "description": "Essential business credit card with basic rewards and low annual fee.",
+    "benefits": [
+      "Low annual fee",
+      "Basic expense tracking",
+      "Up to 3 employee cards"
+    ],
+    "risk_customer": 2,
+    "value_customer": 3,
+    "profit_margin": 4,
+    "risk_bank": 4,
+    "retention_value": 2,
+    "details": {
+      "interest_rate": 18.99,
+      "annual_fee": 0,
+      "credit_limit": 10000,
+      "rewards_rate": 1.5,
+      "employee_cards": 3
+    }
+  },
+  {
+    "product_id": "ORG_PROD_2",
+    "category": "Credit Card",
+    "subcategory": "Basic",
+    "tier": "Standard",
+    "name": "Standard Basic Credit Card for Organizations",
+    "description": "Standard business credit card with moderate rewards and competitive rates.",
+    "benefits": [
+      "Moderate rewards rate",
+      "Basic expense reporting",
+      "Up to 5 employee cards"
+    ],
+    "risk_customer": 3,
+    "value_customer": 4,
+    "profit_margin": 5,
+    "risk_bank": 3,
+    "retention_value": 3,
+    "details": {
+      "interest_rate": 17.99,
+      "annual_fee": 50,
+      "credit_limit": 20000,
+      "rewards_rate": 2.0,
+      "employee_cards": 5
+    }
+  },
+  {
+    "product_id": "ORG_PROD_3",
+    "category": "Credit Card",
+    "subcategory": "Basic",
+    "tier": "Premium",
+    "name": "Premium Basic Credit Card for Organizations",
+    "description": "Premium business credit card with enhanced rewards and benefits.",
+    "benefits": [
+      "Enhanced rewards",
+      "Detailed expense categorization",
+      "Up to 10 employee cards"
+    ],
+    "risk_customer": 4,
+    "value_customer": 5,
+    "profit_margin": 6,
+    "risk_bank": 3,
+    "retention_value": 4,
+    "details": {
+      "interest_rate": 16.99,
+      "annual_fee": 100,
+      "credit_limit": 35000,
+      "rewards_rate": 2.5,
+      "employee_cards": 10
+    }
+  },
+  {
+    "product_id": "ORG_PROD_4",
+    "category": "Credit Card",
+    "subcategory": "Basic",
+    "tier": "Elite",
+    "name": "Elite Basic Credit Card for Organizations",
+    "description": "Elite business credit card with exceptional rewards and exclusive privileges.",
+    "benefits": [
+      "Premium rewards",
+      "Advanced expense analytics",
+      "Up to 15 employee cards"
+    ],
+    "risk_customer": 4,
+    "value_customer": 6,
+    "profit_margin": 7,
+    "risk_bank": 2,
+    "retention_value": 5,
+    "details": {
+      "interest_rate": 15.99,
+      "annual_fee": 150,
+      "credit_limit": 50000,
+      "rewards_rate": 3.0,
+      "employee_cards": 15
+    }
+  },
+  {
+    "product_id": "ORG_PROD_5",
+    "category": "Credit Card",
+    "subcategory": "Gold",
+    "tier": "Entry",
+    "name": "Entry Gold Credit Card for Organizations",
+    "description": "Entry-level Gold business card with enhanced cashback on business expenses.",
+    "benefits": [
+      "Enhanced cashback on business categories",
+      "Basic travel insurance",
+      "Up to 5 employee cards"
+    ],
+    "risk_customer": 3,
+    "value_customer": 4,
+    "profit_margin": 5,
+    "risk_bank": 5,
+    "retention_value": 4,
+    "details": {
+      "interest_rate": 17.99,
+      "annual_fee": 100,
+      "credit_limit": 20000,
+      "rewards_rate": 2.0,
+      "employee_cards": 5
+    }
+  },
+  {
+    "product_id": "ORG_PROD_6",
+    "category": "Credit Card",
+    "subcategory": "Gold",
+    "tier": "Standard",
+    "name": "Standard Gold Credit Card for Organizations",
+    "description": "Standard Gold business card with superior rewards and travel benefits.",
+    "benefits": [
+      "Superior rewards on business expenses",
+      "Comprehensive travel insurance",
+      "Up to 10 employee cards"
+    ],
+    "risk_customer": 4,
+    "value_customer": 6,
+    "profit_margin": 6,
+    "risk_bank": 4,
+    "retention_value": 5,
+    "details": {
+      "interest_rate": 16.99,
+      "annual_fee": 195,
+      "credit_limit": 40000,
+      "rewards_rate": 2.5,
+      "employee_cards": 10
+    }
+  },
+  {
+    "product_id": "ORG_PROD_7",
+    "category": "Credit Card",
+    "subcategory": "Gold",
+    "tier": "Premium",
+    "name": "Premium Gold Credit Card for Organizations",
+    "description": "Premium Gold business card with extensive rewards and premium services.",
+    "benefits": [
+      "Extensive rewards program",
+      "Premium travel benefits",
+      "Up to 15 employee cards"
+    ],
+    "risk_customer": 5,
+    "value_customer": 8,
+    "profit_margin": 7,
+    "risk_bank": 4,
+    "retention_value": 6,
+    "details": {
+      "interest_rate": 15.99,
+      "annual_fee": 295,
+      "credit_limit": 60000,
+      "rewards_rate": 3.0,
+      "employee_cards": 15
+    }
+  },
+  {
+    "product_id": "ORG_PROD_8",
+    "category": "Credit Card",
+    "subcategory": "Gold",
+    "tier": "Elite",
+    "name": "Elite Gold Credit Card for Organizations",
+    "description": "Elite Gold business card with maximum rewards and exclusive concierge services.",
+    "benefits": [
+      "Maximum rewards on all purchases",
+      "Elite travel protection",
+      "Up to 25 employee cards"
+    ],
+    "risk_customer": 6,
+    "value_customer": 10,
+    "profit_margin": 8,
+    "risk_bank": 3,
+    "retention_value": 8,
+    "details": {
+      "interest_rate": 14.99,
+      "annual_fee": 395,
+      "credit_limit": 100000,
+      "rewards_rate": 3.5,
+      "employee_cards": 25
+    }
+  },
+  {
+    "product_id": "ORG_PROD_9",
+    "category": "Credit Card",
+    "subcategory": "Platinum",
+    "tier": "Entry",
+    "name": "Entry Platinum Credit Card for Organizations",
+    "description": "Entry-level Platinum business card with premium rewards and benefits.",
+    "benefits": [
+      "Premium rewards on key business categories",
+      "Airport lounge access",
+      "Up to 10 employee cards"
+    ],
+    "risk_customer": 4,
+    "value_customer": 6,
+    "profit_margin": 6,
+    "risk_bank": 6,
+    "retention_value": 5,
+    "details": {
+      "interest_rate": 16.99,
+      "annual_fee": 195,
+      "credit_limit": 50000,
+      "rewards_rate": 2.5,
+      "employee_cards": 10
+    }
+  },
+  {
+    "product_id": "ORG_PROD_10",
+    "category": "Credit Card",
+    "subcategory": "Platinum",
+    "tier": "Standard",
+    "name": "Standard Platinum Credit Card for Organizations",
+    "description": "Standard Platinum business card with extensive travel and business perks.",
+    "benefits": [
+      "Extensive travel perks",
+      "Global assistance",
+      "Up to 20 employee cards"
+    ],
+    "risk_customer": 5,
+    "value_customer": 8,
+    "profit_margin": 8,
+    "risk_bank": 5,
+    "retention_value": 7,
+    "details": {
+      "interest_rate": 15.99,
+      "annual_fee": 295,
+      "credit_limit": 100000,
+      "rewards_rate": 3.0,
+      "employee_cards": 20
+    }
+  },
+  {
+    "product_id": "ORG_PROD_11",
+    "category": "Credit Card",
+    "subcategory": "Platinum",
+    "tier": "Premium",
+    "name": "Premium Platinum Credit Card for Organizations",
+    "description": "Premium Platinum business card with comprehensive rewards and executive benefits.",
+    "benefits": [
+      "Comprehensive reward system",
+      "Premium concierge",
+      "Up to 30 employee cards"
+    ],
+    "risk_customer": 6,
+    "value_customer": 10,
+    "profit_margin": 10,
+    "risk_bank": 4,
+    "retention_value": 9,
+    "details": {
+      "interest_rate": 14.99,
+      "annual_fee": 495,
+      "credit_limit": 150000,
+      "rewards_rate": 3.5,
+      "employee_cards": 30
+    }
+  },
+  {
+    "product_id": "ORG_PROD_12",
+    "category": "Credit Card",
+    "subcategory": "Platinum",
+    "tier": "Elite",
+    "name": "Elite Platinum Credit Card for Organizations",
+    "description": "Elite Platinum business card with unlimited rewards and exclusive global privileges.",
+    "benefits": [
+      "Unlimited rewards potential",
+      "Global elite status",
+      "Up to 50 employee cards"
+    ],
+    "risk_customer": 7,
+    "value_customer": 10,
+    "profit_margin": 10,
+    "risk_bank": 4,
+    "retention_value": 10,
+    "details": {
+      "interest_rate": 13.99,
+      "annual_fee": 695,
+      "credit_limit": 250000,
+      "rewards_rate": 4.5,
+      "employee_cards": 50
+    }
+  },
+  {
+    "product_id": "ORG_PROD_13",
+    "category": "Credit Card",
+    "subcategory": "Luxury",
+    "tier": "Entry",
+    "name": "Entry Luxury Credit Card for Organizations",
+    "description": "Entry-level Luxury business card with premium status and exclusive rewards.",
+    "benefits": [
+      "Premium status",
+      "Luxury travel benefits",
+      "Up to 15 employee cards"
+    ],
+    "risk_customer": 5,
+    "value_customer": 6,
+    "profit_margin": 7,
+    "risk_bank": 6,
+    "retention_value": 6,
+    "details": {
+      "interest_rate": 16.49,
+      "annual_fee": 295,
+      "credit_limit": 100000,
+      "rewards_rate": 3.0,
+      "employee_cards": 15
+    }
+  },
+  {
+    "product_id": "ORG_PROD_14",
+    "category": "Credit Card",
+    "subcategory": "Luxury",
+    "tier": "Standard",
+    "name": "Standard Luxury Credit Card for Organizations",
+    "description": "Standard Luxury business card with extensive privileges and premium services.",
+    "benefits": [
+      "Extensive privileges",
+      "Global concierge",
+      "Up to 25 employee cards"
+    ],
+    "risk_customer": 6,
+    "value_customer": 9,
+    "profit_margin": 9,
+    "risk_bank": 5,
+    "retention_value": 8,
+    "details": {
+      "interest_rate": 15.49,
+      "annual_fee": 495,
+      "credit_limit": 200000,
+      "rewards_rate": 4.0,
+      "employee_cards": 25
+    }
+  },
+  {
+    "product_id": "ORG_PROD_15",
+    "category": "Credit Card",
+    "subcategory": "Luxury",
+    "tier": "Premium",
+    "name": "Premium Luxury Credit Card for Organizations",
+    "description": "Premium Luxury business card with comprehensive concierge and global benefits.",
+    "benefits": [
+      "Comprehensive luxury services",
+      "VIP event access",
+      "Up to 50 employee cards"
+    ],
+    "risk_customer": 7,
+    "value_customer": 10,
+    "profit_margin": 10,
+    "risk_bank": 4,
+    "retention_value": 10,
+    "details": {
+      "interest_rate": 14.49,
+      "annual_fee": 795,
+      "credit_limit": 350000,
+      "rewards_rate": 5.0,
+      "employee_cards": 50
+    }
+  },
+  {
+    "product_id": "ORG_PROD_16",
+    "category": "Credit Card",
+    "subcategory": "Luxury",
+    "tier": "Elite",
+    "name": "Elite Luxury Credit Card for Organizations",
+    "description": "Elite Luxury business card with unlimited privileges and tailored executive services.",
+    "benefits": [
+      "Unlimited privileges",
+      "Bespoke services",
+      "Up to 100 employee cards"
+    ],
+    "risk_customer": 8,
+    "value_customer": 10,
+    "profit_margin": 10,
+    "risk_bank": 4,
+    "retention_value": 10,
+    "details": {
+      "interest_rate": 13.49,
+      "annual_fee": 995,
+      "credit_limit": 500000,
+      "rewards_rate": 6.0,
+      "employee_cards": 100
+    }
+  },
+  {
+    "product_id": "ORG_PROD_17",
+    "category": "Credit Card",
+    "subcategory": "Dining",
+    "tier": "Entry",
+    "name": "Entry Dining Credit Card for Organizations",
+    "description": "Entry-level Dining business card with enhanced rewards on restaurant expenses.",
+    "benefits": [
+      "Enhanced rewards on dining",
+      "Restaurant reservations",
+      "Up to 5 employee cards"
+    ],
+    "risk_customer": 2,
+    "value_customer": 5,
+    "profit_margin": 5,
+    "risk_bank": 4,
+    "retention_value": 4,
+    "details": {
+      "interest_rate": 17.99,
+      "annual_fee": 150,
+      "credit_limit": 25000,
+      "rewards_rate": 4.0,
+      "employee_cards": 5
+    }
+  },
+  {
+    "product_id": "ORG_PROD_18",
+    "category": "Credit Card",
+    "subcategory": "Dining",
+    "tier": "Standard",
+    "name": "Standard Dining Credit Card for Organizations",
+    "description": "Standard Dining business card with superior rewards on dining and catering.",
+    "benefits": [
+      "Superior dining rewards",
+      "Priority restaurant bookings",
+      "Up to 10 employee cards"
+    ],
+    "risk_customer": 3,
+    "value_customer": 7,
+    "profit_margin": 6,
+    "risk_bank": 3,
+    "retention_value": 6,
+    "details": {
+      "interest_rate": 16.99,
+      "annual_fee": 250,
+      "credit_limit": 50000,
+      "rewards_rate": 5.0,
+      "employee_cards": 10
+    }
+  },
+  {
+    "product_id": "ORG_PROD_19",
+    "category": "Credit Card",
+    "subcategory": "Dining",
+    "tier": "Premium",
+    "name": "Premium Dining Credit Card for Organizations",
+    "description": "Premium Dining business card with extensive rewards on all food-related expenses.",
+    "benefits": [
+      "Extensive food & beverage rewards",
+      "VIP dining experiences",
+      "Up to 20 employee cards"
+    ],
+    "risk_customer": 4,
+    "value_customer": 9,
+    "profit_margin": 7,
+    "risk_bank": 3,
+    "retention_value": 8,
+    "details": {
+      "interest_rate": 15.99,
+      "annual_fee": 350,
+      "credit_limit": 75000,
+      "rewards_rate": 6.0,
+      "employee_cards": 20
+    }
+  },
+  {
+    "product_id": "ORG_PROD_20",
+    "category": "Credit Card",
+    "subcategory": "Dining",
+    "tier": "Elite",
+    "name": "Elite Dining Credit Card for Organizations",
+    "description": "Elite Dining business card with maximum rewards on hospitality and exclusive restaurant access.",
+    "benefits": [
+      "Maximum dining rewards",
+      "Exclusive chef experiences",
+      "Up to 30 employee cards"
+    ],
+    "risk_customer": 4,
+    "value_customer": 10,
+    "profit_margin": 8,
+    "risk_bank": 2,
+    "retention_value": 10,
+    "details": {
+      "interest_rate": 14.99,
+      "annual_fee": 495,
+      "credit_limit": 100000,
+      "rewards_rate": 7.0,
+      "employee_cards": 30
+    }
+  },
+  {
+    "product_id": "ORG_PROD_21",
+    "category": "Credit Card",
+    "subcategory": "Travel",
+    "tier": "Entry",
+    "name": "Entry Travel Credit Card for Organizations",
+    "description": "Entry-level Travel business card with enhanced rewards on travel expenses.",
+    "benefits": [
+      "Enhanced travel rewards",
+      "Basic travel insurance",
+      "Up to 5 employee cards"
+    ],
+    "risk_customer": 3,
+    "value_customer": 6,
+    "profit_margin": 6,
+    "risk_bank": 5,
+    "retention_value": 5,
+    "details": {
+      "interest_rate": 17.99,
+      "annual_fee": 175,
+      "credit_limit": 30000,
+      "rewards_rate": 4.0,
+      "employee_cards": 5
+    }
+  },
+  {
+    "product_id": "ORG_PROD_22",
+    "category": "Credit Card",
+    "subcategory": "Travel",
+    "tier": "Standard",
+    "name": "Standard Travel Credit Card for Organizations",
+    "description": "Standard Travel business card with superior travel benefits and insurance.",
+    "benefits": [
+      "Superior travel benefits",
+      "Comprehensive travel protection",
+      "Up to 15 employee cards"
+    ],
+    "risk_customer": 4,
+    "value_customer": 8,
+    "profit_margin": 7,
+    "risk_bank": 4,
+    "retention_value": 7,
+    "details": {
+      "interest_rate": 16.99,
+      "annual_fee": 275,
+      "credit_limit": 60000,
+      "rewards_rate": 5.0,
+      "employee_cards": 15
+    }
+  },
+  {
+    "product_id": "ORG_PROD_23",
+    "category": "Credit Card",
+    "subcategory": "Travel",
+    "tier": "Premium",
+    "name": "Premium Travel Credit Card for Organizations",
+    "description": "Premium Travel business card with extensive global travel rewards and lounge access.",
+    "benefits": [
+      "Extensive global rewards",
+      "Premium lounge access",
+      "Up to 25 employee cards"
+    ],
+    "risk_customer": 5,
+    "value_customer": 10,
+    "profit_margin": 8,
+    "risk_bank": 4,
+    "retention_value": 9,
+    "details": {
+      "interest_rate": 15.99,
+      "annual_fee": 375,
+      "credit_limit": 100000,
+      "rewards_rate": 6.0,
+      "employee_cards": 25
+    }
+  },
+  {
+    "product_id": "ORG_PROD_24",
+    "category": "Credit Card",
+    "subcategory": "Travel",
+    "tier": "Elite",
+    "name": "Elite Travel Credit Card for Organizations",
+    "description": "Elite Travel business card with maximum travel rewards and comprehensive global benefits.",
+    "benefits": [
+      "Maximum travel privileges",
+      "Global elite status",
+      "Up to 40 employee cards"
+    ],
+    "risk_customer": 6,
+    "value_customer": 10,
+    "profit_margin": 10,
+    "risk_bank": 3,
+    "retention_value": 10,
+    "details": {
+      "interest_rate": 14.99,
+      "annual_fee": 550,
+      "credit_limit": 150000,
+      "rewards_rate": 7.0,
+      "employee_cards": 40
+    }
+  },
+  {
+    "product_id": "ORG_PROD_25",
+    "category": "Insurance",
+    "subcategory": "Commercial Property",
+    "tier": "Entry",
+    "name": "Entry Commercial Property Insurance for Organizations",
+    "description": "Basic property insurance for small business premises and assets.",
+    "benefits": [
+      "Basic property protection",
+      "Fire & theft coverage",
+      "24/7 claims assistance"
+    ],
+    "risk_customer": 5,
+    "value_customer": 6,
+    "profit_margin": 6,
+    "risk_bank": 8,
+    "retention_value": 5,
+    "details": {
+      "monthly_premium": 500,
+      "deductible": 10000,
+      "coverage_amount": 500000,
+      "specialized_coverage": "Basic"
+    }
+  },
+  {
+    "product_id": "ORG_PROD_26",
+    "category": "Insurance",
+    "subcategory": "Commercial Property",
+    "tier": "Standard",
+    "name": "Standard Commercial Property Insurance for Organizations",
+    "description": "Standard property insurance with enhanced coverage for medium-sized businesses.",
+    "benefits": [
+      "Enhanced property coverage",
+      "Natural disaster protection",
+      "Business interruption support"
+    ],
+    "risk_customer": 6,
+    "value_customer": 8,
+    "profit_margin": 7,
+    "risk_bank": 7,
+    "retention_value": 7,
+    "details": {
+      "monthly_premium": 1000,
+      "deductible": 7500,
+      "coverage_amount": 1000000,
+      "specialized_coverage": "Standard"
+    }
+  },
+  {
+    "product_id": "ORG_PROD_27",
+    "category": "Insurance",
+    "subcategory": "Commercial Property",
+    "tier": "Premium",
+    "name": "Premium Commercial Property Insurance for Organizations",
+    "description": "Premium property insurance with comprehensive coverage for larger businesses.",
+    "benefits": [
+      "Comprehensive asset protection",
+      "Full business interruption coverage",
+      "Priority claims processing"
+    ],
+    "risk_customer": 7,
+    "value_customer": 10,
+    "profit_margin": 8,
+    "risk_bank": 6,
+    "retention_value": 9,
+    "details": {
+      "monthly_premium": 2000,
+      "deductible": 5000,
+      "coverage_amount": 2500000,
+      "specialized_coverage": "Comprehensive"
+    }
+  },
+  {
+    "product_id": "ORG_PROD_28",
+    "category": "Insurance",
+    "subcategory": "Commercial Property",
+    "tier": "Elite",
+    "name": "Elite Commercial Property Insurance for Organizations",
+    "description": "Elite property insurance with all-inclusive coverage for enterprise-level organizations.",
+    "benefits": [
+      "All-inclusive coverage",
+      "Bespoke risk assessment",
+      "Dedicated claims team"
+    ],
+    "risk_customer": 8,
+    "value_customer": 10,
+    "profit_margin": 10,
+    "risk_bank": 6,
+    "retention_value": 10,
+    "details": {
+      "monthly_premium": 3500,
+      "deductible": 2500,
+      "coverage_amount": 5000000,
+      "specialized_coverage": "All-inclusive"
+    }
+  },
+  {
+    "product_id": "ORG_PROD_29",
+    "category": "Insurance",
+    "subcategory": "Cybersecurity",
+    "tier": "Entry",
+    "name": "Entry Cybersecurity Insurance for Organizations",
+    "description": "Basic cyber insurance for small businesses handling sensitive data.",
+    "benefits": [
+      "Basic data breach coverage",
+      "Incident response support",
+      "Regulatory compliance assistance"
+    ],
+    "risk_customer": 4,
+    "value_customer": 6,
+    "profit_margin": 6,
+    "risk_bank": 10,
+    "retention_value": 6,
+    "details": {
+      "monthly_premium": 350,
+      "deductible": 15000,
+      "coverage_amount": 1000000,
+      "specialized_coverage": "Data Breach"
+    }
+  },
+  {
+    "product_id": "ORG_PROD_30",
+    "category": "Insurance",
+    "subcategory": "Cybersecurity",
+    "tier": "Standard",
+    "name": "Standard Cybersecurity Insurance for Organizations",
+    "description": "Standard cyber insurance with enhanced protection for growing businesses.",
+    "benefits": [
+      "Enhanced cyber protection",
+      "Business recovery services",
+      "Legal defense coverage"
+    ],
+    "risk_customer": 5,
+    "value_customer": 9,
+    "profit_margin": 8,
+    "risk_bank": 8,
+    "retention_value": 8,
+    "details": {
+      "monthly_premium": 750,
+      "deductible": 10000,
+      "coverage_amount": 2500000,
+      "specialized_coverage": "Breach & Recovery"
+    }
+  },
+  {
+    "product_id": "ORG_PROD_31",
+    "category": "Insurance",
+    "subcategory": "Cybersecurity",
+    "tier": "Premium",
+    "name": "Premium Cybersecurity Insurance for Organizations",
+    "description": "Premium cyber insurance with extensive coverage for medium to large organizations.",
+    "benefits": [
+      "Extensive cyber shield",
+      "Crisis management",
+      "Reputation protection"
+    ],
+    "risk_customer": 6,
+    "value_customer": 10,
+    "profit_margin": 10,
+    "risk_bank": 7,
+    "retention_value": 10,
+    "details": {
+      "monthly_premium": 1500,
+      "deductible": 7500,
+      "coverage_amount": 5000000,
+      "specialized_coverage": "Full Cyber Protection"
+    }
+  },
+  {
+    "product_id": "ORG_PROD_32",
+    "category": "Insurance",
+    "subcategory": "Cybersecurity",
+    "tier": "Elite",
+    "name": "Elite Cybersecurity Insurance for Organizations",
+    "description": "Elite cyber insurance with comprehensive protection for enterprise-level organizations.",
+    "benefits": [
+      "Comprehensive cyber protection",
+      "24/7 monitoring",
+      "Full incident remediation"
+    ],
+    "risk_customer": 7,
+    "value_customer": 10,
+    "profit_margin": 10,
+    "risk_bank": 6,
+    "retention_value": 10,
+    "details": {
+      "monthly_premium": 3000,
+      "deductible": 5000,
+      "coverage_amount": 10000000,
+      "specialized_coverage": "Enterprise Cyber Shield"
+    }
+  },
+  {
+    "product_id": "ORG_PROD_33",
+    "category": "Insurance",
+    "subcategory": "General Liability",
+    "tier": "Entry",
+    "name": "Entry General Liability Insurance for Organizations",
+    "description": "Basic liability coverage protecting against common business lawsuits.",
+    "benefits": [
+      "Basic legal protection",
+      "Third-party injury coverage",
+      "Property damage liability"
+    ],
+    "risk_customer": 4,
+    "value_customer": 6,
+    "profit_margin": 6,
+    "risk_bank": 7,
+    "retention_value": 5,
+    "details": {
+      "monthly_premium": 300,
+      "deductible": 5000,
+      "coverage_amount": 1000000,
+      "specialized_coverage": "Basic Liability"
+    }
+  },
+  {
+    "product_id": "ORG_PROD_34",
+    "category": "Insurance",
+    "subcategory": "General Liability",
+    "tier": "Standard",
+    "name": "Standard General Liability Insurance for Organizations",
+    "description": "Standard liability coverage with enhanced protection for growing businesses.",
+    "benefits": [
+      "Enhanced liability coverage",
+      "Product liability protection",
+      "Legal defense costs"
+    ],
+    "risk_customer": 5,
+    "value_customer": 8,
+    "profit_margin": 7,
+    "risk_bank": 6,
+    "retention_value": 7,
+    "details": {
+      "monthly_premium": 600,
+      "deductible": 3500,
+      "coverage_amount": 2000000,
+      "specialized_coverage": "Standard Liability"
+    }
+  },
+  {
+    "product_id": "ORG_PROD_35",
+    "category": "Insurance",
+    "subcategory": "General Liability",
+    "tier": "Premium",
+    "name": "Premium General Liability Insurance for Organizations",
+    "description": "Premium liability coverage with extensive protection for medium to large organizations.",
+    "benefits": [
+      "Extensive liability shield",
+      "Advertising injury coverage",
+      "Global protection"
+    ],
+    "risk_customer": 6,
+    "value_customer": 10,
+    "profit_margin": 8,
+    "risk_bank": 5,
+    "retention_value": 9,
+    "details": {
+      "monthly_premium": 1200,
+      "deductible": 2500,
+      "coverage_amount": 5000000,
+      "specialized_coverage": "Extended Liability"
+    }
+  },
+  {
+    "product_id": "ORG_PROD_36",
+    "category": "Insurance",
+    "subcategory": "General Liability",
+    "tier": "Elite",
+    "name": "Elite General Liability Insurance for Organizations",
+    "description": "Elite liability coverage with comprehensive protection for enterprise-level organizations.",
+    "benefits": [
+      "Comprehensive liability protection",
+      "Directors & officers coverage",
+      "Unlimited legal defense"
+    ],
+    "risk_customer": 7,
+    "value_customer": 10,
+    "profit_margin": 10,
+    "risk_bank": 5,
+    "retention_value": 10,
+    "details": {
+      "monthly_premium": 2000,
+      "deductible": 1000,
+      "coverage_amount": 10000000,
+      "specialized_coverage": "Complete Liability Shield"
+    }
+  },
+  {
+    "product_id": "ORG_PROD_37",
+    "category": "Loan",
+    "subcategory": "Working Capital",
+    "tier": "Entry",
+    "name": "Entry Working Capital Loan for Organizations",
+    "description": "Basic short-term cash flow management loan for small businesses.",
+    "benefits": [
+      "Quick approval process",
+      "Flexible repayment options",
+      "No collateral for established businesses"
+    ],
+    "risk_customer": 5,
+    "value_customer": 5,
+    "profit_margin": 5,
+    "risk_bank": 7,
+    "retention_value": 4,
+    "details": {
+      "interest_rate": 8.99,
+      "loan_amount": 50000,
+      "term_months": 12,
+      "processing_fee": 2.0
+    }
+  },
+  {
+    "product_id": "ORG_PROD_38",
+    "category": "Loan",
+    "subcategory": "Working Capital",
+    "tier": "Standard",
+    "name": "Standard Working Capital Loan for Organizations",
+    "description": "Standard working capital loan with improved terms for established businesses.",
+    "benefits": [
+      "Competitive interest rates",
+      "Higher credit limits",
+      "Reduced processing fees"
+    ],
+    "risk_customer": 6,
+    "value_customer": 7,
+    "profit_margin": 6,
+    "risk_bank": 6,
+    "retention_value": 5,
+    "details": {
+      "interest_rate": 7.99,
+      "loan_amount": 150000,
+      "term_months": 24,
+      "processing_fee": 1.5
+    }
+  },
+  {
+    "product_id": "ORG_PROD_39",
+    "category": "Loan",
+    "subcategory": "Working Capital",
+    "tier": "Premium",
+    "name": "Premium Working Capital Loan for Organizations",
+    "description": "Premium working capital solution with favorable terms for larger businesses.",
+    "benefits": [
+      "Preferential interest rates",
+      "Extended credit periods",
+      "Minimal documentation"
+    ],
+    "risk_customer": 7,
+    "value_customer": 9,
+    "profit_margin": 7,
+    "risk_bank": 5,
+    "retention_value": 6,
+    "details": {
+      "interest_rate": 6.99,
+      "loan_amount": 500000,
+      "term_months": 36,
+      "processing_fee": 1.0
+    }
+  },
+  {
+    "product_id": "ORG_PROD_40",
+    "category": "Loan",
+    "subcategory": "Working Capital",
+    "tier": "Elite",
+    "name": "Elite Working Capital Loan for Organizations",
+    "description": "Elite working capital solution with optimal terms for major enterprises.",
+    "benefits": [
+      "Lowest interest rates",
+      "Maximum credit limits",
+      "Zero processing fees"
+    ],
+    "risk_customer": 8,
+    "value_customer": 10,
+    "profit_margin": 8,
+    "risk_bank": 5,
+    "retention_value": 8,
+    "details": {
+      "interest_rate": 5.99,
+      "loan_amount": 1000000,
+      "term_months": 48,
+      "processing_fee": 0.5
+    }
+  },
+  {
+    "product_id": "ORG_PROD_41",
+    "category": "Loan",
+    "subcategory": "Commercial Real Estate",
+    "tier": "Entry",
+    "name": "Entry Commercial Real Estate Loan for Organizations",
+    "description": "Basic commercial real estate loan for small office expansions.",
+    "benefits": [
+      "Standard LTV ratio",
+      "Fixed rate options",
+      "Renovation financing available"
+    ],
+    "risk_customer": 6,
+    "value_customer": 5,
+    "profit_margin": 6,
+    "risk_bank": 8,
+    "retention_value": 6,
+    "details": {
+      "interest_rate": 6.49,
+      "loan_amount": 250000,
+      "term_months": 120,
+      "processing_fee": 1.5
+    }
+  },
+  {
+    "product_id": "ORG_PROD_42",
+    "category": "Loan",
+    "subcategory": "Commercial Real Estate",
+    "tier": "Standard",
+    "name": "Standard Commercial Real Estate Loan for Organizations",
+    "description": "Standard commercial real estate loan with improved terms for medium properties.",
+    "benefits": [
+      "Enhanced LTV options",
+      "Competitive rates",
+      "Flexible term structures"
+    ],
+    "risk_customer": 8,
+    "value_customer": 7,
+    "profit_margin": 7,
+    "risk_bank": 7,
+    "retention_value": 8,
+    "details": {
+      "interest_rate": 5.99,
+      "loan_amount": 750000,
+      "term_months": 180,
+      "processing_fee": 1.0
+    }
+  },
+  {
+    "product_id": "ORG_PROD_43",
+    "category": "Loan",
+    "subcategory": "Commercial Real Estate",
+    "tier": "Premium",
+    "name": "Premium Commercial Real Estate Loan for Organizations",
+    "description": "Premium commercial real estate financing for larger property investments.",
+    "benefits": [
+      "Preferred LTV ratios",
+      "Reduced interest rates",
+      "Comprehensive property assessment"
+    ],
+    "risk_customer": 10,
+    "value_customer": 9,
+    "profit_margin": 8,
+    "risk_bank": 6,
+    "retention_value": 10,
+    "details": {
+      "interest_rate": 5.49,
+      "loan_amount": 2000000,
+      "term_months": 240,
+      "processing_fee": 0.75
+    }
+  },
+  {
+    "product_id": "ORG_PROD_44",
+    "category": "Loan",
+    "subcategory": "Commercial Real Estate",
+    "tier": "Elite",
+    "name": "Elite Commercial Real Estate Loan for Organizations",
+    "description": "Elite commercial real estate financing with optimal terms for major property acquisitions.",
+    "benefits": [
+      "Maximum LTV ratio",
+      "Lowest interest rates",
+      "Tailored repayment schedules"
+    ],
+    "risk_customer": 10,
+    "value_customer": 10,
+    "profit_margin": 10,
+    "risk_bank": 6,
+    "retention_value": 10,
+    "details": {
+      "interest_rate": 4.99,
+      "loan_amount": 5000000,
+      "term_months": 360,
+      "processing_fee": 0.5
+    }
+  },
+  {
+    "product_id": "ORG_PROD_45",
+    "category": "Loan",
+    "subcategory": "Trade Credit",
+    "tier": "Entry",
+    "name": "Entry Trade Credit Loan for Organizations",
+    "description": "Basic trade credit loan for small import/export businesses.",
+    "benefits": [
+      "Basic import/export financing",
+      "Letter of credit support",
+      "Trade risk protection"
+    ],
+    "risk_customer": 6,
+    "value_customer": 6,
+    "profit_margin": 6,
+    "risk_bank": 10,
+    "retention_value": 4,
+    "details": {
+      "interest_rate": 7.99,
+      "loan_amount": 100000,
+      "term_months": 6,
+      "processing_fee": 2.0
+    }
+  },
+  {
+    "product_id": "ORG_PROD_46",
+    "category": "Loan",
+    "subcategory": "Trade Credit",
+    "tier": "Standard",
+    "name": "Standard Trade Credit Loan for Organizations",
+    "description": "Standard trade credit financing with improved terms for established traders.",
+    "benefits": [
+      "Enhanced trade financing",
+      "Global transaction support",
+      "Reduced documentary fees"
+    ],
+    "risk_customer": 7,
+    "value_customer": 8,
+    "profit_margin": 7,
+    "risk_bank": 8,
+    "retention_value": 6,
+    "details": {
+      "interest_rate": 6.99,
+      "loan_amount": 250000,
+      "term_months": 12,
+      "processing_fee": 1.5
+    }
+  },
+  {
+    "product_id": "ORG_PROD_47",
+    "category": "Loan",
+    "subcategory": "Trade Credit",
+    "tier": "Premium",
+    "name": "Premium Trade Credit Loan for Organizations",
+    "description": "Premium trade credit solution with favorable terms for larger trading operations.",
+    "benefits": [
+      "Comprehensive trade solutions",
+      "Preferential exchange rates",
+      "Priority processing"
+    ],
+    "risk_customer": 8,
+    "value_customer": 10,
+    "profit_margin": 8,
+    "risk_bank": 7,
+    "retention_value": 8,
+    "details": {
+      "interest_rate": 5.99,
+      "loan_amount": 500000,
+      "term_months": 24,
+      "processing_fee": 1.0
+    }
+  },
+  {
+    "product_id": "ORG_PROD_48",
+    "category": "Loan",
+    "subcategory": "Trade Credit",
+    "tier": "Elite",
+    "name": "Elite Trade Credit Loan for Organizations",
+    "description": "Elite trade credit solution with optimal terms for major international trading operations.",
+    "benefits": [
+      "Elite trade financing",
+      "Global banking network access",
+      "Zero international fees"
+    ],
+    "risk_customer": 10,
+    "value_customer": 10,
+    "profit_margin": 10,
+    "risk_bank": 6,
+    "retention_value": 10,
+    "details": {
+      "interest_rate": 4.99,
+      "loan_amount": 1000000,
+      "term_months": 36,
+      "processing_fee": 0.5
+    }
+  },
+  {
+    "product_id": "ORG_PROD_49",
+    "category": "Loan",
+    "subcategory": "Startup Funding",
+    "tier": "Entry",
+    "name": "Entry Startup Funding Loan for Organizations",
+    "description": "Basic startup funding for newly registered small businesses.",
+    "benefits": [
+      "Basic startup capital",
+      "Simplified application",
+      "Business planning support"
+    ],
+    "risk_customer": 7,
+    "value_customer": 6,
+    "profit_margin": 6,
+    "risk_bank": 10,
+    "retention_value": 5,
+    "details": {
+      "interest_rate": 9.99,
+      "loan_amount": 50000,
+      "term_months": 36,
+      "processing_fee": 3.0
+    }
+  },
+  {
+    "product_id": "ORG_PROD_50",
+    "category": "Loan",
+    "subcategory": "Startup Funding",
+    "tier": "Standard",
+    "name": "Standard Startup Funding Loan for Organizations",
+    "description": "Standard startup financing with improved terms for promising ventures.",
+    "benefits": [
+      "Enhanced funding options",
+      "Reduced collateral requirements",
+      "Mentorship access"
+    ],
+    "risk_customer": 9,
+    "value_customer": 8,
+    "profit_margin": 8,
+    "risk_bank": 9,
+    "retention_value": 7,
+    "details": {
+      "interest_rate": 8.99,
+      "loan_amount": 200000,
+      "term_months": 48,
+      "processing_fee": 2.0
+    }
+  },
+  {
+    "product_id": "ORG_PROD_51",
+    "category": "Loan",
+    "subcategory": "Startup Funding",
+    "tier": "Premium",
+    "name": "Premium Startup Funding Loan for Organizations",
+    "description": "Premium startup capital with favorable terms for high-potential businesses.",
+    "benefits": [
+      "Comprehensive startup package",
+      "Minimal collateral needs",
+      "Business development support"
+    ],
+    "risk_customer": 10,
+    "value_customer": 10,
+    "profit_margin": 10,
+    "risk_bank": 8,
+    "retention_value": 9,
+    "details": {
+      "interest_rate": 7.99,
+      "loan_amount": 500000,
+      "term_months": 60,
+      "processing_fee": 1.0
+    }
+  },
+  {
+    "product_id": "ORG_PROD_52",
+    "category": "Loan",
+    "subcategory": "Startup Funding",
+    "tier": "Elite",
+    "name": "Elite Startup Funding Loan for Organizations",
+    "description": "Elite startup financing with optimal terms for high-growth ventures.",
+    "benefits": [
+      "Maximum funding potential",
+      "Collateral-free options",
+      "Full business incubation support"
+    ],
+    "risk_customer": 10,
+    "value_customer": 10,
+    "profit_margin": 10,
+    "risk_bank": 7,
+    "retention_value": 10,
+    "details": {
+      "interest_rate": 6.99,
+      "loan_amount": 1000000,
+      "term_months": 84,
+      "processing_fee": 0.5
+    }
+  },
+  {
+    "product_id": "ORG_PROD_53",
+    "category": "Investment",
+    "subcategory": "Corporate FD",
+    "tier": "Entry",
+    "name": "Entry Corporate FD Investment for Organizations",
+    "description": "Basic corporate fixed deposit with flexible tenure options.",
+    "benefits": [
+      "Higher than retail interest rates",
+      "Flexible tenure options",
+      "Premature withdrawal facility"
+    ],
+    "risk_customer": 2,
+    "value_customer": 4,
+    "profit_margin": 3,
+    "risk_bank": 2,
+    "retention_value": 4,
+    "details": {
+      "min_investment": 10000,
+      "expected_annual_return": 3.0,
+      "volatility": 1,
+      "lock_in_period_months": 6
+    }
+  },
+  {
+    "product_id": "ORG_PROD_54",
+    "category": "Investment",
+    "subcategory": "Corporate FD",
+    "tier": "Standard",
+    "name": "Standard Corporate FD Investment for Organizations",
+    "description": "Standard corporate fixed deposit with enhanced interest rates.",
+    "benefits": [
+      "Enhanced interest benefits",
+      "Multiple reinvestment options",
+      "Preferential rates"
+    ],
+    "risk_customer": 2,
+    "value_customer": 5,
+    "profit_margin": 4,
+    "risk_bank": 2,
+    "retention_value": 6,
+    "details": {
+      "min_investment": 50000,
+      "expected_annual_return": 3.5,
+      "volatility": 1,
+      "lock_in_period_months": 12
+    }
+  },
+  {
+    "product_id": "ORG_PROD_55",
+    "category": "Investment",
+    "subcategory": "Corporate FD",
+    "tier": "Premium",
+    "name": "Premium Corporate FD Investment for Organizations",
+    "description": "Premium corporate fixed deposit with preferential rates and terms.",
+    "benefits": [
+      "Premium interest rates",
+      "Customized tenure options",
+      "Sweep-in facility"
+    ],
+    "risk_customer": 2,
+    "value_customer": 6,
+    "profit_margin": 5,
+    "risk_bank": 2,
+    "retention_value": 8,
+    "details": {
+      "min_investment": 100000,
+      "expected_annual_return": 4.0,
+      "volatility": 1,
+      "lock_in_period_months": 24
+    }
+  },
+  {
+    "product_id": "ORG_PROD_56",
+    "category": "Investment",
+    "subcategory": "Corporate FD",
+    "tier": "Elite",
+    "name": "Elite Corporate FD Investment for Organizations",
+    "description": "Elite corporate fixed deposit with maximum returns and flexibility.",
+    "benefits": [
+      "Maximum interest benefits",
+      "Completely flexible terms",
+      "Zero penalty withdrawals"
+    ],
+    "risk_customer": 3,
+    "value_customer": 8,
+    "profit_margin": 6,
+    "risk_bank": 2,
+    "retention_value": 10,
+    "details": {
+      "min_investment": 500000,
+      "expected_annual_return": 4.5,
+      "volatility": 1,
+      "lock_in_period_months": 36
+    }
+  },
+  {
+    "product_id": "ORG_PROD_57",
+    "category": "Investment",
+    "subcategory": "Government & Corporate Bonds",
+    "tier": "Entry",
+    "name": "Entry Government & Corporate Bonds Investment for Organizations",
+    "description": "Basic bond investment portfolio focused on stable returns.",
+    "benefits": [
+      "Stable returns",
+      "Government security",
+      "Regular income option"
+    ],
+    "risk_customer": 2,
+    "value_customer": 4,
+    "profit_margin": 3,
+    "risk_bank": 4,
+    "retention_value": 4,
+    "details": {
+      "min_investment": 25000,
+      "expected_annual_return": 4.0,
+      "volatility": 2,
+      "lock_in_period_months": 12
+    }
+  },
+  {
+    "product_id": "ORG_PROD_58",
+    "category": "Investment",
+    "subcategory": "Government & Corporate Bonds",
+    "tier": "Standard",
+    "name": "Standard Government & Corporate Bonds Investment for Organizations",
+    "description": "Standard bond investment with enhanced diversification and returns.",
+    "benefits": [
+      "Enhanced yield potential",
+      "Diversified portfolio",
+      "Tax-efficient structures"
+    ],
+    "risk_customer": 3,
+    "value_customer": 6,
+    "profit_margin": 4,
+    "risk_bank": 3,
+    "retention_value": 6,
+    "details": {
+      "min_investment": 100000,
+      "expected_annual_return": 5.0,
+      "volatility": 2,
+      "lock_in_period_months": 24
+    }
+  },
+  {
+    "product_id": "ORG_PROD_59",
+    "category": "Investment",
+    "subcategory": "Government & Corporate Bonds",
+    "tier": "Premium",
+    "name": "Premium Government & Corporate Bonds Investment for Organizations",
+    "description": "Premium bond portfolio with strategic allocation for optimal returns.",
+    "benefits": [
+      "Strategic allocation",
+      "Premium bond access",
+      "Tailored maturity laddering"
+    ],
+    "risk_customer": 4,
+    "value_customer": 8,
+    "profit_margin": 5,
+    "risk_bank": 3,
+    "retention_value": 8,
+    "details": {
+      "min_investment": 250000,
+      "expected_annual_return": 6.0,
+      "volatility": 3,
+      "lock_in_period_months": 36
+    }
+  },
+  {
+    "product_id": "ORG_PROD_60",
+    "category": "Investment",
+    "subcategory": "Government & Corporate Bonds",
+    "tier": "Elite",
+    "name": "Elite Government & Corporate Bonds Investment for Organizations",
+    "description": "Elite bond investment solution with maximum yield optimization.",
+    "benefits": [
+      "Maximum yield optimization",
+      "Exclusive bond offerings",
+      "Customized portfolio management"
+    ],
+    "risk_customer": 4,
+    "value_customer": 10,
+    "profit_margin": 6,
+    "risk_bank": 2,
+    "retention_value": 10,
+    "details": {
+      "min_investment": 1000000,
+      "expected_annual_return": 7.0,
+      "volatility": 3,
+      "lock_in_period_months": 60
+    }
+  },
+  {
+    "product_id": "ORG_PROD_61",
+    "category": "Investment",
+    "subcategory": "REITs",
+    "tier": "Entry",
+    "name": "Entry REITs Investment for Organizations",
+    "description": "Basic REIT investment for income-generating real estate exposure.",
+    "benefits": [
+      "Steady income stream",
+      "Real estate exposure",
+      "Liquidity advantages"
+    ],
+    "risk_customer": 5,
+    "value_customer": 5,
+    "profit_margin": 5,
+    "risk_bank": 6,
+    "retention_value": 5,
+    "details": {
+      "min_investment": 50000,
+      "expected_annual_return": 6.0,
+      "volatility": 4,
+      "lock_in_period_months": 6
+    }
+  },
+  {
+    "product_id": "ORG_PROD_62",
+    "category": "Investment",
+    "subcategory": "REITs",
+    "tier": "Standard",
+    "name": "Standard REITs Investment for Organizations",
+    "description": "Standard REIT investment with enhanced property portfolio diversification.",
+    "benefits": [
+      "Enhanced property diversification",
+      "Higher income potential",
+      "Professional management"
+    ],
+    "risk_customer": 6,
+    "value_customer": 7,
+    "profit_margin": 6,
+    "risk_bank": 5,
+    "retention_value": 7,
+    "details": {
+      "min_investment": 150000,
+      "expected_annual_return": 8.0,
+      "volatility": 5,
+      "lock_in_period_months": 12
+    }
+  },
+  {
+    "product_id": "ORG_PROD_63",
+    "category": "Investment",
+    "subcategory": "REITs",
+    "tier": "Premium",
+    "name": "Premium REITs Investment for Organizations",
+    "description": "Premium REIT solution with strategic commercial property allocation.",
+    "benefits": [
+      "Premium property portfolio",
+      "Strategic sector allocation",
+      "Inflation protection"
+    ],
+    "risk_customer": 7,
+    "value_customer": 9,
+    "profit_margin": 7,
+    "risk_bank": 4,
+    "retention_value": 9,
+    "details": {
+      "min_investment": 500000,
+      "expected_annual_return": 10.0,
+      "volatility": 6,
+      "lock_in_period_months": 24
+    }
+  },
+  {
+    "product_id": "ORG_PROD_64",
+    "category": "Investment",
+    "subcategory": "REITs",
+    "tier": "Elite",
+    "name": "Elite REITs Investment for Organizations",
+    "description": "Elite REIT investment with premium property holdings and maximum income potential.",
+    "benefits": [
+      "Elite property holdings",
+      "Maximum income generation",
+      "Private REIT options"
+    ],
+    "risk_customer": 8,
+    "value_customer": 10,
+    "profit_margin": 8,
+    "risk_bank": 4,
+    "retention_value": 10,
+    "details": {
+      "min_investment": 1000000,
+      "expected_annual_return": 12.0,
+      "volatility": 7,
+      "lock_in_period_months": 36
+    }
+  },
+  {
+    "product_id": "ORG_PROD_65",
+    "category": "Investment",
+    "subcategory": "ETFs",
+    "tier": "Entry",
+    "name": "Entry ETFs Investment for Organizations",
+    "description": "Basic ETF investment portfolio with core market exposure.",
+    "benefits": [
+      "Market exposure",
+      "Diversification benefits",
+      "Low management fees"
+    ],
+    "risk_customer": 4,
+    "value_customer": 4,
+    "profit_margin": 4,
+    "risk_bank": 5,
+    "retention_value": 4,
+    "details": {
+      "min_investment": 10000,
+      "expected_annual_return": 5.0,
+      "volatility": 3,
+      "lock_in_period_months": 0
+    }
+  },
+  {
+    "product_id": "ORG_PROD_66",
+    "category": "Investment",
+    "subcategory": "ETFs",
+    "tier": "Standard",
+    "name": "Standard ETFs Investment for Organizations",
+    "description": "Standard ETF investment with enhanced sector diversification.",
+    "benefits": [
+      "Enhanced sector allocation",
+      "Dividend optimization",
+      "Tax-efficient structure"
+    ],
+    "risk_customer": 5,
+    "value_customer": 6,
+    "profit_margin": 5,
+    "risk_bank": 4,
+    "retention_value": 6,
+    "details": {
+      "min_investment": 50000,
+      "expected_annual_return": 7.0,
+      "volatility": 4,
+      "lock_in_period_months": 0
+    }
+  },
+  {
+    "product_id": "ORG_PROD_67",
+    "category": "Investment",
+    "subcategory": "ETFs",
+    "tier": "Premium",
+    "name": "Premium ETFs Investment for Organizations",
+    "description": "Premium ETF portfolio with strategic allocation across multiple asset classes.",
+    "benefits": [
+      "Strategic multi-asset exposure",
+      "Premium ETF access",
+      "Portfolio rebalancing"
+    ],
+    "risk_customer": 6,
+    "value_customer": 8,
+    "profit_margin": 6,
+    "risk_bank": 4,
+    "retention_value": 8,
+    "details": {
+      "min_investment": 100000,
+      "expected_annual_return": 9.0,
+      "volatility": 5,
+      "lock_in_period_months": 0
+    }
+  },
+  {
+    "product_id": "ORG_PROD_68",
+    "category": "Investment",
+    "subcategory": "ETFs",
+    "tier": "Elite",
+    "name": "Elite ETFs Investment for Organizations",
+    "description": "Elite ETF investment solution with maximum diversification and liquidity benefits.",
+    "benefits": [
+      "Maximum diversification",
+      "Exclusive ETF offerings",
+      "Complete portfolio management"
+    ],
+    "risk_customer": 7,
+    "value_customer": 10,
+    "profit_margin": 7,
+    "risk_bank": 3,
+    "retention_value": 10,
+    "details": {
+      "min_investment": 250000,
+      "expected_annual_return": 11.0,
+      "volatility": 6,
+      "lock_in_period_months": 0
+    }
+  }
+]
