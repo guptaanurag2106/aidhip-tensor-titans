@@ -40,7 +40,7 @@ def cust_purch_hist():
     return jsonify(matching_customers)
 
 #Sends Customer Socal Media Info
-@app.route('/soc_med', methods=['GET'])
+@app.route('/customer_social_media_history', methods=['GET'])
 def soc_med():
     customer_id = request.args.get('customer_id')
 

@@ -55,6 +55,21 @@ const CustomerPurchaseHistorySchema = z.object({
   transaction_id: z.string(),
 });
 
+const CustomerSocialMediaHistorySchema = z.object({
+  brands_liked: z.array(z.string()),
+  customer_id: z.string(),
+  date: z.string(),
+  engagement_level: z.number(),
+  feedback_on_financial_products: z.string(),
+  image_url: z.string(),
+  influencers_followed: z.number(),
+  platform: z.string(),
+  post_id: z.string(),
+  sentiment_score: z.number(),
+  text_content: z.string(),
+  topics_of_interest: z.array(z.string()),
+});
+
 export type CustomerInfo = z.infer<typeof CustomerInfoSchema>;
 export type CustomerSupportHistory = z.infer<
   typeof CustomerSupportHistorySchema
@@ -87,6 +102,16 @@ const convertStringToArraysForCustomerInfo = (customerInfo: any) => ({
 const convertStringToArraysForSupportRecord = (supportRecord: any) => ({
   ...supportRecord,
   main_concerns: supportRecord.main_concerns?.split(",") ?? [],
+});
+
+const convertStringToArraysForSocialMediaRecord = (socialMedia: any) => ({
+  ...socialMedia,
+  brands_liked: socialMedia.brands_liked.split(",") ?? [],
+  topics_of_interest:
+    socialMedia.topics_of_interest
+      .replace("[", "")
+      .replace("]", "")
+      .split(",") ?? [],
 });
 
 // Fetch customer info
@@ -197,6 +222,27 @@ export const useCustomerPurchaseHistory = (customerId: string) => {
         return { error: response.data.error } as { error: string };
       }
       return z.array(CustomerPurchaseHistorySchema).parse(response.data);
+    },
+    enabled: !!customerId,
+  });
+};
+
+export const useCustomerSocialMediaHistory = (customerId: string) => {
+  return useQuery({
+    queryKey: ["customer-social-media-history", customerId],
+    queryFn: async () => {
+      const response = await axios.get(
+        `${API_BASE_URL}/customer_social_media_history`,
+        {
+          params: { customer_id: customerId },
+        }
+      );
+      if (response?.data?.error) {
+        return { error: response.data.error } as { error: string };
+      }
+      return z
+        .array(CustomerSocialMediaHistorySchema)
+        .parse(response.data.map(convertStringToArraysForSocialMediaRecord));
     },
     enabled: !!customerId,
   });
