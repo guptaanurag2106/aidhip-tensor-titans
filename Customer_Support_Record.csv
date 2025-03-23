@@ -1,0 +1,59 @@
+Customer ID,Date,Audio Url,Transcript,Sentiment,Was issue resolved,Is repeating issue,Main concerns
+1,2025-02-02,http://example.com/audio191.mp3,Special information she. Drive attack order.,Neutral,False,True,"Product Inquiry, Technical Support"
+1,2024-08-29,http://example.com/audio220.mp3,Scientist I doctor describe tell.,Negative,False,False,Billing Issue
+1,2024-04-08,http://example.com/audio139.mp3,Doctor trouble office officer significant. Down then worry miss including every. We they treatment personal interview many win.,Positive,False,True,"Billing Issue, Product Inquiry"
+1,2025-02-26,http://example.com/audio684.mp3,Five indicate chance heavy senior list support. Tax certain leg arm include. Newspaper care drug data position two.,Neutral,True,False,"Account Access, Feedback"
+1,2025-01-23,http://example.com/audio813.mp3,Right couple environmental purpose owner them could. Right next look thank four whatever address view.,Neutral,True,True,Account Access
+2,2025-03-06,http://example.com/audio810.mp3,Trial receive region however dream focus executive. Move grow end mention market better wonder.,Neutral,True,False,"Technical Support, Complaint"
+3,2024-09-06,http://example.com/audio627.mp3,Have including none determine certainly. Network once result far cultural. Here street material pressure range.,Positive,True,False,"Feedback, Technical Support"
+4,2024-06-21,http://example.com/audio421.mp3,Leave run goal cause national contain threat. Model stuff avoid stand. Share include successful.,Neutral,True,True,"Feedback, Billing Issue"
+4,2024-06-11,http://example.com/audio461.mp3,Despite lay art. Tree process administration mother in admit reveal movie.,Neutral,False,True,Account Access
+4,2024-07-01,http://example.com/audio444.mp3,South travel blood benefit chance court. Education great some bad where learn during. Feel stock ball yard practice.,Negative,True,True,Product Inquiry
+4,2024-03-30,http://example.com/audio169.mp3,Help live PM reflect bar suddenly. Not teach believe month amount deep. Little another avoid understand tonight nor allow.,Positive,False,True,"Complaint, Product Inquiry"
+6,2025-02-21,http://example.com/audio202.mp3,Which onto sell. Up federal nor note support quality. Forward sense cause write right may window.,Negative,False,True,"Complaint, Feedback"
+6,2024-04-07,http://example.com/audio96.mp3,Stuff future shoulder western however. Ahead event yeah make green wait. Control one herself sign far east.,Negative,True,True,Feedback
+7,2024-04-14,http://example.com/audio738.mp3,Here six child hope. Blood accept final growth especially car.,Negative,False,True,Billing Issue
+7,2024-05-26,http://example.com/audio47.mp3,Never impact ago government behavior our foot. Activity including single right nice yeah. Occur college herself catch feeling.,Negative,False,True,"Complaint, Billing Issue"
+7,2024-09-15,http://example.com/audio510.mp3,Itself inside machine baby. Want result many pattern leader.,Negative,False,False,"Account Access, Technical Support"
+7,2024-05-07,http://example.com/audio305.mp3,Forward per sound forget friend spring.,Neutral,True,True,Technical Support
+8,2025-01-27,http://example.com/audio496.mp3,Feel owner receive look. Who why fact reason. Whose site for exactly skill half usually. Or nation race nearly well.,Neutral,True,False,Product Inquiry
+8,2024-09-03,http://example.com/audio883.mp3,Something story attorney summer some pull. Plan drug probably resource.,Negative,False,False,"Account Access, Product Inquiry"
+8,2025-01-01,http://example.com/audio528.mp3,Wrong look husband media turn reality myself. Reduce speech order trial body eat.,Negative,True,False,Technical Support
+10,2024-11-17,http://example.com/audio461.mp3,And worker quality hundred sell whole involve action. Develop section newspaper reach determine.,Positive,True,True,Product Inquiry
+10,2024-08-02,http://example.com/audio969.mp3,Real character young lot far turn beat story. Give gas six miss. Live just recent five feel special.,Neutral,False,True,Product Inquiry
+11,2024-04-30,http://example.com/audio739.mp3,Quality clearly worker during. Necessary former interview left. Picture control price how scene third.,Neutral,True,True,"Complaint, Technical Support"
+11,2024-08-30,http://example.com/audio511.mp3,Above Democrat everything region somebody officer. Cost for leader energy television month police. Home hotel box goal leader common purpose song.,Neutral,False,True,Technical Support
+11,2025-02-18,http://example.com/audio518.mp3,Public finish draw bring. Really memory industry case himself control. Really population yourself never majority cell fire. People tend weight machine crime himself no.,Neutral,True,True,"Billing Issue, Feedback"
+11,2024-11-13,http://example.com/audio289.mp3,Indeed style major bar air set factor. Different eye sit not significant. Near both box simple statement happen state.,Neutral,False,False,Billing Issue
+12,2024-04-03,http://example.com/audio138.mp3,Despite interesting save president easy themselves allow. Give stage keep yes simply. Decide scene ready technology particular.,Neutral,False,False,"Billing Issue, Technical Support"
+12,2024-08-22,http://example.com/audio53.mp3,Size spend south now. Exactly much food region eye environment teach. Career seek in arrive. Term camera tend economic represent.,Negative,True,False,"Billing Issue, Technical Support"
+12,2025-01-16,http://example.com/audio517.mp3,Central plan physical heart away some shoulder. Middle everything view hard wear force. Than suggest behavior.,Neutral,False,True,Billing Issue
+13,2025-03-09,http://example.com/audio383.mp3,Somebody huge why station. Environmental stock front official not magazine gas. Animal phone student.,Neutral,False,True,Complaint
+13,2024-03-24,http://example.com/audio522.mp3,Lead yeah into yet travel think. City usually ever pressure economy.,Neutral,True,True,Account Access
+13,2024-08-02,http://example.com/audio731.mp3,How figure record. Investment before believe degree back.,Neutral,False,False,Complaint
+14,2024-10-22,http://example.com/audio144.mp3,Act receive stage write institution car. Director become south billion. Thing case similar send card year.,Neutral,False,True,"Complaint, Product Inquiry"
+14,2024-05-10,http://example.com/audio608.mp3,Across practice key reveal physical character in. Team beautiful beyond sell operation himself. Fire cause everybody base network outside.,Neutral,False,False,"Billing Issue, Product Inquiry"
+14,2024-10-27,http://example.com/audio340.mp3,Day parent country hot position.,Negative,True,False,"Feedback, Billing Issue"
+14,2024-12-30,http://example.com/audio612.mp3,History drop point audience thousand activity guess. Car team nothing half raise several.,Neutral,False,True,Complaint
+15,2025-03-03,http://example.com/audio175.mp3,Onto add democratic. We huge expert Republican.,Negative,False,True,Billing Issue
+15,2024-12-24,http://example.com/audio587.mp3,Bar Mr pattern everyone finally memory. Window choice force only shake. Financial join well draw.,Negative,True,True,Technical Support
+15,2024-06-16,http://example.com/audio322.mp3,Law participant finally score. Budget remain reduce clearly. Mission situation result cold camera sit.,Neutral,True,False,Technical Support
+16,2024-06-25,http://example.com/audio794.mp3,Friend investment model. Republican office baby lawyer growth.,Negative,False,True,Complaint
+16,2024-09-17,http://example.com/audio213.mp3,Happy effort bill off. Direction meeting analysis television. Animal hair turn condition whether.,Negative,False,False,"Product Inquiry, Account Access"
+16,2024-03-31,http://example.com/audio471.mp3,Focus indicate result even back. Budget pull apply development middle animal. Attention let executive suddenly force network.,Negative,False,False,"Complaint, Technical Support"
+16,2024-03-21,http://example.com/audio197.mp3,Nor fight performance less option. Young simply run national somebody character usually.,Positive,False,False,Product Inquiry
+17,2024-03-27,http://example.com/audio722.mp3,Player really act friend serve heavy. Billion morning draw man art. Republican behavior TV today.,Positive,False,False,"Product Inquiry, Complaint"
+17,2024-09-25,http://example.com/audio957.mp3,Window be believe card star avoid nothing. Production candidate factor surface unit hotel. Fish evening avoid dark sister once.,Negative,False,False,Complaint
+18,2024-05-14,http://example.com/audio557.mp3,Letter image movie who debate final enter. Bed space fight relate.,Neutral,False,False,Product Inquiry
+18,2024-10-25,http://example.com/audio44.mp3,Chance represent why how any federal. All identify laugh security.,Neutral,True,False,"Feedback, Product Inquiry"
+18,2024-06-18,http://example.com/audio766.mp3,Sound cause activity store. Candidate statement head piece popular. Only true avoid young cup position speak begin.,Neutral,True,True,"Complaint, Product Inquiry"
+18,2025-01-23,http://example.com/audio141.mp3,Amount leave collection off. Many him interview government traditional every. Third alone people early far include nearly.,Positive,True,True,Feedback
+18,2024-04-10,http://example.com/audio927.mp3,Case current this moment piece soon. Writer site grow.,Negative,True,True,Billing Issue
+19,2024-10-04,http://example.com/audio339.mp3,Tree maybe home conference five despite. Around yard morning short yourself. Beyond prevent entire staff.,Negative,False,True,Billing Issue
+19,2025-02-17,http://example.com/audio988.mp3,Offer work home very yard. Compare or south recently.,Negative,True,False,"Technical Support, Account Access"
+19,2025-02-16,http://example.com/audio775.mp3,Way nor none could write think.,Neutral,False,False,Billing Issue
+20,2024-09-15,http://example.com/audio588.mp3,Make bed discussion despite. Long forward pass southern future concern sort.,Positive,True,True,"Account Access, Billing Issue"
+20,2025-01-30,http://example.com/audio857.mp3,Challenge relate center. Suffer team whether health.,Neutral,False,True,"Billing Issue, Feedback"
+20,2025-02-26,http://example.com/audio306.mp3,Big few carry church we social whether power. Religious no threat party. Development open compare fill read camera.,Negative,True,False,"Technical Support, Complaint"
+20,2024-12-10,http://example.com/audio537.mp3,Surface side nothing consider fish speak. Determine not view cell seat draw word collection. Start prove role from.,Neutral,True,False,"Account Access, Billing Issue"
+20,2024-03-23,http://example.com/audio339.mp3,Really go skin result answer. Run why this manage her national.,Positive,False,False,Billing Issue

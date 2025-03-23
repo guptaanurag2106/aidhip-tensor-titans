@@ -1,0 +1,11 @@
+Customer ID,Age,Gender,Income,Occupation,Credit Score,Preffered Payment Method,Recent Large Purchases,Location,Education,Avg past 3 month end bank balance,Is married,Num children,Num loans,Loans Amt Dollar,Avg monthy spending,Top spending categories,Num of support interactions last 3 month
+1,25,Male,153479.09,Artist,528,Debit Card,5,North Judithbury,High School,67702.28,True,4,5,63910.17,2388.96,"Transportation, Entertainment, Utilities",9
+2,69,Male,156585.33,Doctor,732,Cash,2,East Jill,Associate,21609.84,False,0,2,11283.65,8551.2,"Healthcare, Transportation, Food",7
+3,25,Female,34184.04,Manager,670,Bank Transfer,1,New Roberttown,High School,4677.86,True,2,4,155270.31,4807.4,"Education, Entertainment, Travel",5
+4,60,Female,146327.66,Teacher,475,Bank Transfer,5,East Jessetown,Associate,16423.91,False,2,1,49486.64,6580.0,"Utilities, Education, Travel",0
+5,70,Male,164908.24,Retired,574,Credit Card,1,Lake Debra,PhD,87649.13,False,1,1,33116.49,4258.5,"Shopping, Entertainment, Travel",2
+6,65,Other,117015.91,Retired,708,Cash,1,Robinsonshire,Associate,51001.68,True,0,1,43194.04,1951.99,"Travel, Transportation, Education",6
+7,22,Female,88691.47,Unemployed,841,Cash,4,Lisatown,High School,68060.31,True,5,4,138477.58,3288.25,"Travel, Utilities, Food",4
+8,66,Male,111382.7,Teacher,605,Bank Transfer,4,Lake Roberto,Associate,15368.64,True,4,4,170275.22,5141.75,"Entertainment, Travel, Transportation",3
+9,33,Other,190450.9,Teacher,797,Credit Card,4,Ericmouth,Associate,12926.31,False,4,0,0.0,2068.71,"Transportation, Entertainment, Healthcare",3
+10,37,Female,199126.88,Student,748,Bank Transfer,3,North Noahstad,High School,24865.77,True,2,5,97042.96,1059.3,"Entertainment, Food, Travel",1

@@ -1,0 +1,207 @@
+Customer ID,Date,Platform,Payment Method,Amt,Location,Item Category,Item Sub Category,Item brand
+1,2024-04-25,Online,Bank Transfer,8561.61,Kramershire,Groceries,Dairy,BrandD
+1,2024-11-12,Online,Digital Wallet,6692.89,East Shannon,Home Goods,Kitchen,BrandB
+1,2025-01-05,In-store,Debit Card,69.29,West Andrewview,Clothing,Accessories,BrandD
+1,2025-03-02,In-store,Cash,3020.16,West Georgefurt,Clothing,Accessories,BrandE
+1,2024-05-16,Mobile App,Cash,6927.99,New Shellyland,Electronics,Tablets,BrandA
+1,2024-07-20,In-store,Cash,1598.01,Bushchester,Toys,Action Figures,BrandE
+1,2025-02-26,Mobile App,Credit Card,6387.47,New Pamela,Toys,Puzzles,BrandC
+1,2024-05-15,Online,Debit Card,4782.34,West Jamieborough,Groceries,Dairy,BrandD
+1,2024-08-15,In-store,Bank Transfer,9128.06,Donnaport,Toys,Puzzles,BrandE
+1,2024-06-13,Online,Bank Transfer,8731.48,South Ashleyfort,Toys,Dolls,BrandA
+2,2024-05-14,Online,Bank Transfer,1122.98,Adamland,Home Goods,Kitchen,BrandE
+2,2024-07-04,Mobile App,Bank Transfer,1499.37,Gonzaleztown,Books,Non-Fiction,BrandC
+2,2024-06-02,Online,Debit Card,7169.46,Tiffanyfort,Books,Textbooks,BrandD
+2,2025-01-21,Online,Digital Wallet,1320.31,Kristenfort,Electronics,Cameras,BrandD
+2,2024-09-14,Mobile App,Digital Wallet,6728.0,Christopherside,Home Goods,Furniture,BrandC
+2,2024-08-07,In-store,Cash,8164.72,Nicolestad,Toys,Action Figures,BrandB
+2,2024-05-26,Online,Digital Wallet,3445.94,West Scottview,Books,Fiction,BrandA
+2,2024-06-09,Online,Digital Wallet,318.32,Anneberg,Books,Fiction,BrandD
+2,2024-12-19,Mobile App,Digital Wallet,3745.23,North Elizabethside,Clothing,Women,BrandD
+2,2024-08-17,In-store,Credit Card,6827.62,New Bruce,Home Goods,Bedding,BrandE
+2,2024-08-07,Online,Debit Card,9928.47,Sheppardfort,Clothing,Kids,BrandD
+2,2024-10-14,Mobile App,Debit Card,8348.38,South Kent,Books,Non-Fiction,BrandA
+2,2024-08-10,Mobile App,Bank Transfer,4241.86,New Ashleyhaven,Groceries,Bakery,BrandD
+2,2025-01-05,In-store,Cash,1552.06,North Stacy,Clothing,Women,BrandB
+2,2024-08-30,Online,Digital Wallet,6149.62,East Lindsey,Toys,Action Figures,BrandA
+2,2024-05-04,Online,Credit Card,5939.85,Millerchester,Clothing,Women,BrandD
+3,2024-05-31,Online,Credit Card,4023.25,Port Brooke,Toys,Action Figures,BrandB
+3,2024-07-14,Online,Debit Card,5039.45,North Paulfurt,Books,Non-Fiction,BrandC
+3,2024-10-07,Mobile App,Bank Transfer,7725.61,Apriltown,Clothing,Kids,BrandC
+3,2024-12-31,Online,Bank Transfer,2211.21,Rodriguezberg,Clothing,Kids,BrandC
+3,2024-05-12,Mobile App,Bank Transfer,8797.26,North Annaville,Groceries,Produce,BrandB
+3,2024-12-31,Mobile App,Digital Wallet,469.79,Natalieview,Toys,Outdoor,BrandC
+3,2024-08-06,Mobile App,Cash,6963.39,Armstrongfort,Toys,Outdoor,BrandD
+3,2024-04-01,In-store,Debit Card,7544.41,Richardfurt,Clothing,Kids,BrandD
+3,2024-04-02,In-store,Debit Card,8057.96,Hannahton,Clothing,Women,BrandA
+3,2024-12-16,In-store,Bank Transfer,5300.39,Pennytown,Books,Textbooks,BrandD
+3,2024-07-20,Online,Cash,6467.41,Larryfort,Clothing,Kids,BrandD
+3,2025-01-27,Mobile App,Debit Card,516.31,Port Jeremyport,Groceries,Produce,BrandD
+3,2025-03-10,Online,Debit Card,8046.7,Schroedermouth,Toys,Action Figures,BrandE
+3,2024-06-25,In-store,Debit Card,8694.87,Jacobsland,Toys,Dolls,BrandC
+3,2024-05-26,Online,Debit Card,9620.81,Port Richard,Groceries,Produce,BrandA
+3,2024-09-12,Online,Bank Transfer,7037.98,Lorihaven,Toys,Outdoor,BrandD
+3,2025-01-02,In-store,Digital Wallet,4663.04,West Jennafurt,Clothing,Kids,BrandC
+3,2024-05-07,In-store,Bank Transfer,8828.24,East Jamesborough,Groceries,Meat,BrandD
+3,2025-01-19,In-store,Debit Card,3707.68,North Stephen,Electronics,Cameras,BrandD
+4,2025-02-17,Mobile App,Debit Card,163.18,West Micheal,Books,Non-Fiction,BrandE
+5,2024-09-04,In-store,Debit Card,1962.72,Reidville,Books,Textbooks,BrandB
+5,2024-11-23,In-store,Bank Transfer,6546.43,West Tracy,Home Goods,Decor,BrandC
+5,2024-08-29,Mobile App,Digital Wallet,4608.83,Matthewsstad,Groceries,Bakery,BrandC
+5,2024-07-22,Mobile App,Bank Transfer,4883.67,Kaitlynland,Clothing,Women,BrandE
+5,2024-07-01,Mobile App,Credit Card,8390.85,Williamsshire,Toys,Action Figures,BrandA
+5,2024-12-29,Online,Digital Wallet,1375.78,Port Jeffrey,Toys,Action Figures,BrandB
+5,2024-06-09,Online,Debit Card,5057.82,West Denise,Electronics,Laptops,BrandC
+5,2024-09-22,Mobile App,Digital Wallet,158.3,South Rhondaburgh,Electronics,Cameras,BrandE
+5,2024-10-25,Online,Credit Card,5294.65,East Johnnyport,Books,Textbooks,BrandC
+5,2024-12-04,Online,Bank Transfer,8131.76,Rodneyfurt,Books,Children,BrandD
+5,2025-01-24,Online,Bank Transfer,1489.83,Kingmouth,Clothing,Men,BrandB
+5,2024-07-07,In-store,Cash,7949.57,Silvatown,Books,Children,BrandA
+5,2024-09-22,In-store,Bank Transfer,2432.84,Annaport,Groceries,Bakery,BrandB
+5,2024-07-06,Mobile App,Credit Card,935.91,South Calebview,Groceries,Produce,BrandD
+5,2024-11-08,Online,Credit Card,7028.75,Joseport,Home Goods,Bedding,BrandA
+5,2024-05-26,Mobile App,Cash,5659.0,North Linda,Home Goods,Bedding,BrandA
+5,2025-01-06,Online,Debit Card,9012.83,Guerreroberg,Books,Fiction,BrandE
+5,2024-12-07,Online,Credit Card,6844.6,Brightview,Home Goods,Kitchen,BrandC
+6,2025-02-13,Online,Cash,157.57,Priceton,Books,Fiction,BrandB
+6,2024-10-18,Mobile App,Digital Wallet,9288.82,West Jessica,Books,Non-Fiction,BrandC
+6,2024-06-08,Mobile App,Digital Wallet,6770.67,Knoxstad,Clothing,Women,BrandE
+6,2024-09-20,Mobile App,Debit Card,7905.19,Port Diane,Groceries,Bakery,BrandA
+6,2024-10-09,Online,Credit Card,4371.45,Connorberg,Books,Children,BrandA
+6,2024-12-15,In-store,Credit Card,6341.6,Lake Rachel,Groceries,Bakery,BrandD
+6,2024-11-13,In-store,Bank Transfer,9411.49,West Jeffrey,Home Goods,Decor,BrandD
+6,2025-01-31,Online,Bank Transfer,2954.5,Frenchmouth,Clothing,Accessories,BrandB
+6,2024-08-02,Online,Cash,1543.06,Stevenville,Toys,Action Figures,BrandB
+6,2024-09-07,In-store,Cash,1066.4,South Pamelahaven,Toys,Outdoor,BrandA
+6,2024-05-01,In-store,Cash,1023.21,Morenochester,Groceries,Bakery,BrandA
+6,2024-04-07,In-store,Bank Transfer,5547.85,East Victoria,Clothing,Accessories,BrandD
+6,2024-07-22,Online,Cash,5542.64,Thomasburgh,Electronics,Phones,BrandE
+6,2024-12-29,In-store,Credit Card,2919.18,Cookburgh,Books,Children,BrandD
+6,2024-07-11,Mobile App,Bank Transfer,1696.66,North Shannonborough,Electronics,Laptops,BrandD
+6,2024-12-22,In-store,Cash,2684.8,New Kathy,Clothing,Women,BrandB
+6,2024-09-14,In-store,Cash,4211.6,East Christinachester,Electronics,Laptops,BrandD
+7,2024-08-13,Online,Digital Wallet,5938.47,Reyeston,Groceries,Meat,BrandB
+7,2024-09-30,Online,Cash,68.67,Stephaniemouth,Home Goods,Furniture,BrandD
+8,2024-12-21,In-store,Digital Wallet,3348.03,North Erica,Books,Textbooks,BrandE
+8,2024-11-03,In-store,Bank Transfer,9472.84,East Heather,Clothing,Kids,BrandB
+8,2024-07-23,Online,Digital Wallet,9687.28,North Patrick,Home Goods,Kitchen,BrandC
+8,2024-10-20,Mobile App,Debit Card,3259.54,North Madison,Toys,Outdoor,BrandC
+8,2024-07-06,Online,Bank Transfer,1998.8,Stephenhaven,Home Goods,Kitchen,BrandE
+8,2024-10-23,Mobile App,Digital Wallet,9429.81,Ryanberg,Clothing,Men,BrandB
+8,2024-07-22,Mobile App,Credit Card,8189.84,Howardborough,Home Goods,Kitchen,BrandD
+8,2024-05-18,Online,Cash,2420.97,Smithbury,Toys,Outdoor,BrandB
+8,2024-12-10,In-store,Credit Card,4491.22,East Jessica,Toys,Outdoor,BrandE
+8,2024-10-20,Mobile App,Bank Transfer,9235.03,North Michael,Home Goods,Bedding,BrandD
+9,2024-11-12,Mobile App,Bank Transfer,5938.61,South Nancyview,Electronics,Tablets,BrandA
+9,2024-12-26,Mobile App,Cash,1664.22,New Virginiaville,Electronics,Laptops,BrandE
+9,2024-11-13,In-store,Digital Wallet,1060.34,North Hannahchester,Electronics,Cameras,BrandA
+9,2024-08-28,Mobile App,Bank Transfer,5580.38,New Johnnyberg,Groceries,Dairy,BrandE
+9,2024-06-02,In-store,Digital Wallet,4631.17,West Robertville,Clothing,Accessories,BrandE
+9,2024-11-16,In-store,Credit Card,4828.23,Cindyberg,Toys,Dolls,BrandC
+9,2024-08-19,Online,Debit Card,3483.94,New Jenniferville,Home Goods,Furniture,BrandC
+9,2024-06-30,Mobile App,Digital Wallet,3483.65,South Jamesborough,Home Goods,Decor,BrandA
+9,2024-12-28,In-store,Credit Card,3003.34,West Jade,Home Goods,Bedding,BrandA
+9,2024-07-05,Mobile App,Credit Card,6771.72,New Tylerborough,Electronics,Tablets,BrandB
+9,2024-11-25,Mobile App,Debit Card,5519.55,Riveratown,Toys,Dolls,BrandC
+9,2024-03-23,In-store,Debit Card,7977.76,North Maryfort,Books,Textbooks,BrandB
+9,2024-05-12,In-store,Credit Card,7374.15,Port Williamville,Clothing,Accessories,BrandB
+9,2025-02-13,In-store,Credit Card,7047.65,South Vanessa,Home Goods,Bedding,BrandB
+9,2024-07-05,Mobile App,Credit Card,7995.22,Williamsburgh,Groceries,Produce,BrandE
+9,2025-02-01,In-store,Debit Card,4576.05,Michaelmouth,Clothing,Kids,BrandC
+9,2024-08-21,Mobile App,Cash,5970.11,North Melissaton,Toys,Outdoor,BrandE
+10,2024-03-22,In-store,Cash,8455.33,Lake Deborah,Books,Fiction,BrandE
+10,2024-07-17,Mobile App,Bank Transfer,848.43,Friedmanview,Clothing,Kids,BrandB
+10,2025-02-03,Online,Cash,1170.37,West Lisaburgh,Groceries,Produce,BrandC
+10,2024-04-29,Mobile App,Digital Wallet,4182.97,Riversview,Toys,Dolls,BrandB
+10,2025-01-18,In-store,Debit Card,4867.22,Marshburgh,Books,Textbooks,BrandE
+10,2024-04-29,Mobile App,Debit Card,4896.93,Port Erikchester,Toys,Dolls,BrandB
+10,2025-02-15,In-store,Bank Transfer,537.06,Phammouth,Clothing,Kids,BrandC
+10,2024-05-24,Online,Debit Card,8152.34,Maxwelltown,Electronics,Cameras,BrandE
+10,2025-01-28,In-store,Digital Wallet,4156.89,South Samantha,Books,Textbooks,BrandD
+10,2024-04-29,Online,Bank Transfer,309.58,Alexanderland,Home Goods,Decor,BrandB
+10,2024-06-22,In-store,Debit Card,5376.55,Alexanderhaven,Groceries,Produce,BrandB
+10,2024-12-24,Mobile App,Bank Transfer,1133.0,Lake Morgan,Home Goods,Bedding,BrandA
+11,2024-09-24,Mobile App,Credit Card,7600.28,South Dorothybury,Books,Children,BrandD
+11,2024-09-11,In-store,Credit Card,7360.15,Hernandezside,Books,Non-Fiction,BrandB
+11,2025-02-08,In-store,Cash,3486.42,North Dawnburgh,Groceries,Produce,BrandA
+11,2024-09-20,Online,Debit Card,8107.22,Christianburgh,Home Goods,Furniture,BrandE
+11,2024-04-15,Mobile App,Bank Transfer,6328.07,Floresmouth,Toys,Puzzles,BrandB
+11,2025-03-09,Online,Debit Card,8054.6,New Jeffreyfurt,Books,Non-Fiction,BrandE
+11,2024-08-13,Mobile App,Bank Transfer,1684.61,North Stephen,Groceries,Meat,BrandC
+11,2025-01-06,Mobile App,Credit Card,1356.75,Millerfort,Groceries,Meat,BrandD
+12,2024-08-29,Mobile App,Debit Card,2497.52,South Julietown,Groceries,Dairy,BrandC
+13,2024-04-25,In-store,Debit Card,5774.68,Johnsonside,Toys,Outdoor,BrandC
+13,2024-03-19,In-store,Digital Wallet,756.09,Port Cassandraport,Toys,Outdoor,BrandA
+13,2025-02-07,Mobile App,Cash,4547.5,Lake Emily,Home Goods,Kitchen,BrandD
+13,2025-03-01,Mobile App,Credit Card,7309.59,Marciabury,Groceries,Produce,BrandD
+13,2025-01-22,Online,Bank Transfer,3977.76,Annfort,Toys,Puzzles,BrandD
+13,2024-12-06,In-store,Cash,8283.61,Jenniferville,Clothing,Accessories,BrandC
+13,2024-04-23,Mobile App,Digital Wallet,7883.25,North Matthew,Books,Non-Fiction,BrandA
+14,2025-01-16,Online,Credit Card,9294.4,Amystad,Electronics,Cameras,BrandB
+15,2024-11-30,In-store,Debit Card,9956.94,East Travischester,Home Goods,Furniture,BrandB
+15,2024-04-27,Online,Cash,934.31,East David,Toys,Puzzles,BrandC
+15,2025-01-24,In-store,Debit Card,518.82,South Makayla,Groceries,Produce,BrandC
+15,2024-05-27,In-store,Credit Card,7037.28,Danielchester,Toys,Dolls,BrandA
+15,2024-04-05,Online,Debit Card,5937.2,Port Patriciamouth,Clothing,Accessories,BrandE
+15,2024-11-14,Online,Credit Card,6956.28,South Adam,Toys,Outdoor,BrandA
+15,2024-12-13,In-store,Credit Card,2290.24,Robersonfort,Home Goods,Decor,BrandA
+15,2025-02-20,Online,Cash,3676.25,Lake Beth,Toys,Action Figures,BrandC
+15,2024-12-11,Online,Debit Card,685.05,North Paul,Clothing,Accessories,BrandE
+15,2024-10-24,In-store,Cash,7224.6,Williamfurt,Electronics,Laptops,BrandB
+15,2024-08-19,Online,Credit Card,8966.03,West Raymond,Home Goods,Bedding,BrandB
+15,2024-07-22,In-store,Digital Wallet,3145.72,Shawnberg,Electronics,Cameras,BrandB
+15,2024-05-08,Mobile App,Credit Card,2482.42,Meganside,Clothing,Kids,BrandE
+15,2025-01-28,Mobile App,Credit Card,8479.07,East Jason,Books,Children,BrandC
+16,2024-12-05,Mobile App,Digital Wallet,2956.12,Samanthaberg,Books,Non-Fiction,BrandA
+16,2025-03-13,In-store,Credit Card,2411.58,New Amy,Clothing,Accessories,BrandE
+16,2024-11-07,In-store,Cash,1320.7,Port Michaelfort,Electronics,Phones,BrandE
+16,2024-10-18,Mobile App,Debit Card,7627.5,Craigside,Home Goods,Kitchen,BrandA
+16,2024-07-01,Online,Cash,2158.21,Stokeshaven,Electronics,Phones,BrandA
+16,2024-04-26,Mobile App,Bank Transfer,7671.33,Thomaston,Home Goods,Kitchen,BrandD
+17,2024-05-31,In-store,Credit Card,3099.76,West Frances,Electronics,Laptops,BrandE
+17,2024-05-11,Mobile App,Cash,3907.92,Lake Kristenborough,Clothing,Women,BrandA
+17,2024-12-19,Mobile App,Debit Card,580.0,West Lisaville,Groceries,Bakery,BrandA
+17,2024-10-30,In-store,Bank Transfer,6088.72,Lake Deborah,Home Goods,Furniture,BrandC
+17,2024-08-08,Online,Credit Card,7079.3,Heatherton,Toys,Dolls,BrandA
+17,2025-02-21,In-store,Bank Transfer,5172.71,Butlermouth,Clothing,Accessories,BrandC
+17,2025-03-07,Online,Cash,7329.63,North Juliaborough,Clothing,Kids,BrandA
+17,2024-11-01,In-store,Cash,5239.02,Greerstad,Electronics,Tablets,BrandC
+17,2024-12-20,In-store,Digital Wallet,5108.31,Port Jenny,Toys,Action Figures,BrandA
+17,2024-05-28,In-store,Debit Card,2551.91,Thompsonland,Home Goods,Decor,BrandA
+17,2024-05-26,Online,Bank Transfer,26.68,Lake Willie,Books,Fiction,BrandA
+17,2024-08-04,In-store,Cash,3830.41,Ramirezview,Clothing,Men,BrandB
+18,2024-05-05,Online,Cash,2483.38,Adammouth,Electronics,Cameras,BrandC
+18,2024-12-03,Mobile App,Cash,1194.89,North Eric,Groceries,Produce,BrandA
+18,2024-07-15,Mobile App,Credit Card,9540.84,Port Sarahport,Clothing,Women,BrandA
+18,2024-09-14,In-store,Cash,864.77,Charlesmouth,Home Goods,Kitchen,BrandD
+18,2024-09-27,Online,Cash,5638.5,New Carlos,Electronics,Tablets,BrandC
+19,2024-09-19,In-store,Bank Transfer,9718.61,Danielsfurt,Clothing,Accessories,BrandB
+19,2024-04-21,Online,Credit Card,9324.04,East Elizabeth,Toys,Dolls,BrandA
+19,2024-07-18,Mobile App,Credit Card,9509.95,Jefferyhaven,Clothing,Kids,BrandA
+19,2024-09-08,Mobile App,Cash,1040.39,North Elizabethmouth,Toys,Outdoor,BrandE
+19,2024-06-14,In-store,Credit Card,9725.62,North Felicia,Clothing,Accessories,BrandB
+19,2024-07-14,Online,Credit Card,9212.82,South Jonathanport,Toys,Puzzles,BrandE
+19,2024-03-28,In-store,Credit Card,5808.13,Williehaven,Home Goods,Kitchen,BrandE
+19,2024-08-29,Online,Bank Transfer,5678.64,West Rachelborough,Clothing,Accessories,BrandD
+19,2024-07-14,Online,Cash,2610.65,North Garyside,Toys,Dolls,BrandC
+19,2024-09-30,In-store,Digital Wallet,2720.29,East Ellenborough,Home Goods,Kitchen,BrandA
+19,2025-01-29,Mobile App,Credit Card,1554.95,Houstonborough,Clothing,Women,BrandB
+19,2024-10-01,In-store,Digital Wallet,1208.25,Lucasland,Home Goods,Bedding,BrandC
+19,2024-12-17,In-store,Digital Wallet,2650.81,North Stephen,Clothing,Accessories,BrandA
+19,2024-07-18,Mobile App,Cash,8264.04,North Brianview,Electronics,Laptops,BrandE
+19,2024-10-09,In-store,Debit Card,913.04,West Rickey,Electronics,Laptops,BrandB
+19,2024-08-31,Mobile App,Credit Card,6772.16,Hamiltontown,Groceries,Bakery,BrandC
+19,2024-08-08,In-store,Digital Wallet,5559.98,New Adamland,Clothing,Men,BrandE
+19,2024-12-20,In-store,Credit Card,8039.16,Lake Melaniestad,Clothing,Men,BrandB
+19,2025-02-21,Online,Debit Card,1308.02,West Kristinport,Electronics,Phones,BrandD
+20,2024-10-27,Mobile App,Bank Transfer,2588.95,Kathymouth,Toys,Action Figures,BrandA
+20,2024-08-05,Online,Digital Wallet,8093.18,South Ericbury,Electronics,Phones,BrandA
+20,2024-05-07,Online,Digital Wallet,507.33,Roblesside,Groceries,Produce,BrandE
+20,2024-07-04,In-store,Credit Card,3827.91,West Erica,Home Goods,Bedding,BrandD
+20,2025-02-16,Online,Debit Card,2750.54,Susantown,Clothing,Kids,BrandD
+20,2024-10-07,Mobile App,Bank Transfer,6170.15,North Bobby,Clothing,Men,BrandC
+20,2024-10-14,Mobile App,Digital Wallet,610.73,Medinaland,Home Goods,Bedding,BrandC
+20,2024-07-08,In-store,Debit Card,6426.88,Jasonhaven,Home Goods,Decor,BrandE
+20,2024-05-10,In-store,Cash,4797.36,East Christina,Clothing,Men,BrandD
+20,2024-06-19,In-store,Cash,1798.98,East Emilyshire,Groceries,Meat,BrandC
+20,2025-01-24,Online,Cash,586.85,Newmanland,Books,Non-Fiction,BrandD
