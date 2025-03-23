@@ -42,6 +42,19 @@ const CustomerSupportHistorySchema = z.object({
   was_issue_resolved: z.boolean(),
 });
 
+const CustomerPurchaseHistorySchema = z.object({
+  amt: z.number(),
+  customer_id: z.string(),
+  date: z.string(),
+  item_brand: z.string(),
+  item_category: z.string(),
+  item_sub_category: z.string(),
+  location: z.string(),
+  payment_method: z.string(),
+  platform: z.string(),
+  transaction_id: z.string(),
+});
+
 export type CustomerInfo = z.infer<typeof CustomerInfoSchema>;
 export type CustomerSupportHistory = z.infer<
   typeof CustomerSupportHistorySchema
@@ -59,18 +72,22 @@ export const useCustomerIds = () => {
 
 const convertStringToArraysForCustomerInfo = (customerInfo: any) => ({
   ...customerInfo,
-  balance: customerInfo.balance?.split(",").map((v: string) => parseFloat(v)) ?? [],
+  balance:
+    customerInfo.balance?.split(",").map((v: string) => parseFloat(v)) ?? [],
   goals: customerInfo.goals?.split(",") ?? [],
-  loan_amts: customerInfo.loan_amts?.split(",").map((v: string) => parseFloat(v)) ?? [],
+  loan_amts:
+    customerInfo.loan_amts?.split(",").map((v: string) => parseFloat(v)) ?? [],
   main_purchase_cat: customerInfo.main_purchase_cat?.split(",") ?? [],
   monthly_spending:
-    customerInfo.monthly_spending?.split(",").map((v: string) => parseFloat(v)) ?? [],
+    customerInfo.monthly_spending
+      ?.split(",")
+      .map((v: string) => parseFloat(v)) ?? [],
 });
 
 const convertStringToArraysForSupportRecord = (supportRecord: any) => ({
   ...supportRecord,
   main_concerns: supportRecord.main_concerns?.split(",") ?? [],
-})
+});
 
 // Fetch customer info
 export const useCustomerInfo = (customerId: string) => {
@@ -132,8 +149,9 @@ export const useCustomerSupportHistory = (customerId: string) => {
       if (response?.data?.error) {
         return { error: response.data.error } as { error: string };
       }
-      console.log(response.data.map(convertStringToArraysForSupportRecord))
-      return z.array(CustomerSupportHistorySchema).parse(response.data.map(convertStringToArraysForSupportRecord));
+      return z
+        .array(CustomerSupportHistorySchema)
+        .parse(response.data.map(convertStringToArraysForSupportRecord));
     },
     enabled: !!customerId,
   });
@@ -162,5 +180,24 @@ export const useAddCustomerSupportHistory = () => {
         queryKey: ["customer-support-history", customerId],
       });
     },
+  });
+};
+
+export const useCustomerPurchaseHistory = (customerId: string) => {
+  return useQuery({
+    queryKey: ["customer-purchase-history", customerId],
+    queryFn: async () => {
+      const response = await axios.get(
+        `${API_BASE_URL}/customer_purchase_history`,
+        {
+          params: { customer_id: customerId },
+        }
+      );
+      if (response?.data?.error) {
+        return { error: response.data.error } as { error: string };
+      }
+      return z.array(CustomerPurchaseHistorySchema).parse(response.data);
+    },
+    enabled: !!customerId,
   });
 };

@@ -1,117 +1,14 @@
 import type React from "react"
 
-import { useState, useEffect } from "react"
+import { useState } from "react"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import { format } from "date-fns"
-
-// Mock purchase data
-const MOCK_PURCHASES = {
-  CUST001: [
-    {
-      id: "P001",
-      category: "Electronics",
-      subCategory: "Smartphones",
-      brand: "Apple",
-      price: 999,
-      date: "2023-05-15",
-      platform: "Online",
-      paymentMethod: "Credit Card",
-    },
-    {
-      id: "P002",
-      category: "Clothing",
-      subCategory: "Shirts",
-      brand: "Nike",
-      price: 49.99,
-      date: "2023-06-22",
-      platform: "In-store",
-      paymentMethod: "Cash",
-    },
-  ],
-  CUST002: [
-    {
-      id: "P003",
-      category: "Home",
-      subCategory: "Furniture",
-      brand: "IKEA",
-      price: 299,
-      date: "2023-04-10",
-      platform: "Online",
-      paymentMethod: "PayPal",
-    },
-  ],
-  CUST003: [
-    {
-      id: "P004",
-      category: "Electronics",
-      subCategory: "Laptops",
-      brand: "Dell",
-      price: 1299,
-      date: "2023-07-05",
-      platform: "Online",
-      paymentMethod: "Credit Card",
-    },
-    {
-      id: "P005",
-      category: "Books",
-      subCategory: "Fiction",
-      brand: "Penguin",
-      price: 19.99,
-      date: "2023-07-12",
-      platform: "Online",
-      paymentMethod: "Debit Card",
-    },
-    {
-      id: "P006",
-      category: "Groceries",
-      subCategory: "Snacks",
-      brand: "Various",
-      price: 45.5,
-      date: "2023-07-18",
-      platform: "In-store",
-      paymentMethod: "Cash",
-    },
-  ],
-  CUST004: [
-    {
-      id: "P007",
-      category: "Beauty",
-      subCategory: "Skincare",
-      brand: "Cerave",
-      price: 35.99,
-      date: "2023-06-30",
-      platform: "Online",
-      paymentMethod: "Credit Card",
-    },
-  ],
-  CUST005: [
-    {
-      id: "P008",
-      category: "Sports",
-      subCategory: "Equipment",
-      brand: "Adidas",
-      price: 129.99,
-      date: "2023-05-28",
-      platform: "In-store",
-      paymentMethod: "Credit Card",
-    },
-    {
-      id: "P009",
-      category: "Electronics",
-      subCategory: "Headphones",
-      brand: "Sony",
-      price: 199.99,
-      date: "2023-06-15",
-      platform: "Online",
-      paymentMethod: "PayPal",
-    },
-  ],
-}
+import { useCustomerPurchaseHistory } from "@/lib/api"
+import { formatDate } from "@/lib/utils"
 
 // Categories for form
 const CATEGORIES = ["Electronics", "Clothing", "Home", "Books", "Beauty", "Sports", "Groceries"]
@@ -123,8 +20,7 @@ interface CustomerPurchaseHistoryProps {
 }
 
 export default function CustomerPurchaseHistory({ customerId }: CustomerPurchaseHistoryProps) {
-  const [purchases, setPurchases] = useState<any[]>([])
-  const [loading, setLoading] = useState(true)
+  const { data: purchases, isLoading } = useCustomerPurchaseHistory(customerId);
   const [showForm, setShowForm] = useState(false)
 
   // Form state
@@ -134,18 +30,6 @@ export default function CustomerPurchaseHistory({ customerId }: CustomerPurchase
   const [price, setPrice] = useState<string>("")
   const [platform, setPlatform] = useState<string>("")
   const [paymentMethod, setPaymentMethod] = useState<string>("")
-
-  // Simulate API fetch
-  useEffect(() => {
-    const fetchPurchases = async () => {
-      // Simulate network delay
-      await new Promise((resolve) => setTimeout(resolve, 300))
-      setPurchases(MOCK_PURCHASES[customerId as keyof typeof MOCK_PURCHASES] || [])
-      setLoading(false)
-    }
-
-    fetchPurchases()
-  }, [customerId])
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
@@ -161,9 +45,6 @@ export default function CustomerPurchaseHistory({ customerId }: CustomerPurchase
       platform,
       paymentMethod,
     }
-
-    // Add to purchases
-    setPurchases([...purchases, newPurchase])
 
     // Reset form
     setCategory("")
@@ -184,38 +65,42 @@ export default function CustomerPurchaseHistory({ customerId }: CustomerPurchase
         <CardDescription>View and manage customer purchase records</CardDescription>
       </CardHeader>
       <CardContent>
-        {loading ? (
+        {isLoading ? (
           <p className="text-center py-4">Loading purchase history...</p>
-        ) : purchases.length > 0 ? (
-          <Table>
-            <TableHeader>
-              <TableRow>
-                <TableHead>Date</TableHead>
-                <TableHead>Category</TableHead>
-                <TableHead>Sub-Category</TableHead>
-                <TableHead>Brand</TableHead>
-                <TableHead className="text-right">Price</TableHead>
-                <TableHead>Platform</TableHead>
-                <TableHead>Payment</TableHead>
-              </TableRow>
-            </TableHeader>
-            <TableBody>
-              {purchases.map((purchase) => (
-                <TableRow key={purchase.id}>
-                  <TableCell>{format(new Date(purchase.date), "MMM d, yyyy")}</TableCell>
-                  <TableCell>{purchase.category}</TableCell>
-                  <TableCell>{purchase.subCategory}</TableCell>
-                  <TableCell>{purchase.brand}</TableCell>
-                  <TableCell className="text-right">${purchase.price.toFixed(2)}</TableCell>
-                  <TableCell>{purchase.platform}</TableCell>
-                  <TableCell>{purchase.paymentMethod}</TableCell>
-                </TableRow>
-              ))}
-            </TableBody>
-          </Table>
-        ) : (
-          <p className="text-center py-4">No purchase history found for this customer.</p>
-        )}
+        ) : purchases && "error" in purchases ?
+          (
+            <p className="text-center py-4">{purchases.error}</p>
+          ) : purchases ?
+            (
+              <Table>
+                <TableHeader>
+                  <TableRow>
+                    <TableHead>Date</TableHead>
+                    <TableHead>Category</TableHead>
+                    <TableHead>Sub-Category</TableHead>
+                    <TableHead>Brand</TableHead>
+                    <TableHead className="text-right">Price</TableHead>
+                    <TableHead>Platform</TableHead>
+                    <TableHead>Payment</TableHead>
+                  </TableRow>
+                </TableHeader>
+                <TableBody>
+                  {purchases?.map((purchase) => (
+                    <TableRow key={purchase.transaction_id}>
+                      <TableCell>{formatDate(purchase.date)}</TableCell>
+                      <TableCell>{purchase.item_category}</TableCell>
+                      <TableCell>{purchase.item_sub_category}</TableCell>
+                      <TableCell>{purchase.item_brand}</TableCell>
+                      <TableCell className="text-right">${purchase.amt.toFixed(2)}</TableCell>
+                      <TableCell>{purchase.platform}</TableCell>
+                      <TableCell>{purchase.payment_method}</TableCell>
+                    </TableRow>
+                  ))}
+                </TableBody>
+              </Table>
+            ) : (
+              <p className="text-center py-4">No purchase history found for this customer.</p>
+            )}
 
         {showForm && (
           <form onSubmit={handleSubmit} className="mt-6 space-y-4 border rounded-lg p-4">
@@ -303,10 +188,6 @@ export default function CustomerPurchaseHistory({ customerId }: CustomerPurchase
           </form>
         )}
       </CardContent>
-      <CardFooter className="flex justify-between">
-        <div>{!loading && <span className="text-sm text-muted-foreground">{purchases.length} records found</span>}</div>
-        {!showForm && <Button onClick={() => setShowForm(true)}>Add New Purchase</Button>}
-      </CardFooter>
     </Card>
   )
 }

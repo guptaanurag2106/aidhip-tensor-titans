@@ -2,7 +2,7 @@
 
 import type React from "react"
 
-import { useState, useEffect } from "react"
+import { useState } from "react"
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -12,58 +12,7 @@ import { Switch } from "@/components/ui/switch"
 import { Badge } from "@/components/ui/badge"
 import { AlertCircle, CheckCircle2, RepeatIcon } from "lucide-react"
 import { useCustomerSupportHistory } from "@/lib/api"
-
-// Updated mock support data
-const MOCK_SUPPORT = {
-  CUST_1: [
-    {
-      complaint_id: "SPRT_1",
-      customer_id: "CUST_1",
-      date: "18/08/2023",
-      transcript:
-        "Hi, I'm calling because I was double-charged for a purchase at Trader Joe's on August 15th. The transaction shows up twice on my online statement, both for $78.52. I checked with Trader Joe's, and they confirmed they only processed one transaction. I'd like to get the duplicate charge removed, please. This is frustrating. My account number is [redacted for privacy].",
-      main_concerns: "Billing issue",
-      is_repeating_issue: false,
-      was_issue_resolved: true,
-      sentiment: -0.4,
-    },
-    {
-      complaint_id: "SPRT_2",
-      customer_id: "CUST_1",
-      date: "05/03/2024",
-      transcript:
-        "I'm having trouble setting up automatic payments for my credit card through the mobile app. Every time I try to link my checking account, I get an error message that says 'Unable to connect. Please try again later.' I've tried multiple times over the last two days, and it's still not working. The app is fully updated. Is there a known issue, or can you help me resolve this? It is important to pay through my prefered method.",
-      main_concerns: "Technical support",
-      is_repeating_issue: true,
-      was_issue_resolved: false,
-      sentiment: -0.6,
-    },
-  ],
-  CUST_2: [
-    {
-      complaint_id: "SPRT_3",
-      customer_id: "CUST_2",
-      date: "15/08/2023",
-      transcript:
-        "I'm calling to dispute a $75 overdraft fee. My account balance was positive when I made the purchase, but the charge posted later, causing the overdraft. It seems like there was a delay in processing, and now I'm being penalized. This isn't fair, as I'm always careful with my budgeting, with a family and children's education costs I plan ahead. Can you please reverse the fee?",
-      main_concerns: "Billing issue, Overdraft Fee",
-      is_repeating_issue: false,
-      was_issue_resolved: true,
-      sentiment: -0.6,
-    },
-    {
-      complaint_id: "SPRT_4",
-      customer_id: "CUST_2",
-      date: "02/11/2023",
-      transcript:
-        "I keep receiving notifications for 'low balance' alerts, even though I have over $25,000 in my account! I set the alert threshold much lower. It's annoying and makes me worry unnecessarily. Can you fix this? I've tried adjusting in the app, but it doesn't seem to save the changes. I need these alerts to be accurate for managing household and kids' expenses.",
-      main_concerns: "Technical support, Account Alerts",
-      is_repeating_issue: true,
-      was_issue_resolved: false,
-      sentiment: -0.4,
-    },
-  ],
-}
+import { formatDate } from "@/lib/utils"
 
 // Concern options for the form
 const CONCERN_OPTIONS = [
@@ -120,17 +69,6 @@ export default function CustomerSupportHistory({ customerId }: CustomerSupportHi
     console.log("New support record added:", newSupport)
   }
 
-  // Format date from DD/MM/YYYY to more readable format
-  const formatDate = (dateString: string) => {
-    const [day, month, year] = dateString.split("/")
-    const date = new Date(`${year}-${month}-${day}`)
-    return new Intl.DateTimeFormat("en-US", {
-      day: "numeric",
-      month: "short",
-      year: "numeric",
-    }).format(date)
-  }
-
   // Get sentiment color based on value
   const getSentimentColor = (sentiment: number) => {
     if (sentiment >= 0.3) return "text-green-600"
@@ -156,61 +94,64 @@ export default function CustomerSupportHistory({ customerId }: CustomerSupportHi
       <CardContent>
         {isLoading ? (
           <p className="text-center py-4">Loading support history...</p>
-        ) : supportHistory ? (
-          <div className="space-y-6">
-            {supportHistory.map((support) => (
-              <div key={support.complaint_id} className="border rounded-lg p-4 space-y-3">
-                <div className="flex flex-wrap justify-between items-start gap-2">
-                  <div>
-                    <div className="flex items-center gap-2">
-                      <span className="font-medium">{support.complaint_id}</span>
-                      <span className="text-sm text-muted-foreground">{formatDate(support.date)}</span>
-                    </div>
-                    <div className="flex flex-wrap gap-1 mt-1">
-                      {support.main_concerns.map((concern: string, index: number) => (
-                        <Badge key={index} variant="outline" className="text-xs">
-                          {concern}
-                        </Badge>
-                      ))}
-                    </div>
-                  </div>
-                  <div className="flex items-center gap-2">
-                    {support.is_repeating_issue && (
-                      <div className="flex items-center text-amber-600 text-xs">
-                        <RepeatIcon className="h-3.5 w-3.5 mr-1" />
-                        Repeating Issue
+        ) : supportHistory && "error" in supportHistory ?
+          (
+            <p className="text-center py-4">{supportHistory.error}</p>
+          ) : supportHistory ? (
+            <div className="space-y-6">
+              {supportHistory.map((support) => (
+                <div key={support.complaint_id} className="border rounded-lg p-4 space-y-3">
+                  <div className="flex flex-wrap justify-between items-start gap-2">
+                    <div>
+                      <div className="flex items-center gap-2">
+                        <span className="font-medium">{support.complaint_id}</span>
+                        <span className="text-sm text-muted-foreground">{formatDate(support.date)}</span>
                       </div>
-                    )}
-                    <div
-                      className={`flex items-center text-xs ${support.was_issue_resolved ? "text-green-600" : "text-red-600"}`}
-                    >
-                      {support.was_issue_resolved ? (
-                        <>
-                          <CheckCircle2 className="h-3.5 w-3.5 mr-1" />
-                          Resolved
-                        </>
-                      ) : (
-                        <>
-                          <AlertCircle className="h-3.5 w-3.5 mr-1" />
-                          Unresolved
-                        </>
-                      )}
+                      <div className="flex flex-wrap gap-1 mt-1">
+                        {support.main_concerns.map((concern: string, index: number) => (
+                          <Badge key={index} variant="outline" className="text-xs">
+                            {concern}
+                          </Badge>
+                        ))}
+                      </div>
                     </div>
-                    <div className={`flex items-center text-xs ${getSentimentColor(support.sentiment)}`}>
-                      Sentiment: {getSentimentLabel(support.sentiment)}
+                    <div className="flex items-center gap-2">
+                      {support.is_repeating_issue && (
+                        <div className="flex items-center text-amber-600 text-xs">
+                          <RepeatIcon className="h-3.5 w-3.5 mr-1" />
+                          Repeating Issue
+                        </div>
+                      )}
+                      <div
+                        className={`flex items-center text-xs ${support.was_issue_resolved ? "text-green-600" : "text-red-600"}`}
+                      >
+                        {support.was_issue_resolved ? (
+                          <>
+                            <CheckCircle2 className="h-3.5 w-3.5 mr-1" />
+                            Resolved
+                          </>
+                        ) : (
+                          <>
+                            <AlertCircle className="h-3.5 w-3.5 mr-1" />
+                            Unresolved
+                          </>
+                        )}
+                      </div>
+                      <div className={`flex items-center text-xs ${getSentimentColor(support.sentiment)}`}>
+                        Sentiment: {getSentimentLabel(support.sentiment)}
+                      </div>
                     </div>
                   </div>
-                </div>
 
-                <div className="bg-muted/50 p-3 rounded text-sm">
-                  <p className="whitespace-pre-line">{support.transcript}</p>
+                  <div className="bg-muted/50 p-3 rounded text-sm">
+                    <p className="whitespace-pre-line">{support.transcript}</p>
+                  </div>
                 </div>
-              </div>
-            ))}
-          </div>
-        ) : (
-          <p className="text-center py-4">No support history found for this customer.</p>
-        )}
+              ))}
+            </div>
+          ) : (
+            <p className="text-center py-4">No support history found for this customer.</p>
+          )}
 
         {showForm && (
           <form onSubmit={handleSubmit} className="mt-6 space-y-4 border rounded-lg p-4">
@@ -296,12 +237,6 @@ export default function CustomerSupportHistory({ customerId }: CustomerSupportHi
           </form>
         )}
       </CardContent>
-      <CardFooter className="flex justify-between">
-        <div>
-          {!isLoading && <span className="text-sm text-muted-foreground">{supportHistory?.length ?? 'No'} records found</span>}
-        </div>
-        {!showForm && <Button onClick={() => setShowForm(true)}>Add New Support Record</Button>}
-      </CardFooter>
     </Card>
   )
 }

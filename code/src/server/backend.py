@@ -1,6 +1,8 @@
 from flask import Flask, request, jsonify
 import pandas as pd
+import csv
 from flask_cors import CORS
+
 app = Flask(__name__)
 CORS(app)
 
@@ -18,28 +20,24 @@ def cust_prof():
     cust_prof_df = pd.read_csv('../data/customer_profile.csv')
 
     for index, row in cust_prof_df.iterrows():
-        print("row is ", row['customer_id'])
         if row['customer_id'] == customer_id:
             return jsonify(row.to_dict())
     return {"error": "Customer not found"}
 
 #Sends Customer Purchase History
-@app.route('/cust_purch_hist', methods=['GET'])
+@app.route('/customer_purchase_history', methods=['GET'])
 def cust_purch_hist():
     customer_id = request.args.get('customer_id')
-
-    cust_purch_hist_list = []
-    cust_purch_hist_df = pd.read_csv('../data/customer_purchase.csv')
-    # print(cust_purch_hist_df)
-    for index, row in cust_purch_hist_df.iterrows():
-        if row[1] == customer_id:
-            cust_purch_hist_dict = {}
-            for cols in cust_purch_hist_df.columns:
-                cust_purch_hist_dict[cols] = row[cols]
-            cust_purch_hist_list.append(cust_purch_hist_dict)
-    if len(cust_purch_hist_list) > 0:      
-        return jsonify(cust_purch_hist_list)
-    return {"error": "No records found"}
+    matching_customers = []
+    
+    with open('../data/customer_purchase.csv', mode='r', encoding='utf-8') as file:
+        reader = csv.DictReader(file)
+        for row in reader:
+            if row.get('customer_id') == customer_id:
+                row['amt'] = float(row['amt'])
+                matching_customers.append(row)
+    
+    return jsonify(matching_customers)
 
 #Sends Customer Socal Media Info
 @app.route('/soc_med', methods=['GET'])
@@ -48,7 +46,6 @@ def soc_med():
 
     soc_med_list = []
     soc_med_df = pd.read_csv('../data/social_media_record.csv')
-    # print(soc_med_df)
     for index, row in soc_med_df.iterrows():
         if row[1] == customer_id:
             soc_med_dict = {}
@@ -69,7 +66,6 @@ def cust_sup_hist():
         
         cust_sup_hist_list = []
         cust_sup_hist_df = pd.read_csv('../data/customer_support_record.csv')
-        # print(cust_sup_hist_df)
         for index, row in cust_sup_hist_df.iterrows():
             if row[1] == customer_id:
                 cust_sup_hist_dict = {}
