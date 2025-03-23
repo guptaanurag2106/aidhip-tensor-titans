@@ -9,6 +9,8 @@ if (!API_BASE_URL) {
   throw new Error("Missing `VITE_API_BASE_URL` env variable.");
 }
 
+const convertStringArrayToArray = (s: string) => s.split(",").map((v) => v.trim()); 
+
 // Define schemas
 const CustomerInfoSchema = z.object({
   age: z.number(),
@@ -92,7 +94,7 @@ const convertStringToArraysForCustomerInfo = (customerInfo: any) => ({
   goals: customerInfo.goals?.split(",") ?? [],
   loan_amts:
     customerInfo.loan_amts?.split(",").map((v: string) => parseFloat(v)) ?? [],
-  main_purchase_cat: customerInfo.main_purchase_cat?.split(",") ?? [],
+  main_purchase_cat:customerInfo.main_purchase_cat ? convertStringArrayToArray(customerInfo.main_purchase_cat) : [],
   monthly_spending:
     customerInfo.monthly_spending
       ?.split(",")
@@ -101,17 +103,15 @@ const convertStringToArraysForCustomerInfo = (customerInfo: any) => ({
 
 const convertStringToArraysForSupportRecord = (supportRecord: any) => ({
   ...supportRecord,
-  main_concerns: supportRecord.main_concerns?.split(",") ?? [],
+  main_concerns: convertStringArrayToArray(supportRecord.main_concerns) ?? [],
 });
 
 const convertStringToArraysForSocialMediaRecord = (socialMedia: any) => ({
   ...socialMedia,
   brands_liked: socialMedia.brands_liked.split(",") ?? [],
-  topics_of_interest:
-    socialMedia.topics_of_interest
-      .replace("[", "")
-      .replace("]", "")
-      .split(",") ?? [],
+  topics_of_interest: socialMedia.topics_of_interest ?
+  convertStringArrayToArray(socialMedia.topics_of_interest)
+       : [],
 });
 
 // Fetch customer info
@@ -240,9 +240,14 @@ export const useCustomerSocialMediaHistory = (customerId: string) => {
       if (response?.data?.error) {
         return { error: response.data.error } as { error: string };
       }
+      try {
+
       return z
         .array(CustomerSocialMediaHistorySchema)
         .parse(response.data.map(convertStringToArraysForSocialMediaRecord));
+      }catch(err){
+        console.log(err)
+      }
     },
     enabled: !!customerId,
   });

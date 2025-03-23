@@ -28,33 +28,34 @@ def cust_prof():
 @app.route('/customer_purchase_history', methods=['GET'])
 def cust_purch_hist():
     customer_id = request.args.get('customer_id')
-    matching_customers = []
+    matching_rows = []
     
     with open('../data/customer_purchase.csv', mode='r', encoding='utf-8') as file:
         reader = csv.DictReader(file)
         for row in reader:
             if row.get('customer_id') == customer_id:
                 row['amt'] = float(row['amt'])
-                matching_customers.append(row)
+                matching_rows.append(row)
     
-    return jsonify(matching_customers)
+    return jsonify(matching_rows)
 
 #Sends Customer Socal Media Info
 @app.route('/customer_social_media_history', methods=['GET'])
 def soc_med():
     customer_id = request.args.get('customer_id')
-
-    soc_med_list = []
-    soc_med_df = pd.read_csv('../data/social_media_record.csv')
-    for index, row in soc_med_df.iterrows():
-        if row[1] == customer_id:
-            soc_med_dict = {}
-            for cols in soc_med_df.columns:
-                soc_med_dict[cols] = row[cols]
-            soc_med_list.append(soc_med_dict)
-    if len(soc_med_list) > 0:      
-        return jsonify(soc_med_list)
-    return {"error": "No records found"}
+    matching_rows = []
+    
+    with open('../data/social_media_record.csv', mode='r', encoding='utf-8') as file:
+        reader = csv.DictReader(file)
+        for row in reader:
+            if row.get('customer_id') == customer_id:
+                row['influencers_followed'] = float(row['influencers_followed'])
+                row['sentiment_score'] = float(row['sentiment_score'])
+                row['engagement_level'] = float(row['engagement_level'])
+                matching_rows.append(row)
+    
+    return jsonify(matching_rows)
+    
 
 #Sends/Receives Customer Support History
 @app.route('/customer_support_history', methods=['GET', 'POST'])
