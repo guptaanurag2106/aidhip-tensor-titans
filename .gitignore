@@ -1,2 +1,4 @@
+.DS_Store
 code/src/generator/.env
 code/src/.env
+venv
