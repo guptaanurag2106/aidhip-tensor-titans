@@ -83,19 +83,6 @@ def cust_sup_hist():
             cust_sup_hist_df[col] = [cust_sup_hist_record[col]]
         cust_sup_hist_df.to_csv('../data/customer_support_record.csv', mode='a', header=False, index=False)
         return "Record added"
-        
-
-# Receive JSON data
-# @app.route('/test', methods=['POST'])
-# def home():
-    
-#     request_data = request.get_json()
-    
-#     language = request_data['language']
-#     framework = request_data['framework']
-#     python_version = request_data['version_info']['python']
-    
-#     return [language, framework, python_version]
 
 if __name__ == '__main__':
     app.run(debug=True)
