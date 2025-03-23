@@ -2,7 +2,7 @@ transaction_id,customer_id,date,platform,payment_method,amt,location,item_catego
 TXN_1,CUST_1,18/08/2023,Amazon,Credit Card,129.99,California,Electronics,Headphones,Sony
 TXN_2,CUST_1,22/08/2023,Offline,Credit Card,65.75,California,Groceries,Produce,Trader Joe's
 TXN_3,CUST_1,25/08/2023,Online,Credit Card,120,California,Restaurants,Dinner,The Cheesecake Factory
-TXN_4,CUST_1,29/08/2023,Online,Zelle,1500,California,Rent,Apartment Rent,N/A
+TXN_4,CUST_1,29/08/2023,Online,Zelle,1500,California,Rent,Apartment Rent,""
 TXN_5,CUST_1,02/09/2023,Offline,Credit Card,82.3,California,Groceries,General,Safeway
 TXN_6,CUST_1,05/09/2023,Online,Credit Card,212.5,California,Utilities,Electricity,PG&E
 TXN_7,CUST_1,10/09/2023,Online,Credit Card,75,California,Restaurants,Brunch,Local Cafe
@@ -41,7 +41,7 @@ TXN_39,CUST_4,15/08/2023,Robinhood,Zelle,2000,New York,Investments,Stocks,TSLA
 TXN_40,CUST_4,18/08/2023,Online,Credit Card,150,New York,Dining,Restaurant,The Smith
 TXN_41,CUST_4,22/08/2023,Amazon,Debit Card,75.5,New York,Electronics,Headphones,Sony
 TXN_42,CUST_4,29/08/2023,Offline,Credit Card,120,New York,Entertainment,Concert Tickets,Ticketmaster
-TXN_43,CUST_4,02/09/2023,Online,Zelle,2500,New York,Rent,Apartment Rent,N/A
+TXN_43,CUST_4,02/09/2023,Online,Zelle,2500,New York,Rent,Apartment Rent,""
 TXN_44,CUST_4,05/09/2023,Online,Venmo,80,New York,Dining,Restaurant,Chipotle
 TXN_45,CUST_4,10/09/2023,Expedia,Credit Card,450,New York,Travel,Flights,JetBlue
 TXN_46,CUST_4,12/09/2023,Offline,Debit Card,100,New York,Entertainment,Movie Tickets,AMC Theatres
@@ -49,7 +49,7 @@ TXN_47,CUST_4,15/09/2023,Robinhood,Zelle,1500,New York,Investments,Stocks,AAPL
 TXN_48,CUST_4,18/09/2023,Online,Debit Card,65.99,New York,Apparel,Shoes,Nike
 TXN_49,CUST_4,22/09/2023,Amazon,Credit Card,25.78,New York,Books,Finance,Wiley
 TXN_50,CUST_4,25/09/2023,Offline,Credit Card,140,New York,Dining,Restaurant,ABC Steakhouse
-TXN_51,CUST_5,02/07/2023,Offline,Debit Card,1550,Illinois,Mortgage,Mortgage Payment,N/A
+TXN_51,CUST_5,02/07/2023,Offline,Debit Card,1550,Illinois,Mortgage,Mortgage Payment,""
 TXN_52,CUST_5,05/07/2023,Offline,Debit Card,450,Illinois,Groceries,General Groceries,Trader Joe's
 TXN_53,CUST_5,07/07/2023,Online,Debit Card,300,Illinois,Childcare,After-school care,Local Childcare Center
 TXN_54,CUST_5,10/07/2023,Online,Debit Card,220,Illinois,Utilities,Electricity Bill,ComEd
