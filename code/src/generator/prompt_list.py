@@ -137,11 +137,11 @@ def create_social_media_prompt(persona, num_posts):
     image_url: Image URL (Type: String, Example: 'https://example.com/images/abcd1234.jpg')
     text_content: Text Content (Type: String, Example: 'This is some text content about a product or service.')
     influencers_followed: Influencers Followed (Range: Integer, 0-10)
-    topics_of_interest: Topics of Interest (Type: List of Strings, Example: ['Technology', 'Sports', 'Finance'])
+    topics_of_interest: Topics of Interest (Type: Comma separated String, Example: 'Technology,Sports,Finance')
     feedback_on_financial_products: Feedback on Financial Products (Options: 'Positive', 'Negative', 'Neutral')
     sentiment_score: Sentiment Score toward the bank/financial related topics(Range: Float, 0.0 to 10.0, Example: 7.4)
     engagement_level: Engagement Level (Range: Float, 0.0 to 10.0, Example: 6.2)
-    brands_liked: Brands Liked (Type: Comma separated list of Strings, Example: ['Nike', 'Apple', 'Tesla'])
+    brands_liked: Brands Liked (Type: Comma separated String, Example: 'Nike,Apple,Tesla'])
     
     Return the posts as a JSON array.
     """

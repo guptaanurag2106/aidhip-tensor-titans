@@ -153,7 +153,7 @@ def sort_products(cust_info: dict, products: list[dict]) -> list[dict]:
         return []
 
 
-def main(customer_id):
+def main(customer_id: str) -> tuple[list[dict], list[dict]]:
     cust_info = get_cust_info(customer_id)
 
     cust_input_params = generate_cust_input_params(cust_info)
@@ -192,20 +192,7 @@ def main(customer_id):
     sorted_products = sort_products(cust_info, top_n_products)
     sorted_passive_products = sort_products(cust_info, top_n_passive_products)
 
-    print(
-        [
-            element for element in product_list 
-            for i in sorted_products 
-            if element["product_id"] == i
-        ]
-    )
-    print(
-        [
-            element for element in product_list 
-            for i in sorted_passive_products 
-            if element["product_id"] == i
-        ]
-    )
+    return sorted_products, sorted_passive_products
 
 
 if __name__ == "__main__":
