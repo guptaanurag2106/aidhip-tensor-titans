@@ -1,12 +1,13 @@
 from flask import Flask, request, jsonify
 import pandas as pd
+import os
 
 app = Flask(__name__)
 
 #Sends Customer Profile Info
 @app.route('/cust_profile', methods=['GET'])
 def cust_prof():
-    cust_id = request.form.get('cust_id') # check naming
+    cust_id = request.values.get('cust_id') # check naming
     
     cust_prof_dict = {}
     cust_prof_df = pd.read_csv('../data/customer_profile.csv')
@@ -21,7 +22,7 @@ def cust_prof():
 #Sends Customer Purchase History
 @app.route('/cust_purch_hist', methods=['GET'])
 def cust_purch_hist():
-    cust_id = request.form.get('cust_id')
+    cust_id = request.values.get('cust_id')
 
     cust_purch_hist_list = []
     cust_purch_hist_df = pd.read_csv('../data/customer_purchase.csv')
@@ -39,7 +40,7 @@ def cust_purch_hist():
 #Sends Customer Socal Media Info
 @app.route('/soc_med', methods=['GET'])
 def soc_med():
-    cust_id = request.form.get('cust_id')
+    cust_id = request.values.get('cust_id')
 
     soc_med_list = []
     soc_med_df = pd.read_csv('../data/social_media_record.csv')
@@ -60,8 +61,8 @@ def cust_sup_hist():
     
     #Send
     if request.method == 'GET':
-        cust_id = request.form.get('cust_id') # check naming
-        
+        cust_id = request.values.get('cust_id') # check naming
+        print('cust id: ', cust_id)
         cust_sup_hist_list = []
         cust_sup_hist_df = pd.read_csv('../data/customer_support_record.csv')
         # print(cust_sup_hist_df)
