@@ -15,7 +15,7 @@ import { useCustomerIds, useCustomerInfo } from "@/lib/api"
 
 export default function CustomerDashboard() {
     const { data: customerIds, isLoading: isCustomerIdsLoading } = useCustomerIds();
-    const [selectedCustomerId, setSelectedCustomerId] = useState<string | undefined>('CUST_1'); // TODO: remove the default value
+    const [selectedCustomerId, setSelectedCustomerId] = useState<string | undefined>();
     const { data: customerInfo, isLoading: isCustomerLoading } = useCustomerInfo(selectedCustomerId || "");
 
     return (
