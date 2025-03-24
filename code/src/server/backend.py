@@ -87,13 +87,13 @@ def add_customer_social_history():
 def get_customer_support_history():
     customer_id = request.args.get('customer_id')
     matching_rows = []
-
-    with open('../data/customer_support_record.csv', mode='r', encoding='utf-8') as file:
-        reader = csv.DictReader(file)
-        for row in reader:
-            if row.get('customer_id') == customer_id:
-                row['sentiment'] = float(row['sentiment'])
-                matching_rows.append(row)
+    cust_sup_hist_df = pd.read_csv('../data/customer_support_record.csv')
+    for index, row in cust_sup_hist_df.iterrows():
+        if row[1] == customer_id:
+            cust_sup_hist_dict = {}
+            for cols in cust_sup_hist_df.columns:
+                cust_sup_hist_dict[cols] = row[cols]
+            matching_rows.append(cust_sup_hist_dict)
     return jsonify(matching_rows)
 
 
