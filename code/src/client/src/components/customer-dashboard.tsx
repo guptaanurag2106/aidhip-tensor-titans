@@ -15,7 +15,7 @@ import { useCustomerIds, useCustomerInfo } from "@/lib/api"
 
 export default function CustomerDashboard() {
     const { data: customerIds, isLoading: isCustomerIdsLoading } = useCustomerIds();
-    const [selectedCustomerId, setSelectedCustomerId] = useState<string | undefined>()
+    const [selectedCustomerId, setSelectedCustomerId] = useState<string | undefined>('CUST_1'); // TODO: remove the default value
     const { data: customerInfo, isLoading: isCustomerLoading } = useCustomerInfo(selectedCustomerId || "");
 
     return (
@@ -62,7 +62,11 @@ export default function CustomerDashboard() {
             {selectedCustomerId && customerInfo ? (
                 <>
                     <div className="mb-6">
-                        <CustomerInformation customer={customerInfo} />
+                        {"error" in customerInfo ? (
+                            <p className="text-center text-muted-foreground">{customerInfo.error}</p>
+                        ) : (
+                            <CustomerInformation customer={customerInfo} />
+                        )}
                     </div>
                     <Tabs defaultValue="purchases" className="w-full">
                         <TabsList className="grid w-full grid-cols-3">

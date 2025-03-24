@@ -6,27 +6,27 @@ from flask_cors import CORS
 app = Flask(__name__)
 CORS(app)
 
+INVALID_SENTIMENT_SCORE = -100
 
 @app.route("/customer_ids", methods=["GET"])
 def customer_ids():
-    # read from the csv and return them
     df = pd.read_csv("../data/customer_profile.csv")
     return jsonify(df["customer_id"].tolist())
 
-#Sends Customer Profile Info
+
 @app.route('/customer_profile', methods=['GET'])
 def cust_prof():
     customer_id = request.args.get('customer_id')
-    cust_prof_df = pd.read_csv('../data/customer_profile.csv')
+    df = pd.read_csv('../data/customer_profile.csv')
 
-    for index, row in cust_prof_df.iterrows():
+    for _, row in df.iterrows():
         if row['customer_id'] == customer_id:
             return jsonify(row.to_dict())
     return {"error": "Customer not found"}
 
-#Sends Customer Purchase History
+
 @app.route('/customer_purchase_history', methods=['GET'])
-def cust_purch_hist():
+def get_customer_purchase_history():
     customer_id = request.args.get('customer_id')
     matching_rows = []
     
@@ -39,9 +39,21 @@ def cust_purch_hist():
     
     return jsonify(matching_rows)
 
-#Sends Customer Socal Media Info
+
+@app.route('/customer_purchase_history', methods=['POST'])
+def add_customer_purchase_history():
+    data = request.get_json()
+    data['customer_id'] = request.args.get('customer_id')
+    with open('../data/customer_purchase.csv', mode='a', newline='') as file:
+        cols = ['transaction_id','customer_id','date','platform','payment_method','amt','location','item_category','item_sub_category','item_brand']
+        writer = csv.DictWriter(file, fieldnames=cols)
+        writer.writerow(data)
+    return {"customer_id": data['customer_id']}
+
+
+
 @app.route('/customer_social_media_history', methods=['GET'])
-def soc_med():
+def get_customer_social_history():
     customer_id = request.args.get('customer_id')
     matching_rows = []
     
@@ -55,36 +67,45 @@ def soc_med():
                 matching_rows.append(row)
     
     return jsonify(matching_rows)
-    
 
-#Sends/Receives Customer Support History
-@app.route('/customer_support_history', methods=['GET', 'POST'])
-def cust_sup_hist():
-    
-    #Send
-    if request.method == 'GET':
-        customer_id = request.args.get('customer_id') # check naming
-        
-        cust_sup_hist_list = []
-        cust_sup_hist_df = pd.read_csv('../data/customer_support_record.csv')
-        for index, row in cust_sup_hist_df.iterrows():
-            if row[1] == customer_id:
-                cust_sup_hist_dict = {}
-                for cols in cust_sup_hist_df.columns:
-                    cust_sup_hist_dict[cols] = row[cols]
-                cust_sup_hist_list.append(cust_sup_hist_dict)
-        if len(cust_sup_hist_list) > 0:      
-            return jsonify(cust_sup_hist_list)
-        return {"error": "No records found"}
-    
-    #Receive
-    elif request.method == 'POST':
-        cust_sup_hist_record = request.get_json()
-        cust_sup_hist_df = pd.DataFrame(columns=['complaint_id','customer_id','date','transcript','main_concerns','is_repeating_issue','was_issue_resolved', 'sentiment'])
-        for col in cust_sup_hist_record:
-            cust_sup_hist_df[col] = [cust_sup_hist_record[col]]
-        cust_sup_hist_df.to_csv('../data/customer_support_record.csv', mode='a', header=False, index=False)
-        return {"customer_id": cust_sup_hist_record['customer_id']}
+
+@app.route('/customer_social_media_history', methods=['POST'])
+def add_customer_social_history():
+    data = request.get_json()
+    data['customer_id'] = request.args.get('customer_id')
+    data['sentiment_score'] = INVALID_SENTIMENT_SCORE
+    data['engagement_level'] = INVALID_SENTIMENT_SCORE
+    data['brands_liked'] = INVALID_SENTIMENT_SCORE
+    with open('../data/social_media_record.csv', mode='a', newline='') as file:
+        cols = ['post_id','customer_id','date','platform','image_url','text_content','influencers_followed','topics_of_interest','feedback_on_financial_products','sentiment_score','engagement_level','brands_liked']
+        writer = csv.DictWriter(file, fieldnames=cols)
+        writer.writerow(data)
+    return {"customer_id": data['customer_id']}
+
+
+@app.route('/customer_support_history', methods=['GET'])
+def get_customer_support_history():
+    customer_id = request.args.get('customer_id')
+    matching_rows = []
+
+    with open('../data/customer_support_record.csv', mode='r', encoding='utf-8') as file:
+        reader = csv.DictReader(file)
+        for row in reader:
+            if row.get('customer_id') == customer_id:
+                row['sentiment'] = float(row['sentiment'])
+                matching_rows.append(row)
+    return jsonify(matching_rows)
+
+
+@app.route('/customer_support_history', methods=['POST'])
+def add_customer_support_history():
+    data = request.get_json()
+    data['sentiment'] = INVALID_SENTIMENT_SCORE
+    with open('../data/customer_support_record.csv', mode='a', newline='') as file:
+        cols = ['complaint_id','customer_id','date','transcript','main_concerns','is_repeating_issue','was_issue_resolved', 'sentiment']
+        writer = csv.DictWriter(file, fieldnames=cols)
+        writer.writerow(data)
+    return {"customer_id": data['customer_id']}
 
 if __name__ == '__main__':
     app.run(debug=True, port=5003)

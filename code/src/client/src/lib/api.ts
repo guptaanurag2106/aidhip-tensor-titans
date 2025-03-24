@@ -187,10 +187,10 @@ export const addCustomerSupportHistory = async ({
   data,
 }: {
   customerId: string;
-  data: CustomerSupportHistory;
-}): Promise<{ customerId: string }> => {
+  data: any
+}): Promise<{ customer_id: string }> => {
   return axios
-    .post(`${API_BASE_URL}/customer-support-history`, data, {
+    .post(`${API_BASE_URL}/customer_support_history`, data, {
       params: { customer_id: customerId },
     })
     .then((res) => res.data);
@@ -200,9 +200,9 @@ export const useAddCustomerSupportHistory = () => {
   const queryClient = useQueryClient();
   return useMutation({
     mutationFn: addCustomerSupportHistory,
-    onSuccess: ({ customerId }: { customerId: string }) => {
+    onSuccess: ({ customer_id }: { customer_id: string }) => {
       queryClient.invalidateQueries({
-        queryKey: ["customer-support-history", customerId],
+        queryKey: ["customer-support-history", customer_id],
       });
     },
   });
@@ -224,6 +224,33 @@ export const useCustomerPurchaseHistory = (customerId: string) => {
       return z.array(CustomerPurchaseHistorySchema).parse(response.data);
     },
     enabled: !!customerId,
+  });
+};
+
+
+export const addCustomerPurchaseHistory = async ({
+  customerId,
+  data,
+}: {
+  customerId: string;
+  data: any
+}): Promise<{ customer_id: string }> => {
+  return axios
+    .post(`${API_BASE_URL}/customer_purchase_history`, data, {
+      params: { customer_id: customerId },
+    })
+    .then((res) => res.data);
+};
+
+export const useAddCustomerPurchaseHistory = () => {
+  const queryClient = useQueryClient();
+  return useMutation({
+    mutationFn: addCustomerPurchaseHistory,
+    onSuccess: ({ customer_id }: { customer_id: string }) => {
+      queryClient.invalidateQueries({
+        queryKey: ["customer-purchase-history", customer_id],
+      });
+    },
   });
 };
 
@@ -250,5 +277,32 @@ export const useCustomerSocialMediaHistory = (customerId: string) => {
       }
     },
     enabled: !!customerId,
+  });
+};
+
+
+export const addCustomerSocialMediaHistory = async ({
+  customerId,
+  data,
+}: {
+  customerId: string;
+  data: any
+}): Promise<{ customer_id: string }> => {
+  return axios
+    .post(`${API_BASE_URL}/customer_social_media_history`, data, {
+      params: { customer_id: customerId },
+    })
+    .then((res) => res.data);
+};
+
+export const useAddCustomerSocialMediaHistory = () => {
+  const queryClient = useQueryClient();
+  return useMutation({
+    mutationFn: addCustomerSocialMediaHistory,
+    onSuccess: ({ customer_id }: { customer_id: string }) => {
+      queryClient.invalidateQueries({
+        queryKey: ["customer-social-media-history", customer_id],
+      });
+    },
   });
 };

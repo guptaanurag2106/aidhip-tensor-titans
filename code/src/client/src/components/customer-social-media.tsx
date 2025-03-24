@@ -7,6 +7,7 @@ import {
   Card,
   CardContent,
   CardDescription,
+  CardFooter,
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
@@ -21,13 +22,11 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { format } from "date-fns";
-import { useCustomerSocialMediaHistory } from "@/lib/api";
+import { useAddCustomerSocialMediaHistory, useCustomerSocialMediaHistory } from "@/lib/api";
 import { formatDate } from "@/lib/utils";
 
 // Platform options
 const PLATFORMS = ["Instagram", "Twitter", "Facebook", "TikTok", "LinkedIn"];
-const SENTIMENTS = ["Positive", "Neutral", "Negative"];
 
 interface CustomerSocialMediaProps {
   customerId: string;
@@ -38,38 +37,49 @@ export default function CustomerSocialMedia({
 }: CustomerSocialMediaProps) {
   const { data: socialMedia, isLoading } =
     useCustomerSocialMediaHistory(customerId);
+  const { mutateAsync } = useAddCustomerSocialMediaHistory()
   const [showForm, setShowForm] = useState(false);
 
   // Form state
   const [text, setText] = useState<string>("");
-  const [hasImage, setHasImage] = useState<boolean>(false);
   const [platform, setPlatform] = useState<string>("");
-  const [sentiment, setSentiment] = useState<string>("");
   const [topics, setTopics] = useState<string>("");
+  const [influencersFollowed, setInfluencersFollowed] = useState<string>("");
+  const [brandsLiked, setBrandsLiked] = useState<string>("");
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
 
+    const lastPostId =
+      socialMedia && !("error" in socialMedia)
+        ? parseInt(socialMedia[socialMedia.length - 1].post_id.split("_")[1])
+        : 0;
+
     // Create new social media record
     const newSocialMedia = {
-      id: `SM${Math.floor(Math.random() * 1000)}`,
-      date: new Date().toISOString().split("T")[0],
-      hasImage,
-      text,
+      post_id: `POST_${lastPostId + 1}`,
+      date: new Date().toLocaleDateString("en-GB"),
       platform,
-      sentiment,
-      topics: topics.split(",").map((topic) => topic.trim()),
+      image_url: "",
+      text_content: text,
+      influencers_followed: influencersFollowed,
+      topics_of_interest: topics,
+      brands_liked: brandsLiked,
     };
 
     // Reset form
     setText("");
-    setHasImage(false);
     setPlatform("");
-    setSentiment("");
     setTopics("");
+    setBrandsLiked("");
+    setInfluencersFollowed("");
     setShowForm(false);
 
     console.log("New social media record added:", newSocialMedia);
+    mutateAsync({
+      customerId,
+      data: newSocialMedia
+    })
   };
 
   return (
@@ -107,27 +117,30 @@ export default function CustomerSocialMedia({
                   <p>{social.text_content}</p>
                 </div>
 
-                {social.image_url && social.image_url.indexOf('example.com/') == -1 && (
-                  <div className="mb-3">
-                    <img
-                      src="/placeholder.svg?height=300&width=400"
-                      alt="Social media post"
-                      width={400}
-                      height={300}
-                      className="rounded-md object-cover"
-                    />
-                  </div>
-                )}
+                {social.image_url &&
+                  social.image_url.indexOf("example.com/") == -1 && (
+                    <div className="mb-3">
+                      <img
+                        src="/placeholder.svg?height=300&width=400"
+                        alt="Social media post"
+                        width={400}
+                        height={300}
+                        className="rounded-md object-cover"
+                      />
+                    </div>
+                  )}
 
                 <div className="flex flex-wrap gap-1">
-                  {social.topics_of_interest.map((topic: string, index: number) => (
-                    <span
-                      key={index}
-                      className="bg-muted px-2 py-1 rounded-full text-xs"
-                    >
-                      {topic}
-                    </span>
-                  ))}
+                  {social.topics_of_interest.map(
+                    (topic: string, index: number) => (
+                      <span
+                        key={index}
+                        className="bg-muted px-2 py-1 rounded-full text-xs"
+                      >
+                        {topic}
+                      </span>
+                    )
+                  )}
                 </div>
               </div>
             ))}
@@ -174,40 +187,43 @@ export default function CustomerSocialMedia({
                 />
               </div>
 
-              <div className="flex items-center space-x-2">
-                <input
-                  type="checkbox"
-                  id="hasImage"
-                  checked={hasImage}
-                  onChange={(e) => setHasImage(e.target.checked)}
-                  className="rounded border-gray-300 text-primary focus:ring-primary"
-                />
-                <Label htmlFor="hasImage">Has Image</Label>
-              </div>
-
               <div className="space-y-2">
-                <Label htmlFor="sentiment">Sentiment</Label>
-                <Select value={sentiment} onValueChange={setSentiment} required>
-                  <SelectTrigger id="sentiment">
-                    <SelectValue placeholder="Select sentiment" />
-                  </SelectTrigger>
-                  <SelectContent>
-                    {SENTIMENTS.map((sent) => (
-                      <SelectItem key={sent} value={sent}>
-                        {sent}
-                      </SelectItem>
-                    ))}
-                  </SelectContent>
-                </Select>
-              </div>
-
-              <div className="space-y-2">
-                <Label htmlFor="topics">Topics (comma separated)</Label>
+                <Label htmlFor="topics">
+                  Topics of interest (comma separated)
+                </Label>
                 <Input
                   id="topics"
                   value={topics}
                   onChange={(e) => setTopics(e.target.value)}
                   placeholder="e.g. Technology, Fashion, Travel"
+                  required
+                />
+              </div>
+
+              <div className="space-y-2">
+                <Label htmlFor="influencersFollowed">
+                  Influencers Followed
+                </Label>
+                <Input
+                  id="influencersFollowed"
+                  type="number"
+                  min="0"
+                  step="1"
+                  value={influencersFollowed}
+                  onChange={(e) => setInfluencersFollowed(e.target.value)}
+                  required
+                />
+              </div>
+
+              <div className="space-y-2">
+                <Label htmlFor="brandsLiked">Brands Liked</Label>
+                <Input
+                  id="brandsLiked"
+                  type="number"
+                  min="0"
+                  step="1"
+                  value={brandsLiked}
+                  onChange={(e) => setBrandsLiked(e.target.value)}
                   required
                 />
               </div>
@@ -226,6 +242,13 @@ export default function CustomerSocialMedia({
           </form>
         )}
       </CardContent>
+      <CardFooter className="flex justify-between">
+        {!showForm && (
+          <Button onClick={() => setShowForm(true)}>
+            Add New Social Record
+          </Button>
+        )}
+      </CardFooter>
     </Card>
   );
 }

@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import { useCustomerPurchaseHistory } from "@/lib/api"
+import { useAddCustomerPurchaseHistory, useCustomerPurchaseHistory } from "@/lib/api"
 import { formatDate } from "@/lib/utils"
 
 // Categories for form
@@ -21,6 +21,7 @@ interface CustomerPurchaseHistoryProps {
 
 export default function CustomerPurchaseHistory({ customerId }: CustomerPurchaseHistoryProps) {
   const { data: purchases, isLoading } = useCustomerPurchaseHistory(customerId);
+  const { mutateAsync } = useAddCustomerPurchaseHistory()
   const [showForm, setShowForm] = useState(false)
 
   // Form state
@@ -30,20 +31,25 @@ export default function CustomerPurchaseHistory({ customerId }: CustomerPurchase
   const [price, setPrice] = useState<string>("")
   const [platform, setPlatform] = useState<string>("")
   const [paymentMethod, setPaymentMethod] = useState<string>("")
+  const [location, setLocation] = useState<string>("")
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
 
+    const lastTxnId = purchases && !("error" in purchases)
+      ? parseInt(purchases[purchases.length - 1].transaction_id.split("_")[1])
+      : 0
+
     // Create new purchase record
     const newPurchase = {
-      id: `P${Math.floor(Math.random() * 1000)}`,
-      category,
-      subCategory,
-      brand,
-      price: Number.parseFloat(price),
-      date: new Date().toISOString().split("T")[0],
+      transaction_id: `TXN_${lastTxnId + 1}`,
+      item_category: category,
+      item_sub_category: subCategory,
+      item_brand: brand,
+      amt: Number.parseFloat(price),
+      date: new Date().toLocaleDateString("en-GB"),
       platform,
-      paymentMethod,
+      payment_method: paymentMethod,
     }
 
     // Reset form
@@ -53,9 +59,14 @@ export default function CustomerPurchaseHistory({ customerId }: CustomerPurchase
     setPrice("")
     setPlatform("")
     setPaymentMethod("")
+    setLocation("")
     setShowForm(false)
 
-    console.log("New purchase added:", newPurchase)
+    console.log("New purchase added:", newPurchase);
+    mutateAsync({
+      customerId,
+      data: newPurchase
+    })
   }
 
   return (
@@ -134,6 +145,11 @@ export default function CustomerPurchaseHistory({ customerId }: CustomerPurchase
               </div>
 
               <div className="space-y-2">
+                <Label htmlFor="location">Location</Label>
+                <Input id="location" value={location} onChange={(e) => setLocation(e.target.value)} required />
+              </div>
+
+              <div className="space-y-2">
                 <Label htmlFor="price">Price ($)</Label>
                 <Input
                   id="price"
@@ -188,6 +204,13 @@ export default function CustomerPurchaseHistory({ customerId }: CustomerPurchase
           </form>
         )}
       </CardContent>
+      <CardFooter className="flex justify-between">
+        {!showForm && (
+          <Button onClick={() => setShowForm(true)}>
+            Add New Purchase Record
+          </Button>
+        )}
+      </CardFooter>
     </Card>
   )
 }
