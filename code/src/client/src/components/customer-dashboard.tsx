@@ -12,6 +12,7 @@ import CustomerInformation from "@/components/customer-information"
 import { RefreshCw } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { useCustomerIds, useCustomerInfo } from "@/lib/api"
+import { custom } from "zod"
 
 export default function CustomerDashboard() {
     const { data: customerIds, isLoading: isCustomerIdsLoading } = useCustomerIds();
@@ -44,17 +45,22 @@ export default function CustomerDashboard() {
                                 </SelectContent>
                             </Select>
                         </div>
-                        {customerInfo && <Button
-                            variant="outline"
-                            size="icon"
-                            onClick={() => {
-                                // TODO: refresh customer data
-                            }}
-                            disabled={isCustomerLoading}
-                        >
-                            <RefreshCw className={`h-4 w-4 ${isCustomerLoading ? "animate-spin" : ""}`} />
-                            <span className="sr-only">Refresh customer data</span>
-                        </Button>}
+                        {
+                            customerInfo &&
+                            <Button
+                                variant="outline"
+                                onClick={() => {
+                                }}
+                                disabled={isCustomerLoading}
+                                className="flex items-center gap-2"
+                            >
+                                <span role="img" aria-label="robot">
+                                    🤖
+                                </span>
+                                <span>Run AI</span>
+                                {isCustomerLoading && <span className="ml-2 animate-spin">⟳</span>}
+                            </Button>
+                        }
                     </div>
                 </CardContent>
             </Card>
