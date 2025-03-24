@@ -1,6 +1,28 @@
 import json
+import os
+
 import numpy as np
+import requests
+from requests import Response
+from dotenv import load_dotenv
 from numpy.lib import math
+
+
+def send_request(prompt: str) -> Response:
+    load_dotenv()
+
+    OPEN_ROUTER_KEY = os.getenv("OPEN_ROUTER_KEY")
+    OPEN_ROUTER_URL = "https://openrouter.ai/api/v1/chat/completions"
+    MODEL = "google/gemini-2.0-flash-lite-preview-02-05:free"
+
+    headers = {
+        "Authorization": f"Bearer {OPEN_ROUTER_KEY}",
+        "Content-Type": "application/json",
+    }
+
+    payload = {"model": MODEL, "messages": [{"role": "user", "content": prompt}]}
+    response = requests.post(OPEN_ROUTER_URL, headers=headers, data=json.dumps(payload))
+    return response
 
 
 def mahalanobis_dist(
@@ -39,7 +61,9 @@ def weighted_vector_dist_passive(
     chosen_products = []
 
     for j in range(len(product_list)):
-        if (v1["risk_customer"] - product_list[j]["risk_customer"] ) <= -1 or (v1["risk_bank"] - product_list[j]["risk_bank"] ) <= -1 :
+        if (v1["risk_customer"] - product_list[j]["risk_customer"]) <= -1 or (
+            v1["risk_bank"] - product_list[j]["risk_bank"]
+        ) <= -1:
             continue
         dist = math.sqrt(
             sum(

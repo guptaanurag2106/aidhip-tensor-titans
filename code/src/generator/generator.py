@@ -95,6 +95,10 @@ def main(args):
                 "main_purchase_cat",
                 "support_interaction_count",
                 "satisfaction",
+                "input_params",
+                "output_params",
+                "top_n_products",
+                "top_n_passive_products",
             ]
         )
 
@@ -186,6 +190,10 @@ def main(args):
                     persona.get("main_purchase_cat", ""),
                     persona.get("support_interaction_count", ""),
                     persona.get("satisfaction", ""),
+                    {},
+                    {},
+                    "",
+                    "",
                 ]
             )
 
