@@ -14,7 +14,6 @@
 ---
 
 ## 🎯 Introduction
-A brief overview of your project and its purpose. Mention which problem statement are your attempting to solve. Keep it concise and engaging.
 
 ## 🎥 Demo
 🔗 [Live Demo](#) (if applicable)  
@@ -38,23 +37,31 @@ Describe the major technical or non-technical challenges your team encountered.
 ## 🏃 How to Run
 1. Clone the repository  
    ```sh
-   git clone https://github.com/your-repo.git
+   git clone https://github.com/ewfx/aidhp-tensor-titans.git
    ```
-2. Install dependencies  
+2. Install dependencies   (Need Python, Nodejs installed)
    ```sh
-   npm install  # or pip install -r requirements.txt (for Python)
+   pip install ./code/requirements.txt
+   cd ./code/src/client
+   npm install
    ```
 3. Run the project  
    ```sh
-   npm start  # or python app.py
+   cd ./code/src/client
+   npm run dev
+   
+   cd ../
+   python backend.py
    ```
 
 ## 🏗️ Tech Stack
-- 🔹 Frontend: React / Vue / Angular
-- 🔹 Backend: Node.js / FastAPI / Django
-- 🔹 Database: PostgreSQL / Firebase
-- 🔹 Other: OpenAI API / Twilio / Stripe
+- 🔹 Frontend: React (Typescript)
+- 🔹 Backend: Flask (Python)
+- 🔹 Database: Currently just uses CSV files
+- 🔹 Other: Open Router APIs (using `google/gemini-2.0-pro-exp-02-05:free` model)
 
 ## 👥 Team
-- **Your Name** - [GitHub](#) | [LinkedIn](#)
-- **Teammate 2** - [GitHub](#) | [LinkedIn](#)
+- **Your Name** - [Anurag Gupta](https://github.com/guptaanurag2106) | [LinkedIn](#)
+- **Teammate 2** - [Delano Lourenco](https://github.com/3ddelano) | [LinkedIn](#)
+- **Teammate 3** - [Ishan Agarwal](https://github.com/ishan0709) | [LinkedIn](#)
+- **Teammate 4** - [Lokkamithran M](https://github.com/Lokkamithran) | [LinkedIn](#)
