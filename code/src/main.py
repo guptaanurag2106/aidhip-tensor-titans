@@ -64,8 +64,8 @@ def generate_cust_input_params(cust_info: dict) -> dict:
     Support Queries: {cust_info["supports"]}
     Analyze the data and give a json with the following properties
 
-    churn_rate: The chance of the customer leaving the bank (Type: Float, 0 means no chance of leaving, 0 negative sentiment support queries
-                never said anything negative about the bank, 10 means will surely leave soon)
+    chance_of_leaving: The chance of the customer leaving the bank (Type: Float, 0 means no chance of leaving, 0 negative sentiment support queries
+                never said anything negative about the bank, 10 means will surely leave soon, Range: 0-10)
     profit_generated: The profits / money generated for the bank (Type: Float, 0 means generates loss for the bank, minimum(300) credit score unpayable loans, 
                       5 means average person (decent credit score, decent income, few loans (which they can pay based on their salary)
                       10 means generates huge profit for the bank full credit score(850), both as of current value, and of future expectations (talk of getting more money, positively promoting the bank etc.)
@@ -99,7 +99,7 @@ def generate_cust_input_params(cust_info: dict) -> dict:
             response_data = json.loads(response_text)
 
             print(response_data)
-            cust_input_params["churn_rate"] = response_data["churn_rate"]
+            cust_input_params["churn_rate"] = response_data["chance_of_leaving"]
             cust_input_params["profit_generated"] = response_data["profit_generated"]
             cust_input_params["risk_appetite"] = response_data["risk_appetite"]
             cust_input_params["financial_acumen"] = response_data["financial_acumen"]
@@ -153,11 +153,10 @@ def sort_products(cust_info: dict, products: list[dict]) -> str:
 def main(customer_id: str):
     cust_info = get_cust_info(customer_id)
 
-    print(cust_info)
     print("Generating input params")
     cust_input_params = generate_cust_input_params(cust_info)
     cust_output_params = cust_map(cust_input_params)
-    print("got params", cust_output_params)
+    print("got params")
 
     cust_financial_products_path = "./data/financial_products.json"
     product_list = load_product_list(cust_financial_products_path)
