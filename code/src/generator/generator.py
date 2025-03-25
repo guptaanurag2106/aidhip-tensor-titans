@@ -2,6 +2,7 @@ import argparse
 import csv
 import json
 import os
+import time
 
 import requests
 from dotenv import load_dotenv
@@ -129,7 +130,6 @@ def main(args):
                 "platform",
                 "image_url",
                 "text_content",
-                "influencers_followed",
                 "topics_of_interest",
                 "feedback_on_financial_products",
                 "sentiment_score",
@@ -156,7 +156,7 @@ def main(args):
     # personas = generate_customer_persona(args.customer_count)
     print("Generating Customer Data")
     personas = request_parse_ret(
-        create_customer_persona_prompt(args.customer_count), args.customer_count
+        create_customer_persona_prompt(args.customer_count, args.max_support_count), args.customer_count
     )
     if not personas:
         return
@@ -197,31 +197,6 @@ def main(args):
                 ]
             )
 
-        print(f"Generating Transaction Data {customer_id}/{args.customer_count}")
-        transactions = request_parse_ret(
-            create_transaction_history_prompt(persona, args.max_purchase_count),
-            args.max_purchase_count,
-        )
-        if transactions:
-            for transaction in transactions:
-                with open(transactions_file, "a", newline="") as f:
-                    writer = csv.writer(f)
-                    writer.writerow(
-                        [
-                            f"TXN_{transaction_id}",
-                            f"CUST_{customer_id}",
-                            transaction.get("date", ""),
-                            transaction.get("platform", ""),
-                            transaction.get("payment_method", ""),
-                            transaction.get("amt", ""),
-                            transaction.get("location", ""),
-                            transaction.get("item_category", ""),
-                            transaction.get("item_sub_category", ""),
-                            transaction.get("item_brand", ""),
-                        ]
-                    )
-                    transaction_id += 1
-
         print(f"Generating Complaint Data {customer_id}/{args.customer_count}")
         complaints = request_parse_ret(
             create_customer_complaint_prompt(
@@ -247,9 +222,37 @@ def main(args):
                     )
                     complaint_id += 1
 
+        time.sleep(5)
+        print(f"Generating Transaction Data {customer_id}/{args.customer_count}")
+        transactions = request_parse_ret(
+            create_transaction_history_prompt(persona, args.max_purchase_count, complaints),
+            args.max_purchase_count,
+        )
+        if transactions:
+            for transaction in transactions:
+                with open(transactions_file, "a", newline="") as f:
+                    writer = csv.writer(f)
+                    writer.writerow(
+                        [
+                            f"TXN_{transaction_id}",
+                            f"CUST_{customer_id}",
+                            transaction.get("date", ""),
+                            transaction.get("platform", ""),
+                            transaction.get("payment_method", ""),
+                            transaction.get("amt", ""),
+                            transaction.get("location", ""),
+                            transaction.get("item_category", ""),
+                            transaction.get("item_sub_category", ""),
+                            transaction.get("item_brand", ""),
+                        ]
+                    )
+                    transaction_id += 1
+
+
+        time.sleep(5)
         print(f"Generating Posts Data {customer_id}/{args.customer_count}")
         posts = request_parse_ret(
-            create_social_media_prompt(persona, args.max_post), args.max_post
+            create_social_media_prompt(persona, args.max_post, complaints, transactions), args.max_post
         )
         if posts:
             for post in posts:
@@ -263,7 +266,6 @@ def main(args):
                             post.get("platform", ""),
                             post.get("image_url", ""),
                             post.get("text_content", ""),
-                            post.get("influencers_followed", ""),
                             post.get("topics_of_interest", ""),
                             post.get("feedback_on_financial_products", ""),
                             post.get("sentiment_score", ""),
@@ -281,7 +283,7 @@ if __name__ == "__main__":
     parser.add_argument(
         "--customer_count",
         type=int,
-        default=6,
+        default=5,
         required=False,
         help="Number of individual customers",
     )
@@ -290,14 +292,21 @@ if __name__ == "__main__":
         type=int,
         default=15,
         required=False,
-        help="Max number of social media posts per person",
+        help="Max number of social media posts per customer",
     )
     parser.add_argument(
         "--max_purchase_count",
         type=int,
         default=20,
         required=False,
-        help="Max number of purchase history per person",
+        help="Max number of purchase history per customer",
+    )
+    parser.add_argument(
+        "--max_support_count",
+        type=int,
+        default=15,
+        required=False,
+        help="Max number of support inquiries per customer",
     )
     args = parser.parse_args()
     main(args)

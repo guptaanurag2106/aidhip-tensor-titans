@@ -66,9 +66,9 @@ def generate_cust_input_params(cust_info: dict) -> dict:
 
     churn_rate: The chance of the customer leaving the bank (Type: Float, 0 means no chance of leaving, 0 negative sentiment support queries
                 never said anything negative about the bank, 10 means will surely leave soon)
-    profit_generated: The profits / money generated for the bank (Type: Float, 0 means generates loss for the bank, minimum credit score unpayable loans, 
+    profit_generated: The profits / money generated for the bank (Type: Float, 0 means generates loss for the bank, minimum(300) credit score unpayable loans, 
                       5 means average person (decent credit score, decent income, few loans (which they can pay based on their salary)
-                      10 means generates huge profit for the bank full credit score, both as of current value, and of future expectations (talk of getting more money, positively promoting the bank etc.)
+                      10 means generates huge profit for the bank full credit score(850), both as of current value, and of future expectations (talk of getting more money, positively promoting the bank etc.)
                     The income can go upto $1,00,000 for the wealthiest customer, so vary the profit_generated accordingly)
     risk_appetite: The risk appetite of the customer (Type: Float, 0 mean wants extremely safe investments or financial products with no chance of losing money even if
                 it generates little to no money, 10 means wants highly risky investments which may generate a lot of money, but may lose a lot as well
