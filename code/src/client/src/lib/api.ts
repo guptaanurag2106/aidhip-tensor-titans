@@ -9,7 +9,8 @@ if (!API_BASE_URL) {
   throw new Error("Missing `VITE_API_BASE_URL` env variable.");
 }
 
-const convertStringArrayToArray = (s: string) => s.split(",").map((v) => v.trim()); 
+const convertStringArrayToArray = (s: string) =>
+  s.split(",").map((v) => v.trim());
 
 // Define schemas
 const CustomerInfoSchema = z.object({
@@ -31,6 +32,10 @@ const CustomerInfoSchema = z.object({
   preferred_payment_method: z.string(),
   satisfaction: z.number(),
   support_interaction_count: z.number(),
+  input_params: z.object({}),
+  output_params: z.object({}),
+  top_n_products: z.array(z.string()),
+  top_n_passive_products: z.array(z.string()),
 });
 
 const CustomerSupportHistorySchema = z.object({
@@ -64,7 +69,6 @@ const CustomerSocialMediaHistorySchema = z.object({
   engagement_level: z.number(),
   feedback_on_financial_products: z.string(),
   image_url: z.string(),
-  influencers_followed: z.number(),
   platform: z.string(),
   post_id: z.string(),
   sentiment_score: z.number(),
@@ -89,16 +93,35 @@ export const useCustomerIds = () => {
 
 const convertStringToArraysForCustomerInfo = (customerInfo: any) => ({
   ...customerInfo,
-  balance:
-    customerInfo.balance?.split(",").map((v: string) => parseFloat(v)) ?? [],
-  goals: customerInfo.goals?.split(",") ?? [],
-  loan_amts:
-    customerInfo.loan_amts?.split(",").map((v: string) => parseFloat(v)) ?? [],
-  main_purchase_cat:customerInfo.main_purchase_cat ? convertStringArrayToArray(customerInfo.main_purchase_cat) : [],
-  monthly_spending:
-    customerInfo.monthly_spending
-      ?.split(",")
-      .map((v: string) => parseFloat(v)) ?? [],
+  balance: customerInfo.balance
+    ? convertStringArrayToArray(customerInfo.balance).map((v: string) =>
+        parseFloat(v)
+      )
+    : [],
+  goals: customerInfo.goals
+    ? convertStringArrayToArray(customerInfo.goals)
+    : [],
+  loan_amts: customerInfo.loan_amts
+    ? convertStringArrayToArray(customerInfo.loan_amts).map((v: string) =>
+        parseFloat(v)
+      )
+    : [],
+  main_purchase_cat: customerInfo.main_purchase_cat
+    ? convertStringArrayToArray(customerInfo.main_purchase_cat)
+    : [],
+  monthly_spending: customerInfo.monthly_spending
+    ? convertStringArrayToArray(customerInfo.monthly_spending).map(
+        (v: string) => parseFloat(v)
+      )
+    : [],
+  input_params: JSON.parse(customerInfo.input_params),
+  output_params: JSON.parse(customerInfo.output_params),
+  top_n_products: customerInfo.top_n_products
+    ? convertStringArrayToArray(customerInfo.top_n_products)
+    : [],
+  top_n_passive_products: customerInfo.top_n_passive_products
+    ? convertStringArrayToArray(customerInfo.top_n_passive_products)
+    : [],
 });
 
 const convertStringToArraysForSupportRecord = (supportRecord: any) => ({
@@ -108,10 +131,12 @@ const convertStringToArraysForSupportRecord = (supportRecord: any) => ({
 
 const convertStringToArraysForSocialMediaRecord = (socialMedia: any) => ({
   ...socialMedia,
-  brands_liked: socialMedia.brands_liked.split(",") ?? [],
-  topics_of_interest: socialMedia.topics_of_interest ?
-  convertStringArrayToArray(socialMedia.topics_of_interest)
-       : [],
+  brands_liked: socialMedia.brands_liked
+    ? convertStringArrayToArray(socialMedia.brands_liked)
+    : [],
+  topics_of_interest: socialMedia.topics_of_interest
+    ? convertStringArrayToArray(socialMedia.topics_of_interest)
+    : [],
 });
 
 // Fetch customer info
@@ -125,9 +150,13 @@ export const useCustomerInfo = (customerId: string) => {
       if (response?.data?.error) {
         return { error: response.data.error } as { error: string };
       }
-      return CustomerInfoSchema.parse(
-        convertStringToArraysForCustomerInfo(response.data)
-      );
+      try {
+        return CustomerInfoSchema.parse(
+          convertStringToArraysForCustomerInfo(response.data)
+        );
+      } catch (err) {
+        console.log(err);
+      }
     },
     enabled: !!customerId,
   });
@@ -187,7 +216,7 @@ export const addCustomerSupportHistory = async ({
   data,
 }: {
   customerId: string;
-  data: any
+  data: any;
 }): Promise<{ customer_id: string }> => {
   return axios
     .post(`${API_BASE_URL}/customer_support_history`, data, {
@@ -227,13 +256,12 @@ export const useCustomerPurchaseHistory = (customerId: string) => {
   });
 };
 
-
 export const addCustomerPurchaseHistory = async ({
   customerId,
   data,
 }: {
   customerId: string;
-  data: any
+  data: any;
 }): Promise<{ customer_id: string }> => {
   return axios
     .post(`${API_BASE_URL}/customer_purchase_history`, data, {
@@ -268,25 +296,23 @@ export const useCustomerSocialMediaHistory = (customerId: string) => {
         return { error: response.data.error } as { error: string };
       }
       try {
-
-      return z
-        .array(CustomerSocialMediaHistorySchema)
-        .parse(response.data.map(convertStringToArraysForSocialMediaRecord));
-      }catch(err){
-        console.log(err)
+        return z
+          .array(CustomerSocialMediaHistorySchema)
+          .parse(response.data.map(convertStringToArraysForSocialMediaRecord));
+      } catch (err) {
+        console.log(err);
       }
     },
     enabled: !!customerId,
   });
 };
 
-
 export const addCustomerSocialMediaHistory = async ({
   customerId,
   data,
 }: {
   customerId: string;
-  data: any
+  data: any;
 }): Promise<{ customer_id: string }> => {
   return axios
     .post(`${API_BASE_URL}/customer_social_media_history`, data, {

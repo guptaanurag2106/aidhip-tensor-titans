@@ -24,6 +24,7 @@ import {
 } from "@/components/ui/select";
 import { useAddCustomerSocialMediaHistory, useCustomerSocialMediaHistory } from "@/lib/api";
 import { formatDate } from "@/lib/utils";
+import Sentiment from "./sentiment";
 
 // Platform options
 const PLATFORMS = ["Instagram", "Twitter", "Facebook", "TikTok", "LinkedIn"];
@@ -44,8 +45,6 @@ export default function CustomerSocialMedia({
   const [text, setText] = useState<string>("");
   const [platform, setPlatform] = useState<string>("");
   const [topics, setTopics] = useState<string>("");
-  const [influencersFollowed, setInfluencersFollowed] = useState<string>("");
-  const [brandsLiked, setBrandsLiked] = useState<string>("");
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -62,17 +61,13 @@ export default function CustomerSocialMedia({
       platform,
       image_url: "",
       text_content: text,
-      influencers_followed: influencersFollowed,
       topics_of_interest: topics,
-      brands_liked: brandsLiked,
     };
 
     // Reset form
     setText("");
     setPlatform("");
     setTopics("");
-    setBrandsLiked("");
-    setInfluencersFollowed("");
     setShowForm(false);
 
     console.log("New social media record added:", newSocialMedia);
@@ -106,11 +101,7 @@ export default function CustomerSocialMedia({
                       {formatDate(social.date)}
                     </div>
                   </div>
-                  <div
-                    className={`px-2 py-1 rounded-full text-xs bg-gray-100 text-gray-800`}
-                  >
-                    {social.sentiment_score}
-                  </div>
+                  <Sentiment sentiment={social.sentiment_score} />
                 </div>
 
                 <div className="mb-3">
@@ -130,8 +121,8 @@ export default function CustomerSocialMedia({
                     </div>
                   )}
 
-                <div className="flex flex-wrap gap-1">
-                  {social.topics_of_interest.map(
+                <div className="flex flex-wrap gap-1 items-center">
+                  <span className="text-xs">Topics:</span> {social.topics_of_interest.map(
                     (topic: string, index: number) => (
                       <span
                         key={index}
@@ -142,6 +133,21 @@ export default function CustomerSocialMedia({
                     )
                   )}
                 </div>
+                {social.brands_liked.length > 0 && (
+
+                  <div className="flex flex-wrap gap-1 mt-2 items-center">
+                    <span className="text-xs">Brands:</span> {social.brands_liked.map(
+                      (topic: string, index: number) => (
+                        <span
+                          key={index}
+                          className="bg-muted px-2 py-1 rounded-full text-xs"
+                        >
+                          {topic}
+                        </span>
+                      )
+                    )}
+                  </div>
+                )}
               </div>
             ))}
           </div>
@@ -196,34 +202,6 @@ export default function CustomerSocialMedia({
                   value={topics}
                   onChange={(e) => setTopics(e.target.value)}
                   placeholder="e.g. Technology, Fashion, Travel"
-                  required
-                />
-              </div>
-
-              <div className="space-y-2">
-                <Label htmlFor="influencersFollowed">
-                  Influencers Followed
-                </Label>
-                <Input
-                  id="influencersFollowed"
-                  type="number"
-                  min="0"
-                  step="1"
-                  value={influencersFollowed}
-                  onChange={(e) => setInfluencersFollowed(e.target.value)}
-                  required
-                />
-              </div>
-
-              <div className="space-y-2">
-                <Label htmlFor="brandsLiked">Brands Liked</Label>
-                <Input
-                  id="brandsLiked"
-                  type="number"
-                  min="0"
-                  step="1"
-                  value={brandsLiked}
-                  onChange={(e) => setBrandsLiked(e.target.value)}
                   required
                 />
               </div>

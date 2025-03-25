@@ -2,3 +2,4 @@
 code/src/generator/.env
 code/src/.env
 venv
+__pycache__

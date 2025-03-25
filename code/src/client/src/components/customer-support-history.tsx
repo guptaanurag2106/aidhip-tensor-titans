@@ -20,6 +20,7 @@ import { Badge } from "@/components/ui/badge";
 import { AlertCircle, CheckCircle2, RepeatIcon } from "lucide-react";
 import { useAddCustomerSupportHistory, useCustomerSupportHistory } from "@/lib/api";
 import { formatDate } from "@/lib/utils";
+import Sentiment from "./sentiment";
 
 // Concern options for the form
 const CONCERN_OPTIONS = [
@@ -44,7 +45,7 @@ export default function CustomerSupportHistory({
 }: CustomerSupportHistoryProps) {
   const { data: supportHistory, isLoading } =
     useCustomerSupportHistory(customerId);
-  const {mutateAsync} = useAddCustomerSupportHistory();
+  const { mutateAsync } = useAddCustomerSupportHistory();
   const [showForm, setShowForm] = useState(false);
 
   // Form state
@@ -59,8 +60,8 @@ export default function CustomerSupportHistory({
     const lastSupportId =
       supportHistory && !("error" in supportHistory)
         ? parseInt(
-            supportHistory[supportHistory.length - 1].complaint_id.split("_")[1]
-          )
+          supportHistory[supportHistory.length - 1].complaint_id.split("_")[1]
+        )
         : 0;
 
     // Create new support record
@@ -82,24 +83,9 @@ export default function CustomerSupportHistory({
     setShowForm(false);
 
     console.log("New support record added:", newSupport);
-    mutateAsync({customerId, data: newSupport})
+    mutateAsync({ customerId, data: newSupport })
   };
 
-  // Get sentiment color based on value
-  const getSentimentColor = (sentiment: number) => {
-    if (sentiment >= 0.3) return "text-green-600";
-    if (sentiment >= -0.3) return "text-amber-600";
-    return "text-red-600";
-  };
-
-  // Get sentiment label based on value
-  const getSentimentLabel = (sentiment: number) => {
-    if (sentiment >= 0.7) return "Very Positive";
-    if (sentiment >= 0.3) return "Positive";
-    if (sentiment >= -0.3) return "Neutral";
-    if (sentiment >= -0.7) return "Negative";
-    return "Very Negative";
-  };
 
   return (
     <Card>
@@ -153,11 +139,10 @@ export default function CustomerSupportHistory({
                       </div>
                     )}
                     <div
-                      className={`flex items-center text-xs ${
-                        support.was_issue_resolved
-                          ? "text-green-600"
-                          : "text-red-600"
-                      }`}
+                      className={`flex items-center text-xs ${support.was_issue_resolved
+                        ? "text-green-600"
+                        : "text-red-600"
+                        }`}
                     >
                       {support.was_issue_resolved ? (
                         <>
@@ -171,13 +156,7 @@ export default function CustomerSupportHistory({
                         </>
                       )}
                     </div>
-                    <div
-                      className={`flex items-center text-xs ${getSentimentColor(
-                        support.sentiment
-                      )}`}
-                    >
-                      Sentiment: {getSentimentLabel(support.sentiment)}
-                    </div>
+                    <Sentiment sentiment={support.sentiment} />
                   </div>
                 </div>
 

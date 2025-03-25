@@ -9,10 +9,8 @@ import CustomerPurchaseHistory from "@/components/customer-purchase-history"
 import CustomerSupportHistory from "@/components/customer-support-history"
 import CustomerSocialMedia from "@/components/customer-social-media"
 import CustomerInformation from "@/components/customer-information"
-import { RefreshCw } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { useCustomerIds, useCustomerInfo } from "@/lib/api"
-import { custom } from "zod"
 
 export default function CustomerDashboard() {
     const { data: customerIds, isLoading: isCustomerIdsLoading } = useCustomerIds();
