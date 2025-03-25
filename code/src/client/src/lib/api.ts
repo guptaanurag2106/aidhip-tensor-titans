@@ -32,8 +32,8 @@ const CustomerInfoSchema = z.object({
   preferred_payment_method: z.string(),
   satisfaction: z.number(),
   support_interaction_count: z.number(),
-  input_params: z.object({}),
-  output_params: z.object({}),
+  input_params: z.string(),
+  output_params: z.string(),
   top_n_products: z.array(z.string()),
   top_n_passive_products: z.array(z.string()),
 });
@@ -114,8 +114,6 @@ const convertStringToArraysForCustomerInfo = (customerInfo: any) => ({
         (v: string) => parseFloat(v)
       )
     : [],
-  input_params: JSON.parse(customerInfo.input_params),
-  output_params: JSON.parse(customerInfo.output_params),
   top_n_products: customerInfo.top_n_products
     ? convertStringArrayToArray(customerInfo.top_n_products)
     : [],

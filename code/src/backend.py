@@ -33,10 +33,13 @@ def get_customer_profile():
 
     for _, row in df.iterrows():
         if row['customer_id'] == customer_id:
-            if np.isnan(row['top_n_products']):
-                row['top_n_products'] = ''
-            if np.isnan(row['top_n_passive_products']):
-                row['top_n_passive_products'] = ''
+            try:
+                if np.isnan(row['top_n_products']):
+                    row['top_n_products'] = ''
+                if np.isnan(row['top_n_passive_products']):
+                    row['top_n_passive_products'] = ''
+            except Exception:
+                pass
                 
             return jsonify(row.to_dict())
     return {"error": "Customer not found"}
