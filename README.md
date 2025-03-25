@@ -1,4 +1,4 @@
-🚀 Project Name
+🚀 [Project](Project) Name
 
 ## 📌 Table of Contents
 - [Introduction](#introduction)
@@ -22,17 +22,72 @@
 
 ![Screenshot 1](link-to-image)
 
-## 💡 Inspiration
-What inspired you to create this project? Describe the problem you're solving.
+# Problem Statement
+##AI Driven Hyper Personalization Recommendations System
 
-## ⚙️ What It Does
-Explain the key features and functionalities of your project.
+### What We're Building
+Imagine a banking tool that truly understands you - not just as a customer, but as an individual with unique financial goals and preferences. Our platform goes beyond one-size-fits-all recommendations by creating a personalized financial journey.
 
-## 🛠️ How We Built It
-Briefly outline the technologies, frameworks, and tools used in development.
+### The Smart Approach
+We're developing an intuitive dashboard that does more than just suggest products. It learns your financial personality and provides:
+- Top Recommended Products: Perfectly matched to your financial profile
+- Passive Investment Options: Safe choices for when you want to balance risk
 
-## 🚧 Challenges We Faced
-Describe the major technical or non-technical challenges your team encountered.
+### Why It's Different
+Most banking recommendations feel generic. Ours are different:
+- Tailored to your specific financial DNA
+- Balances high-potential opportunities with safe investments
+- Understands that even risk-takers need a financial safety net
+
+### User Experience
+A clean, simple interface where you can:
+- See personalized product recommendations at a glance
+- Explore both exciting and stable financial options
+- Understand why each product might be right for you
+
+Our goal? Making complex financial decisions feel simple, personal, and empowering.
+
+### 💡 Inspiration
+Banking recommendations often feel impersonal and generic. We identified a critical gap: financial institutions struggle to provide truly personalized advice that considers a customer's unique financial personality, risk tolerance, and long-term goals.
+
+### ⚙️ What It Does
+Our platform delivers:
+- Personalized Financial Recommendations
+  - Top-tier product matching based on advanced mathematical profiling
+  - Comprehensive risk and opportunity analysis
+- Dual Recommendation Approach
+  - High-potential product recommendations
+  - Low-risk, high-retention passive investment options
+- Advanced Customer Profiling
+  - 4-dimensional mathematical representation of customer financial characteristics
+  - Dynamic recommendation engine using Mahalanobis distance matching
+
+### 🛠️ How We Built It
+Technology Stack:
+- Frontend: React-based intuitive dashboard
+- Backend: Python-powered data processing
+- Machine Learning: 
+  - Feature engineering
+  - Probabilistic matching algorithms
+- Data Sources: 
+  - Customer banking data
+  - Social media insights
+  - Transaction histories
+- Recommendation Engine: 
+  - Mahalanobis distance calculation
+  - Normalized multi-dimensional similarity scoring
+
+### 🚧 Challenges We Faced
+Technical Challenges:
+- Data Normalization: Standardizing diverse financial metrics
+- Privacy Compliance: Securing sensitive customer information
+- Model Interpretability: Creating transparent AI recommendations
+- Handling Data Sparsity: Generating insights with limited customer data
+
+Key Mitigation Strategies:
+- Implemented robust feature scaling techniques
+- Developed explainable AI components
+- Created sophisticated data imputation methods
 
 ## 🏃 How to Run
 1. Clone the repository  
