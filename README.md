@@ -116,7 +116,7 @@ Key Mitigation Strategies:
 - 🔹 Other: Open Router APIs (using `google/gemini-2.0-pro-exp-02-05:free` model)
 
 ## 👥 Team
-- **Your Name** - [Anurag Gupta](https://github.com/guptaanurag2106) | [LinkedIn](#)
-- **Teammate 2** - [Delano Lourenco](https://github.com/3ddelano) | [LinkedIn](#)
+- **Teammate 1** - [Anurag Gupta](https://github.com/guptaanurag2106) | [LinkedIn](#)
+- **Teammate 2** - [Delano Lourenco](https://github.com/3ddelano) | [LinkedIn](https://www.linkedin.com/in/delano-lourenco-a9022a190/)
 - **Teammate 3** - [Ishan Agrawal](https://github.com/ishan0709) | [LinkedIn](#)
 - **Teammate 4** - [Lokkamithran M](https://github.com/Lokkamithran) | [LinkedIn](#)
