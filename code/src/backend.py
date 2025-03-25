@@ -1,13 +1,17 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, send_from_directory
 import pandas as pd
 import numpy as np
 import csv
 from flask_cors import CORS
 from update_sentiments import update_support_history, update_social_media_history
 from main import main
+from image_upload import UPLOAD_FOLDER, upload_image
+from image_describe import image_transcribe
 
 app = Flask(__name__)
 CORS(app)
+
+app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
 INVALID_SENTIMENT_SCORE = -100
 
@@ -93,6 +97,17 @@ def get_customer_social_history():
 @app.route('/customer_social_media_history', methods=['POST'])
 def add_customer_social_history():
     data = request.get_json()
+    
+    if 'image_base64' in data:
+        base64str = data['image_base64']
+        del data['image_base64']
+        upload_result = upload_image(base64str)
+        if 'error' in upload_result:
+            return upload_result
+        data['image_url'] = upload_result['url']
+        transcribed = image_transcribe(base64str)
+        data['text_content'] = (data['text_content'].strip() + '\nUploaded image transcript: ' + transcribed.strip()).strip()
+
     next_id = get_last_id_from_csv('./data/social_media_record.csv', 'post_id') + 1
     data['post_id'] = 'POST_' + str(next_id)
     data['customer_id'] = request.args.get('customer_id')
@@ -143,6 +158,10 @@ def customer_run_ai():
     customer_id = request.args.get('customer_id')
     main(customer_id)
     return {"customer_id": customer_id}
+
+@app.route('/uploads/images/<name>')
+def view_image(name):
+    return send_from_directory(app.config["UPLOAD_FOLDER"], name)
 
 if __name__ == '__main__':
     app.run(debug=True, port=5003)

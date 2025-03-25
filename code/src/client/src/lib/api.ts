@@ -9,6 +9,8 @@ if (!API_BASE_URL) {
   throw new Error("Missing `VITE_API_BASE_URL` env variable.");
 }
 
+export const getImageUrl = (slug: string) => `${API_BASE_URL}${slug}`;
+
 const convertStringArrayToArray = (s: string) =>
   s.split(",").map((v) => v.trim());
 

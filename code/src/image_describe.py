@@ -17,6 +17,13 @@ def image_transcribe(base64: str) -> str:
         "Content-Type": "application/json",
     }
 
+    base64str = ''
+    if base64.startswith("data:image/"):
+        base64str = base64
+    else:
+        # Assume its jpeg
+        base64str = f"data:image/jpeg;base64,{base64}"
+
     payload = {
         "model": MODEL,
         "messages": [
@@ -30,7 +37,7 @@ def image_transcribe(base64: str) -> str:
                     {
                         "type": "image_url",
                         "image_url": {
-                            "url": f"data:image/jpeg;base64,{base64}",
+                            "url": base64str,
                         },
                     },
                 ],
@@ -45,7 +52,7 @@ def image_transcribe(base64: str) -> str:
             .get("message", {})
             .get("content", "No description available.")
         )
-        return description
+        return description.strip()
     else:
         print(f"Error: {response.status_code}")
         print(response.text)

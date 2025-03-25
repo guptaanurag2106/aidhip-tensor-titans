@@ -2,7 +2,7 @@
 
 import type React from "react";
 
-import { useState } from "react";
+import { useRef, useState } from "react";
 import {
   Card,
   CardContent,
@@ -22,7 +22,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { useAddCustomerSocialMediaHistory, useCustomerSocialMediaHistory } from "@/lib/api";
+import { getImageUrl, useAddCustomerSocialMediaHistory, useCustomerSocialMediaHistory } from "@/lib/api";
 import { formatDate } from "@/lib/utils";
 import Sentiment from "./sentiment";
 
@@ -45,6 +45,23 @@ export default function CustomerSocialMedia({
   const [text, setText] = useState<string>("");
   const [platform, setPlatform] = useState<string>("");
   const [topics, setTopics] = useState<string>("");
+  const [imageBase64, setImageBase64] = useState<string | null>(null)
+  const fileInputRef = useRef<HTMLInputElement>(null)
+
+  const handleImageChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0]
+    if (!file) {
+      setImageBase64(null)
+      return
+    }
+
+    const reader = new FileReader()
+    reader.onloadend = () => {
+      const base64String = reader.result as string
+      setImageBase64(base64String)
+    }
+    reader.readAsDataURL(file)
+  }
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -62,6 +79,7 @@ export default function CustomerSocialMedia({
       image_url: "",
       text_content: text,
       topics_of_interest: topics,
+      ...(imageBase64 ? { image_base64: imageBase64 } : {})
     };
 
     // Reset form
@@ -69,6 +87,11 @@ export default function CustomerSocialMedia({
     setPlatform("");
     setTopics("");
     setShowForm(false);
+
+    // Reset file input
+    if (fileInputRef.current) {
+      fileInputRef.current.value = ""
+    }
 
     console.log("New social media record added:", newSocialMedia);
     mutateAsync({
@@ -105,14 +128,14 @@ export default function CustomerSocialMedia({
                 </div>
 
                 <div className="mb-3">
-                  <p>{social.text_content}</p>
+                  <p dangerouslySetInnerHTML={{ __html: social.text_content.replace(/\n/g, "<br>") }} />
                 </div>
 
                 {social.image_url &&
                   social.image_url.indexOf("example.com/") == -1 && (
                     <div className="mb-3">
                       <img
-                        src="/placeholder.svg?height=300&width=400"
+                        src={getImageUrl(social.image_url)}
                         alt="Social media post"
                         width={400}
                         height={300}
@@ -204,6 +227,30 @@ export default function CustomerSocialMedia({
                   placeholder="e.g. Technology, Fashion, Travel"
                   required
                 />
+              </div>
+
+              <div className="space-y-2">
+                <Label htmlFor="image">Image Upload</Label>
+                <div className="flex flex-col gap-2">
+                  <input
+                    type="file"
+                    id="image"
+                    ref={fileInputRef}
+                    accept="image/*"
+                    onChange={handleImageChange}
+                    className="text-sm text-muted-foreground file:mr-4 file:rounded-md file:border-0 file:bg-primary file:px-4 file:py-2 file:text-sm file:font-medium file:text-primary-foreground hover:file:bg-primary/90"
+                  />
+                  {imageBase64 && (
+                    <div className="mt-2">
+                      <p className="text-xs text-muted-foreground mb-1">Image Preview:</p>
+                      <img
+                        src={imageBase64 || "/placeholder.svg"}
+                        alt="Preview"
+                        className="max-h-32 rounded-md object-cover"
+                      />
+                    </div>
+                  )}
+                </div>
               </div>
             </div>
 
