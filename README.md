@@ -96,18 +96,26 @@ Key Mitigation Strategies:
    ```
 2. Install dependencies   (Need Python, Nodejs installed)
    ```sh
-   pip install ./code/requirements.txt
+   pip install -r ./code/src/requirements.txt
    cd ./code/src/client
    npm install
    ```
-3. Run the project  
+3. Run the project
+   
+   First run the server
+   ```
+   cd ./code/src
+   python backend.py
+   ```
+
+   Then in a new terminal, run the client:
    ```sh
    cd ./code/src/client
    npm run dev
-   
-   cd ../
-   python backend.py
    ```
+  
+   Now visit the webpage at http://localhost:5173
+   
 
 ## 🏗️ Tech Stack
 - 🔹 Frontend: React (Typescript)
