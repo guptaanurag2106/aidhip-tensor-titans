@@ -10,8 +10,8 @@ def update_support_history(data: dict) -> str:
         1 means a very positive comment/sentiment
         0 means a neutral comment (Could be a person inquiring for a bank feature or a simple question)
 
-        Return only the sentiment value (Type: Float) as a string, do not return anything else
-        example return "0.1"
+        Return only the sentiment value (Type: Float), do not return anything else
+        example return 0.1
     """
     response = send_request(prompt)
 
@@ -58,3 +58,8 @@ def update_social_media_history(data: dict) -> dict:
             print("Could not parse JSON from response:", response_data)
 
     return output
+
+if __name__ == "__main__":
+    print(update_support_history({
+        "transcript": "hate the bank"}))
+    print(update_social_media_history({}))

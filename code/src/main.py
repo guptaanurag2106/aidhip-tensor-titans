@@ -61,22 +61,26 @@ def generate_cust_input_params(cust_info: dict) -> dict:
     They have made the following social media posts
     Posts: {cust_info["posts"]}
     They have made the following support queries to the bank's support system
-    Support Queries: {cust_info["posts"]}
+    Support Queries: {cust_info["supports"]}
     Analyze the data and give a json with the following properties
 
-    churn_rate: The chance of the customer leaving the bank (Type: Float, 0 means no chance of leaving, 10 means will surely leave soon)
-    profit_generated: The profits / money generated for the bank (Type: Float, 0 means generates loss for the bank, 10 means generates huge profit for the bank)
-    risk_appetite: The risk appetite of the customer (Type: Float, 0 mean wants very safe investments or financial products with no chance of losing money even if
+    churn_rate: The chance of the customer leaving the bank (Type: Float, 0 means no chance of leaving, 0 negative sentiment support queries
+                never said anything negative about the bank, 10 means will surely leave soon)
+    profit_generated: The profits / money generated for the bank (Type: Float, 0 means generates loss for the bank, minimum credit score unpayable loans, 
+                      5 means average person (decent credit score, decent income, few loans (which they can pay based on their salary)
+                      10 means generates huge profit for the bank full credit score, both as of current value, and of future expectations (talk of getting more money, positively promoting the bank etc.)
+                    The income can go upto $1,00,000 for the wealthiest customer, so vary the profit_generated accordingly)
+    risk_appetite: The risk appetite of the customer (Type: Float, 0 mean wants extremely safe investments or financial products with no chance of losing money even if
                 it generates little to no money, 10 means wants highly risky investments which may generate a lot of money, but may lose a lot as well
     financial_acumen: Financial knowledge and experience of the Customer (Type: Float, 0 means has no knowledge and no previous experience with any financial field,
-                10 means is very well versed in financial field, maybe has a job in it, and has a history of making smart investments, good debts
-    argument: Maximum 5 sentences proving why you chose this value, analyzing trends, identifying key moments, citing incidents etc.
+                10 means is very well versed in financial field, has a job in it, and has a history of making smart investments, good debts
+    argument: Maximum 70 words proving why you chose this value, analyzing trends, identifying key moments, citing incidents etc.
 
-    Return the customer parameters in a structured array of JSON format using the key mentioned after every field.
+    Return the customer parameters in a structured JSON format using the key mentioned after every field.
         """
 
     cust_input_params = {
-        "churn_rate": 6,  # 0-10
+        "churn_rate": 5,  # 0-10
         "profit_generated": 5,
         "risk_appetite": 5,
         "financial_acumen": 5,
@@ -88,7 +92,6 @@ def generate_cust_input_params(cust_info: dict) -> dict:
     if response.status_code == 200:
         response_data = response.json()
         response_text = response_data["choices"][0]["message"]["content"]
-        print(response_text)
 
         try:
             response_text = response_text.strip().lstrip("```json").rstrip("```")
@@ -120,15 +123,15 @@ def sort_products(cust_info: dict, products: list[dict]) -> str:
     They have made the following social media posts
     Posts: {cust_info["posts"]}
     They have made the following support queries to the bank's support system
-    Support Queries: {cust_info["posts"]}
+    Support Queries: {cust_info["supports"]}
     
-    We have selected some financial products which we want to recommend to them,
-    the list is as follows:
+    We have selected some financial products which we want to recommend to them, the list is as follows:
     Products: {products}
-    Analyze the data, the customer's interest etc. and sort the products list based on what they would want more.
+    Using the data, the customer's interest etc. sort the products list based on what they would want more.
 
-    Return only the list of product_id (as a comma separated string) of the sorted products in terms of customer interest highest to lowest,
-    do not return anything else just a comma separated string of product ids
+    Output Content: 1 line: A comma separated string of product_id (example "PROD_1,PROD_54,PROD_2")
+    Conent should only the list of product_id (as a comma separated string) of the sorted products in terms of customer interest highest to lowest,
+    do not give any reasoning etc. just a comma separated string of product ids
         """
     response = send_request(prompt)
 
@@ -150,6 +153,7 @@ def sort_products(cust_info: dict, products: list[dict]) -> str:
 def main(customer_id: str):
     cust_info = get_cust_info(customer_id)
 
+    print(cust_info)
     print("Generating input params")
     cust_input_params = generate_cust_input_params(cust_info)
     cust_output_params = cust_map(cust_input_params)
