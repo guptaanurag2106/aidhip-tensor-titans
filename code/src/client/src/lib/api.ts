@@ -168,7 +168,7 @@ export const updateCustomerInfo = async ({
 }: {
   customerId: string;
   data: CustomerInfo;
-}): Promise<{ customerId: string }> => {
+}): Promise<{ customer_id: string }> => {
   return axios
     .post(`${API_BASE_URL}/customer-info`, data, {
       params: { customer_id: customerId },
@@ -181,9 +181,9 @@ export const useUpdateCustomerInfo = () => {
   const queryClient = useQueryClient();
   return useMutation({
     mutationFn: updateCustomerInfo,
-    onSuccess: ({ customerId }: { customerId: string }) => {
+    onSuccess: ({ customer_id }: { customer_id: string }) => {
       queryClient.invalidateQueries({
-        queryKey: ["customer-info", customerId],
+        queryKey: ["customer-info", customer_id],
       });
     },
   });
@@ -328,6 +328,30 @@ export const useAddCustomerSocialMediaHistory = () => {
     onSuccess: ({ customer_id }: { customer_id: string }) => {
       queryClient.invalidateQueries({
         queryKey: ["customer-social-media-history", customer_id],
+      });
+    },
+  });
+};
+
+export const customerRunAi = async ({
+  customerId,
+}: {
+  customerId: string;
+}): Promise<{ customer_id: string }> => {
+  return axios
+    .post(`${API_BASE_URL}/customer_run_ai`, {
+      params: { customer_id: customerId },
+    })
+    .then((res) => res.data);
+};
+
+export const useCustomerRunAi = () => {
+  const queryClient = useQueryClient();
+  return useMutation({
+    mutationFn: customerRunAi,
+    onSuccess: ({ customer_id }: { customer_id: string }) => {
+      queryClient.invalidateQueries({
+        queryKey: ["customer-info", customer_id],
       });
     },
   });

@@ -4,6 +4,7 @@ import numpy as np
 import csv
 from flask_cors import CORS
 from update_sentiments import update_support_history, update_social_media_history
+from main import main
 
 app = Flask(__name__)
 CORS(app)
@@ -132,6 +133,13 @@ def add_customer_support_history():
         writer = csv.DictWriter(file, fieldnames=cols)
         writer.writerow(data)
     return {"customer_id": data['customer_id']}
+
+
+@app.route('/customer_run_ai', methods=['POST'])
+def customer_run_ai():
+    customer_id = request.args.get('customer_id')
+    main(customer_id)
+    return {"customer_id": customer_id}
 
 if __name__ == '__main__':
     app.run(debug=True, port=5003)

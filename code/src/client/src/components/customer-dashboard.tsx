@@ -10,12 +10,13 @@ import CustomerSupportHistory from "@/components/customer-support-history"
 import CustomerSocialMedia from "@/components/customer-social-media"
 import CustomerInformation from "@/components/customer-information"
 import { Button } from "@/components/ui/button"
-import { useCustomerIds, useCustomerInfo } from "@/lib/api"
+import { useCustomerIds, useCustomerInfo, useCustomerRunAi } from "@/lib/api"
 
 export default function CustomerDashboard() {
     const { data: customerIds, isLoading: isCustomerIdsLoading } = useCustomerIds();
     const [selectedCustomerId, setSelectedCustomerId] = useState<string | undefined>();
     const { data: customerInfo, isLoading: isCustomerLoading } = useCustomerInfo(selectedCustomerId || "");
+    const { mutate: runAi, isPending: isRunningAi } = useCustomerRunAi()
 
     return (
         <div className="container mx-auto py-6">
@@ -48,15 +49,16 @@ export default function CustomerDashboard() {
                             <Button
                                 variant="outline"
                                 onClick={() => {
+                                    runAi({ customerId: selectedCustomerId! })
                                 }}
-                                disabled={isCustomerLoading}
+                                disabled={isCustomerLoading || isRunningAi}
                                 className="flex items-center gap-2"
                             >
                                 <span role="img" aria-label="robot">
                                     🤖
                                 </span>
                                 <span>Run AI</span>
-                                {isCustomerLoading && <span className="ml-2 animate-spin">⟳</span>}
+                                {isCustomerLoading || isRunningAi && <span className="ml-2 animate-spin">⟳</span>}
                             </Button>
                         }
                     </div>

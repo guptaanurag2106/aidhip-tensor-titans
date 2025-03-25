@@ -206,7 +206,7 @@ def main(customer_id: str):
     sorted_passive_products = sort_products(cust_info, top_n_passive_products)
 
     print("writing to csv")
-    df = pd.read_csv("./data/customer_profile.csv")
+    
     columns = [
         "input_params",
         "output_params",
@@ -219,7 +219,7 @@ def main(customer_id: str):
         sorted_products,
         sorted_passive_products,
     ]
-
+    df = pd.read_csv("./data/customer_profile.csv")
     df.loc[df["customer_id"] == customer_id, columns] = new_values
     df.to_csv("./data/customer_profile.csv", index=False)
 
