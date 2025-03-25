@@ -358,21 +358,6 @@ export default function CustomerInformation({ customer }: CustomerInformationPro
                     Based on balance, credit score, and spending patterns
                   </p>
                 </div>
-
-                <div>
-                  <p className="text-sm font-medium mb-1">Recommended Actions</p>
-                  <ul className="text-sm list-disc pl-5 space-y-1">
-                    {customer.credit_score < 700 && <li>Credit improvement consultation</li>}
-                    {customer.goals.includes("save for down payment on house") && (
-                      <li>Home savings account offering</li>
-                    )}
-                    {customer.goals.includes("children's education") && <li>Education savings plan</li>}
-                    {customer.goals.includes("retirement") && <li>Retirement planning consultation</li>}
-                    {customer.satisfaction < 8 && <li>Customer satisfaction follow-up</li>}
-                    {customer.support_interaction_count > 3 && <li>Service quality review</li>}
-                    {customer.loan_amts[customer.loan_amts.length - 1] > 0 && <li>Loan refinancing options</li>}
-                  </ul>
-                </div>
               </div>
             </div>
           </TabsContent>

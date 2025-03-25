@@ -8,14 +8,23 @@ CORS(app)
 
 INVALID_SENTIMENT_SCORE = -100
 
+def get_last_id_from_csv(file_path: str, id_column: str) -> int:
+    last_id = 0
+    with open(file_path, "r") as file:
+        reader = csv.DictReader(file)
+        for row in reader:
+            last_id = max(last_id, int(row[id_column].split("_")[1]))
+
+    return last_id
+
 @app.route("/customer_ids", methods=["GET"])
-def customer_ids():
+def get_customer_ids():
     df = pd.read_csv("../data/customer_profile.csv")
     return jsonify(df["customer_id"].tolist())
 
 
 @app.route('/customer_profile', methods=['GET'])
-def cust_prof():
+def get_customer_profile():
     customer_id = request.args.get('customer_id')
     df = pd.read_csv('../data/customer_profile.csv')
 
@@ -44,6 +53,8 @@ def get_customer_purchase_history():
 def add_customer_purchase_history():
     data = request.get_json()
     data['customer_id'] = request.args.get('customer_id')
+    next_id = get_last_id_from_csv('../data/customer_purchase.csv', 'transaction_id') + 1
+    data['transaction_id'] = 'TXN_' + str(next_id)
     with open('../data/customer_purchase.csv', mode='a', newline='') as file:
         cols = ['transaction_id','customer_id','date','platform','payment_method','amt','location','item_category','item_sub_category','item_brand']
         writer = csv.DictWriter(file, fieldnames=cols)
@@ -72,6 +83,8 @@ def get_customer_social_history():
 @app.route('/customer_social_media_history', methods=['POST'])
 def add_customer_social_history():
     data = request.get_json()
+    next_id = get_last_id_from_csv('../data/social_media_record.csv', 'post_id') + 1
+    data['post_id'] = 'POST_' + str(next_id)
     data['customer_id'] = request.args.get('customer_id')
     data['sentiment_score'] = INVALID_SENTIMENT_SCORE
     data['engagement_level'] = INVALID_SENTIMENT_SCORE
@@ -100,6 +113,8 @@ def get_customer_support_history():
 @app.route('/customer_support_history', methods=['POST'])
 def add_customer_support_history():
     data = request.get_json()
+    next_id = get_last_id_from_csv('../data/customer_support_record.csv', 'complaint_id') + 1
+    data['complaint_id'] = 'SPRT_' + str(next_id)
     data['sentiment'] = INVALID_SENTIMENT_SCORE
     with open('../data/customer_support_record.csv', mode='a', newline='') as file:
         cols = ['complaint_id','customer_id','date','transcript','main_concerns','is_repeating_issue','was_issue_resolved', 'sentiment']
