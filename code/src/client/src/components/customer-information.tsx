@@ -83,7 +83,6 @@ export default function CustomerInformation({
     return "bg-red-500";
   };
 
-  const satisfactionPercentage = (customer.satisfaction / 10) * 100;
 
   // Get color for rating on a scale of 1-10
   const getRatingColor = (rating: number) => {
@@ -99,6 +98,9 @@ export default function CustomerInformation({
 
   const input_params = JSON.parse(customer.input_params);
   const output_params = JSON.parse(customer.output_params);
+
+  const satisfactionPercentage = (customer.satisfaction + 1) * 0.5 * 100;
+
 
   return (
     <Card>
@@ -144,11 +146,10 @@ export default function CustomerInformation({
                     <p className="text-sm text-muted-foreground">
                       {customer.is_married ? "Married" : "Single"},
                       {customer.num_of_children > 0
-                        ? ` ${customer.num_of_children} ${
-                            customer.num_of_children === 1
-                              ? "child"
-                              : "children"
-                          }`
+                        ? ` ${customer.num_of_children} ${customer.num_of_children === 1
+                          ? "child"
+                          : "children"
+                        }`
                         : " No children"}
                     </p>
                   </div>
@@ -245,7 +246,7 @@ export default function CustomerInformation({
                   <p className="text-2xl font-bold">{currentBalance}</p>
                   <p className="text-xs text-muted-foreground">
                     {customer.balance[customer.balance.length - 1] >
-                    customer.balance[customer.balance.length - 2]
+                      customer.balance[customer.balance.length - 2]
                       ? "↑ Increased from last month"
                       : "↓ Decreased from last month"}
                   </p>
@@ -263,9 +264,9 @@ export default function CustomerInformation({
                     {customer.monthly_spending[
                       customer.monthly_spending.length - 1
                     ] >
-                    customer.monthly_spending[
+                      customer.monthly_spending[
                       customer.monthly_spending.length - 2
-                    ]
+                      ]
                       ? "↑ Increased from last month"
                       : "↓ Decreased from last month"}
                   </p>
@@ -291,12 +292,12 @@ export default function CustomerInformation({
                     {customer.credit_score >= 750
                       ? "Excellent"
                       : customer.credit_score >= 700
-                      ? "Very Good"
-                      : customer.credit_score >= 650
-                      ? "Good"
-                      : customer.credit_score >= 600
-                      ? "Fair"
-                      : "Poor"}
+                        ? "Very Good"
+                        : customer.credit_score >= 650
+                          ? "Good"
+                          : customer.credit_score >= 600
+                            ? "Fair"
+                            : "Poor"}
                   </p>
                 </div>
 
@@ -358,19 +359,19 @@ export default function CustomerInformation({
                       )}
                     />
                     <span className="text-sm font-medium">
-                      {customer.satisfaction}/10
+                      {satisfactionPercentage}%
                     </span>
                   </div>
                   <p className="text-xs text-muted-foreground mt-1">
-                    {customer.satisfaction >= 9
+                    {satisfactionPercentage >= 90
                       ? "Extremely Satisfied"
-                      : customer.satisfaction >= 7
-                      ? "Very Satisfied"
-                      : customer.satisfaction >= 5
-                      ? "Satisfied"
-                      : customer.satisfaction >= 3
-                      ? "Somewhat Dissatisfied"
-                      : "Dissatisfied"}
+                      : satisfactionPercentage >= 70
+                        ? "Very Satisfied"
+                        : satisfactionPercentage >= 50
+                          ? "Satisfied"
+                          : satisfactionPercentage >= 30
+                            ? "Somewhat Dissatisfied"
+                            : "Dissatisfied"}
                   </p>
                 </div>
 
@@ -409,7 +410,7 @@ export default function CustomerInformation({
                     ] *
                       12) /
                       customer.income <
-                    0.5
+                      0.5
                       ? "Healthy spending ratio"
                       : "High spending relative to income"}
                   </p>
@@ -451,12 +452,12 @@ export default function CustomerInformation({
                     <div className="w-3 h-3 rounded-full bg-green-500"></div>
                     <p className="text-sm">
                       {customer.balance[customer.balance.length - 1] > 10000 &&
-                      customer.credit_score > 750
+                        customer.credit_score > 750
                         ? "High-Value Customer"
                         : customer.balance[customer.balance.length - 1] >
-                            5000 && customer.credit_score > 700
-                        ? "Medium-Value Customer"
-                        : "Growth Potential Customer"}
+                          5000 && customer.credit_score > 700
+                          ? "Medium-Value Customer"
+                          : "Growth Potential Customer"}
                     </p>
                   </div>
                   <p className="text-xs text-muted-foreground mt-1 ml-5">
