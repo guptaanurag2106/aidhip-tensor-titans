@@ -346,34 +346,6 @@ export default function CustomerInformation({
           <TabsContent value="insights" className="space-y-4">
             <div className="grid gap-4 md:grid-cols-2">
               <div className="space-y-4">
-                <div>
-                  <p className="text-sm font-medium mb-1">
-                    Customer Satisfaction
-                  </p>
-                  <div className="flex items-center gap-2">
-                    <Progress
-                      value={satisfactionPercentage}
-                      className="h-2"
-                      indicatorClassName={getSatisfactionColor(
-                        customer.satisfaction
-                      )}
-                    />
-                    <span className="text-sm font-medium">
-                      {satisfactionPercentage}%
-                    </span>
-                  </div>
-                  <p className="text-xs text-muted-foreground mt-1">
-                    {satisfactionPercentage >= 90
-                      ? "Extremely Satisfied"
-                      : satisfactionPercentage >= 70
-                        ? "Very Satisfied"
-                        : satisfactionPercentage >= 50
-                          ? "Satisfied"
-                          : satisfactionPercentage >= 30
-                            ? "Somewhat Dissatisfied"
-                            : "Dissatisfied"}
-                  </p>
-                </div>
 
                 <div>
                   <p className="text-sm font-medium mb-1">
@@ -451,11 +423,9 @@ export default function CustomerInformation({
                   <div className="flex items-center gap-2 mt-2">
                     <div className="w-3 h-3 rounded-full bg-green-500"></div>
                     <p className="text-sm">
-                      {customer.balance[customer.balance.length - 1] > 10000 &&
-                        customer.credit_score > 750
+                      {output_params.value_customer.toFixed(1) > 8
                         ? "High-Value Customer"
-                        : customer.balance[customer.balance.length - 1] >
-                          5000 && customer.credit_score > 700
+                        : output_params.value_customer.toFixed(1) > 5
                           ? "Medium-Value Customer"
                           : "Growth Potential Customer"}
                     </p>
