@@ -47,7 +47,7 @@ A clean, simple interface where you can:
 
 Our goal? Making complex financial decisions feel simple, personal, and empowering.
 
-### 💡 Inspiration
+## 💡 Inspiration
 Banking recommendations often feel impersonal and generic. We identified a critical gap: financial institutions struggle to provide truly personalized advice that considers a customer's unique financial personality, risk tolerance, and long-term goals.
 
 ### ⚙️ What It Does
@@ -96,26 +96,18 @@ Key Mitigation Strategies:
    ```
 2. Install dependencies   (Need Python, Nodejs installed)
    ```sh
-   pip install -r ./code/src/requirements.txt
+   pip install ./code/requirements.txt
    cd ./code/src/client
    npm install
    ```
-3. Run the project
-   
-   First run the server
-   ```
-   cd ./code/src
-   python backend.py
-   ```
-
-   Then in a new terminal, run the client:
+3. Run the project  
    ```sh
    cd ./code/src/client
    npm run dev
-   ```
-  
-   Now visit the webpage at http://localhost:5173
    
+   cd ../
+   python backend.py
+   ```
 
 ## 🏗️ Tech Stack
 - 🔹 Frontend: React (Typescript)
@@ -124,7 +116,7 @@ Key Mitigation Strategies:
 - 🔹 Other: Open Router APIs (using `google/gemini-2.0-pro-exp-02-05:free` model)
 
 ## 👥 Team
-- **Teammate 1** - [Anurag Gupta](https://github.com/guptaanurag2106) | [LinkedIn](#)
-- **Teammate 2** - [Delano Lourenco](https://github.com/3ddelano) | [LinkedIn](https://www.linkedin.com/in/delano-lourenco-a9022a190/)
+- **Your Name** - [Anurag Gupta](https://github.com/guptaanurag2106) | [LinkedIn](#)
+- **Teammate 2** - [Delano Lourenco](https://github.com/3ddelano) | [LinkedIn](#)
 - **Teammate 3** - [Ishan Agrawal](https://github.com/ishan0709) | [LinkedIn](#)
 - **Teammate 4** - [Lokkamithran M](https://github.com/Lokkamithran) | [LinkedIn](#)

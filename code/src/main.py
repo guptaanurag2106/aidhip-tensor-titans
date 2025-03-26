@@ -28,7 +28,34 @@ def get_cust_info(customer_id: str) -> dict:
         rows = csv.DictReader(file)
         for row in rows:
             if row["customer_id"] == customer_id:
-                cust_info["persona"] = row
+                cust_info["persona"] = {
+                    "customer_id": row.get("customer_id", ""),
+                    "age": row.get("age", ""),
+                    "gender": row.get("gender", ""),
+                    "education": row.get("education", ""),
+                    "is_married": row.get("is_married", ""),
+                    "num_of_children": row.get("num_of_children", ""),
+                    "location": row.get("location", ""),
+                    "income": row.get("income", ""),
+                    "job": row.get("job", ""),
+                    "goals": row.get("goals", ""),
+                    "credit_score": row.get("credit_score", ""),
+                    "preferred_payment_method": row.get("preferred_payment_method", ""),
+                    "balance": row.get("balance", ""),
+                    "loan_amts": row.get("loan_amts", ""),
+                    "monthly_spending": row.get("monthly_spending", ""),
+                    "main_purchase_cat": row.get("main_purchase_cat", ""),
+                    "support_interaction_count": row.get(
+                        "support_interaction_count", ""
+                    ),
+                    "satisfaction": row.get("satisfaction", ""),
+                }
+                cust_info["previous"] = {
+                    "cust_input_params": row.get("input_params", "{}"),
+                    "cust_output_params": row.get("output_params", "{}"),
+                    "top_n_products": row.get("top_n_products", ""),
+                    "top_n_passive_products": row.get("top_n_passive_products", ""),
+                }
                 break
 
     with open(transactions_file, "r", newline="") as file:
@@ -52,7 +79,7 @@ def get_cust_info(customer_id: str) -> dict:
     return cust_info
 
 
-def generate_cust_input_params(cust_info: dict) -> dict:
+def generate_cust_input_params(cust_info: dict):
     prompt = f"""
     Given a customer of a popular U.S. bank with the following persona
     Persona: {cust_info["persona"]} (The list of loans, monthly spending, and balances are from older to newer)
@@ -87,13 +114,17 @@ def generate_cust_input_params(cust_info: dict) -> dict:
         "argument": "",
     }
 
-    response = send_request(prompt)
+    try:
+        response = send_request(prompt)
+    except:
+        return None
 
     if response.status_code == 200:
         response_data = response.json()
-        response_text = response_data["choices"][0]["message"]["content"]
+        print(response_data)
 
         try:
+            response_text = response_data["choices"][0]["message"]["content"]
             response_text = response_text.strip().lstrip("```json").rstrip("```")
 
             response_data = json.loads(response_text)
@@ -107,14 +138,14 @@ def generate_cust_input_params(cust_info: dict) -> dict:
             return cust_input_params
         except:
             print("Could not parse JSON from response:", response_data)
-            return cust_input_params
+            return None
     else:
         print(f"Error: {response.status_code}")
         print(response.text)
-        return cust_input_params
+        return None
 
 
-def sort_products(cust_info: dict, products: list[dict]) -> str:
+def sort_products(cust_info: dict, products: list[dict]):
     prompt = f"""
     Given a customer of a popular U.S. bank with the following persona
     Persona: {cust_info["persona"]} (The list of loans, monthly spending, and balances are from older to newer)
@@ -133,21 +164,28 @@ def sort_products(cust_info: dict, products: list[dict]) -> str:
     Conent should only the list of product_id (as a comma separated string) of the sorted products in terms of customer interest highest to lowest,
     do not give any reasoning etc. just a comma separated string of product ids
         """
-    response = send_request(prompt)
+    try:
+        response = send_request(prompt)
+    except:
+        return None
 
     if response.status_code == 200:
-        response_data = response.json()
-        response_text = response_data["choices"][0]["message"]["content"]
+        try:
+            response_data = response.json()
+            print(response_data)
+            response_text = response_data["choices"][0]["message"]["content"]
 
-        response_data = response_text.split(",")
-        response_data = ",".join([i.strip() for i in response_data])
+            response_data = response_text.split(",")
+            response_data = ",".join([i.strip() for i in response_data])
 
-        print(response_data)
-        return response_data
+            print(response_data)
+            return response_data
+        except:
+            return ""
     else:
         print(f"Error: {response.status_code}")
         print(response.text)
-        return ",".join([i["product_id"] for i in products])
+        return ""
 
 
 def main(customer_id: str):
@@ -155,6 +193,17 @@ def main(customer_id: str):
 
     print("Generating input params")
     cust_input_params = generate_cust_input_params(cust_info)
+    if not cust_input_params:
+        cust_input_params = json.loads(cust_info["previous"]["cust_input_params"])
+        if not cust_input_params:
+            cust_input_params = {
+                "churn_rate": 5,  # 0-10
+                "profit_generated": 5,
+                "risk_appetite": 5,
+                "financial_acumen": 5,
+                "argument": "",
+            }
+
     cust_output_params = cust_map(cust_input_params)
     print("got params")
 
@@ -202,10 +251,21 @@ def main(customer_id: str):
 
     print("Sorting products")
     sorted_products = sort_products(cust_info, top_n_products)
+    if sorted_products == "":
+        sorted_products = cust_info["previous"]["top_n_products"]
+        if not sorted_products or len(sorted_products) == 0:
+            sorted_products = ",".join([i["product_id"] for i in top_n_products])
+
     sorted_passive_products = sort_products(cust_info, top_n_passive_products)
+    if sorted_passive_products == "":
+        sorted_passive_products = cust_info["previous"]["top_n_passive_products"]
+        if not sorted_passive_products or len(sorted_passive_products) == 0:
+            sorted_passive_products = ",".join(
+                [i["product_id"] for i in top_n_passive_products]
+            )
 
     print("writing to csv")
-    
+
     columns = [
         "input_params",
         "output_params",
