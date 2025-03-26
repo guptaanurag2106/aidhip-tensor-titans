@@ -146,7 +146,7 @@ Key Mitigation Strategies:
 
 ## 👥 Team
 
--   **Your Name** - [Anurag Gupta](https://github.com/guptaanurag2106)
--   **Teammate 2** - [Delano Lourenco](https://github.com/3ddelano)
--   **Teammate 3** - [Ishan Agrawal](https://github.com/ishan0709)
--   **Teammate 4** - [Lokkamithran M](https://github.com/Lokkamithran)
+- [Anurag Gupta](https://github.com/guptaanurag2106)
+- [Delano Lourenco](https://github.com/3ddelano)
+- [Ishan Agrawal](https://github.com/ishan0709)
+- [Lokkamithran M](https://github.com/Lokkamithran)
