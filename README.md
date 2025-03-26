@@ -1,4 +1,4 @@
-🚀 aidhip-tensor-titans
+🚀 AIDHP-Tensor-Titans
 
 ## 📌 Table of Contents
 
@@ -149,7 +149,7 @@ Key Mitigation Strategies:
 
 ## Architecture
 
-![Architecture](./artifacts/screenshots/arch_diagram.png)
+![Architecture](./artifacts/arch/arch_diagram.png)
 
 
 ## 👥 Team

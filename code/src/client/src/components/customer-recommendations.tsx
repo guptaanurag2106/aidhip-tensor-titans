@@ -15,7 +15,7 @@ interface CustomerRecommendationsProps {
     customerInfo: CustomerInfo
 }
 
-const TOP_PRODUCTS_TO_SHOW = 5;
+const TOP_PRODUCTS_TO_SHOW = 7;
 const TOP_PASSIVE_PRODUCTS_TO_SHOW = 5;
 
 export default function CustomerRecommendations({ customerInfo }: CustomerRecommendationsProps) {

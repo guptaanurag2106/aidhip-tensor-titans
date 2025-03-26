@@ -210,7 +210,7 @@ def main(customer_id: str):
     cust_financial_products_path = "./data/financial_products.json"
     product_list = load_product_list(cust_financial_products_path)
 
-    top_n_products = mahalanobis_dist(cust_output_params, product_list, 20)
+    top_n_products = mahalanobis_dist(cust_output_params, product_list, 12)
 
     weights = {
         "risk_customer": 0.0,
@@ -220,7 +220,7 @@ def main(customer_id: str):
         "retention_value": 0.6,
     }  # weights should sum to 1
     top_n_passive_products = weighted_vector_dist_passive(
-        cust_output_params, product_list, weights, 10
+        cust_output_params, product_list, weights, 8
     )
 
     top_n_products = [
