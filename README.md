@@ -1,16 +1,16 @@
-🚀 [Project](Project) Name
+🚀
 
 ## 📌 Table of Contents
 
--   [Introduction](#introduction)
--   [Demo](#demo)
--   [Inspiration](#inspiration)
--   [What It Does](#what-it-does)
--   [How We Built It](#how-we-built-it)
--   [Challenges We Faced](#challenges-we-faced)
--   [How to Run](#how-to-run)
--   [Tech Stack](#tech-stack)
--   [Team](#team)
+-   [Introduction](#-introduction)
+-   [Demo](#-demo)
+-   [Inspiration](#-inspiration)
+-   [What It Does](#️-what-it-does)
+-   [How We Built It](#️-how-we-built-it)
+-   [Challenges We Faced](#-challenges-we-faced)
+-   [How to Run](#-how-to-run)
+-   [Tech Stack](#️-tech-stack)
+-   [Team](#-team)
 
 ---
 
@@ -19,7 +19,7 @@
 ## 🎥 Demo
 
 🔗 [Live Demo](#) (if applicable)  
-📹 [Video Demo](#) (if applicable)  
+📹 [Video Demo](./artifacts/demo/demo.mp4)
 🖼️ Screenshots:
 
 ![HomePage](./artifacts/screenshots/home.png)
