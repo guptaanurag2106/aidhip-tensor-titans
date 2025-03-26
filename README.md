@@ -122,13 +122,21 @@ Key Mitigation Strategies:
     cd ./code/src/client
     npm install
     ```
-3. Run the project
+3. Setup environement variables
+    For client: Copy the `code/src/client/.env-sample` file to `code/src/client/.env`. No need to update any values.
+    For backend: Copy the `code/src/.env.local` file to `code/src/.env`. Update the `code/src/.env` file with correct `Open Router` API key (Get one from [OpenRouter Api Key](https://openrouter.ai/settings/keys)).
 
+4. Run the project
+    
+    Run the client
     ```sh
     cd ./code/src/client
     npm run dev
+    ```
 
-    cd ../
+    Run the backend:
+    ```sh
+    cd ./code/src
     python backend.py
     ```
 
