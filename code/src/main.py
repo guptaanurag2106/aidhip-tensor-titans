@@ -101,9 +101,12 @@ def generate_cust_input_params(cust_info: dict):
                 it generates little to no money, 10 means wants highly risky investments which may generate a lot of money, but may lose a lot as well
     financial_acumen: Financial knowledge and experience of the Customer (Type: Float, 0 means has no knowledge and no previous experience with any financial field,
                 10 means is very well versed in financial field, has a job in it, and has a history of making smart investments, good debts
-    argument: Maximum 70 words proving why you chose this value, analyzing trends, identifying key moments, citing incidents etc.
+    argument: 1 string (total for all parameters) of Maximum 100 words proving why you chose these values, giving examples in transactions/posts/support queries
+                don't give separate arguments for different parameters just 1 string "argument" for all
 
+    For generating chance of leaving, account for the number of support queries (which won't be too high, but have more impact on chance of leaving) vs the number of posts (only few will be related to the bank)
     Return the customer parameters in a structured JSON format using the key mentioned after every field.
+    Do not give any reasoning etc. just a JSON
         """
 
     cust_input_params = {
@@ -121,7 +124,6 @@ def generate_cust_input_params(cust_info: dict):
 
     if response.status_code == 200:
         response_data = response.json()
-        print(response_data)
 
         try:
             response_text = response_data["choices"][0]["message"]["content"]
@@ -162,7 +164,7 @@ def sort_products(cust_info: dict, products: list[dict]):
 
     Output Content: 1 line: A comma separated string of product_id (example "PROD_1,PROD_54,PROD_2")
     Conent should only the list of product_id (as a comma separated string) of the sorted products in terms of customer interest highest to lowest,
-    do not give any reasoning etc. just a comma separated string of product ids
+    Do not give any reasoning etc. just a comma separated string of product ids
         """
     try:
         response = send_request(prompt)
@@ -172,13 +174,11 @@ def sort_products(cust_info: dict, products: list[dict]):
     if response.status_code == 200:
         try:
             response_data = response.json()
-            print(response_data)
             response_text = response_data["choices"][0]["message"]["content"]
 
             response_data = response_text.split(",")
             response_data = ",".join([i.strip() for i in response_data])
 
-            print(response_data)
             return response_data
         except:
             return ""

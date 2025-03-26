@@ -10,7 +10,7 @@ def image_transcribe(base64: str) -> str:
 
     OPEN_ROUTER_KEY = os.getenv("OPEN_ROUTER_KEY")
     OPEN_ROUTER_URL = "https://openrouter.ai/api/v1/chat/completions"
-    MODEL = "google/gemini-2.0-pro-exp-02-05:free"
+    MODEL = os.getenv("MODEL")
 
     headers = {
         "Authorization": f"Bearer {OPEN_ROUTER_KEY}",
