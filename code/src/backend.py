@@ -13,8 +13,6 @@ CORS(app)
 
 app.config["UPLOAD_FOLDER"] = UPLOAD_FOLDER
 
-INVALID_SENTIMENT_SCORE = -100
-
 
 def get_last_id_from_csv(file_path: str, id_column: str) -> int:
     last_id = 0

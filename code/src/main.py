@@ -101,7 +101,7 @@ def generate_cust_input_params(cust_info: dict):
                 it generates little to no money, 10 means wants highly risky investments which may generate a lot of money, but may lose a lot as well
     financial_acumen: Financial knowledge and experience of the Customer (Type: Float, 0 means has no knowledge and no previous experience with any financial field,
                 10 means is very well versed in financial field, has a job in it, and has a history of making smart investments, good debts
-    argument: 1 string (total for all parameters) of Maximum 100 words proving why you chose these values, giving examples in transactions/posts/support queries
+    argument: string (total for all parameters) of Maximum 100 words proving why you chose these values, giving examples in transactions/posts/support queries
                 don't give separate arguments for different parameters just 1 string "argument" for all
 
     For generating chance of leaving, account for the number of support queries (which won't be too high, but have more impact on chance of leaving) vs the number of posts (only few will be related to the bank)

@@ -1,4 +1,4 @@
-🚀
+🚀 aidhip-tensor-titans
 
 ## 📌 Table of Contents
 
@@ -18,8 +18,8 @@
 
 ## 🎥 Demo
 
-🔗 [Live Demo](#) (if applicable)  
 📹 [Video Demo](./artifacts/demo/demo.mp4)
+
 🖼️ Screenshots:
 
 ![HomePage](./artifacts/screenshots/home.png)
@@ -138,6 +138,11 @@ Key Mitigation Strategies:
 -   🔹 Backend: Flask (Python)
 -   🔹 Database: Currently just uses CSV files
 -   🔹 Other: Open Router APIs (using `google/gemini-2.0-pro-exp-02-05:free` model)
+
+## Architecture
+
+![Architecture](./artifacts/screenshots/arch_diagram.png)
+
 
 ## 👥 Team
 
