@@ -210,7 +210,17 @@ def main(customer_id: str):
     cust_financial_products_path = "./data/financial_products.json"
     product_list = load_product_list(cust_financial_products_path)
 
-    top_n_products = mahalanobis_dist(cust_output_params, product_list, 12)
+    if not (
+        cust_input_params["churn_rate"] > 8
+        and cust_input_params["profit_generated"] > 9
+    ):
+        top_n_products = mahalanobis_dist(cust_output_params, product_list, 12)
+    else:
+        top_n_products = mahalanobis_dist(
+            {**cust_output_params, "risk_bank": (cust_output_params["risk_bank"] + 1)},
+            product_list,
+            12,
+        )
 
     weights = {
         "risk_customer": 0.0,
