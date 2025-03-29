@@ -215,6 +215,27 @@ def main(customer_id: str):
         and cust_input_params["profit_generated"] > 9
     ):
         top_n_products = mahalanobis_dist(cust_output_params, product_list, 12)
+    elif cust_input_params["churn_rate"] < 1.5:
+        # FIX: focus more on bank, if customer has less chance of leaving
+        top_n_products = mahalanobis_dist(
+            {
+                **cust_output_params,
+                "value_customer": (cust_output_params["value_customer"] - 1),
+            },
+            product_list,
+            12,
+        )
+    elif cust_input_params["churn_rate"] > 8:
+        # FIX: focus slightly more on customer but not as much as case 1 as profit generated not that high
+        top_n_products = mahalanobis_dist(
+            {
+                **cust_output_params,
+                "value_customer": (cust_output_params["value_customer"] + 1),
+            },
+            product_list,
+            12,
+        )
+
     else:
         top_n_products = mahalanobis_dist(
             {**cust_output_params, "risk_bank": (cust_output_params["risk_bank"] + 1)},
